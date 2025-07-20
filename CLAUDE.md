@@ -25,6 +25,15 @@ ivan/
 │   ├── tracking/                  # Portfolio tracking docs
 │   └── sectors/                   # Sector analysis docs
 ├── config/                        # Configuration files
+│   ├── config.json               # Main configuration
+│   ├── .env.example              # Environment variables template
+│   └── .pre-commit-config.yaml   # Pre-commit hooks config
+├── scripts/                       # Automation scripts
+│   ├── run_daily_analysis.bat    # Quick analysis script
+│   ├── run_comprehensive_analysis.bat # Full analysis script
+│   ├── run_system_monitor.bat    # Monitoring script
+│   ├── run_tests.bat             # Test execution script
+│   └── setup_dev_environment.bat # Development setup
 ├── tests/                         # Test suite
 ├── reports/                       # Generated analysis reports
 ├── cache/                         # Data cache
@@ -47,19 +56,19 @@ python -m src.investment_system.analysis.comprehensive_analyzer
 python -m src.investment_system.monitoring.system_monitor
 
 # Windows batch shortcuts
-run_daily_analysis.bat
-run_comprehensive_analysis.bat
-run_system_monitor.bat
+scripts\run_daily_analysis.bat
+scripts\run_comprehensive_analysis.bat
+scripts\run_system_monitor.bat
 ```
 
 ### Development Workflow
 ```bash
 # Setup development environment
-setup_dev_environment.bat
+scripts\setup_dev_environment.bat
 
 # Run all tests
 python -m pytest tests/ -v
-# Or use: run_tests.bat
+# Or use: scripts\run_tests.bat
 
 # Code quality checks
 make format     # Format code with black/isort
@@ -71,12 +80,25 @@ python .claude/hooks/pre_analysis_hook.py
 ```
 
 ### Slash Commands (Claude Code)
+
+**Code Quality & Development:**
 - `/clean` - Format code, organize imports, fix linting issues
 - `/analyze` - Comprehensive code analysis and architecture review
 - `/optimize` - Performance analysis and optimization recommendations
 - `/test` - Run complete test suite with coverage
+- `/debug` - Comprehensive debugging workflow and diagnostics
+- `/security` - Security audit and vulnerability assessment
+
+**Investment Analysis:**
 - `/portfolio` - Portfolio management and analysis commands
 - `/monitor` - System monitoring and health checks
+- `/context` - Load comprehensive project and investment context
+- `/todo` - Investment analysis task management and prioritization
+
+**System Management:**
+- `/deploy` - Production deployment workflow and validation
+- `/performance` - Performance benchmarking and optimization analysis
+- `/docs` - Generate comprehensive system documentation
 
 ## System Architecture
 

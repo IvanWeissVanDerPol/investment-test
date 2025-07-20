@@ -1,0 +1,3 @@
+@echo off
+echo Setting up development environment...
+call scripts\setup_dev_environment.bat

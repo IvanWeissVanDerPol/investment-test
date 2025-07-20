@@ -41,7 +41,7 @@ if not exist ".claude\hooks" mkdir .claude\hooks
 
 echo.
 echo 5. Validating configuration...
-cd tools
+cd config
 python -c "import json; config = json.load(open('config.json')); print('✅ Configuration valid')" 2>nul
 if %errorlevel% neq 0 (
     echo ❌ Configuration validation failed
