@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-07-20T18:03:05.569412",
+  "data_type": "ethics",
+  "identifier": "ethics_screen_XOM_20250720",
+  "data": {
+    "symbol": "XOM",
+    "status": "blocked",
+    "severity": 3,
+    "priority_score": -6,
+    "green_impact": false,
+    "concerns": [
+      {
+        "category": "environmental_damage",
+        "reason": "Climate change denial, environmental destruction, lobbying against clean energy",
+        "leadership_concerns": [
+          "Climate change denial",
+          "Greenwashing",
+          "Lobbying against climate action"
+        ],
+        "sources": [
+          "Environmental studies",
+          "Internal documents",
+          "Scientific reports"
+        ]
+      }
+    ],
+    "benefits": [],
+    "recommendations": [
+      "[AVOID] High ethical concerns"
+    ],
+    "alternative_suggestions": [
+      "FSLR",
+      "ENPH",
+      "ICLN",
+      "QCLN",
+      "VWDRY"
+    ],
+    "portfolio_fit": {
+      "current_green_allocation": 0.25,
+      "target_green_allocation": 0.3,
+      "green_allocation_gap": 0.04999999999999999,
+      "portfolio_value": 1000
+    }
+  }
+}

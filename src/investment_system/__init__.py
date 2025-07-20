@@ -10,11 +10,11 @@ __author__ = "Ivan"
 from .utils.cache_manager import CacheManager
 from .data.market_data_collector import MarketDataCollector
 from .analysis.quick_analysis import get_stock_analysis
-from .portfolio.risk_management import RiskManager
+# from .portfolio.risk_management import RiskManager  # Temporarily disabled
 
 __all__ = [
     "CacheManager",
     "MarketDataCollector", 
     "get_stock_analysis",
-    "RiskManager"
+    # "RiskManager"
 ]

@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-07-20T18:26:10.786791",
+  "data_type": "ai_decisions",
+  "identifier": "ai_decision_XYL_buy_20250720",
+  "data": {
+    "symbol": "XYL",
+    "decision_type": "buy",
+    "recommendation": "BUY",
+    "confidence_level": "LOW",
+    "final_score": 0.7,
+    "timestamp": "2025-07-20T18:26:10.786791",
+    "component_scores": {
+      "ethics_score": 1.0,
+      "ai_score": 0.5,
+      "technical_score": 0.5,
+      "market_score": 0.5
+    },
+    "ethics_analysis": {
+      "symbol": "XYL",
+      "status": "mission_critical",
+      "severity": 0,
+      "priority_score": 10,
+      "green_impact": true,
+      "concerns": [],
+      "benefits": [
+        {
+          "category": "water_conservation",
+          "reason": "Water technology solutions for conservation and treatment",
+          "impact_areas": [
+            "Water Technology",
+            "Conservation",
+            "Water Treatment"
+          ],
+          "esg_score": 8.9,
+          "climate_commitment": "Water security and sustainability solutions",
+          "sources": [
+            "Company sustainability reports",
+            "Water technology analysis"
+          ]
+        }
+      ],
+      "recommendations": [
+        "[URGENT GREEN ALLOCATION] Currently 20.0%, targeting 30.0% - PRIORITY BUY",
+        "[MISSION CRITICAL] Essential for earth preservation - STRONGLY RECOMMENDED",
+        "ESG Score: 8.9/10 - Climate Leadership",
+        "Impact areas: Water Technology, Conservation, Water Treatment",
+        "Climate commitment: Water security and sustainability solutions"
+      ],
+      "alternative_suggestions": [],
+      "portfolio_fit": {
+        "current_green_allocation": 0.2,
+        "target_green_allocation": 0.3,
+        "green_allocation_gap": 0.09999999999999998,
+        "portfolio_value": 900
+      },
+      "allocation_recommendations": [
+        "[OPPORTUNITY] 10.0% gap to green target - CONSIDER"
+      ]
+    },
+    "ai_analysis": "Claude API not configured",
+    "market_analysis": "Market analysis unavailable",
+    "key_factors": [
+      "Strong environmental impact and sustainability credentials",
+      "Mission-critical earth preservation investment"
+    ],
+    "risk_factors": [
+      "Standard market and business risks apply"
+    ],
+    "sustainability_impact": {
+      "environmental_score": 10,
+      "social_score": 0,
+      "governance_score": 0,
+      "overall_impact": "highly_positive"
+    },
+    "portfolio_fit": {
+      "allocation_fit": "excellent",
+      "diversification_impact": "neutral",
+      "risk_balance": "appropriate",
+      "allocation_reason": "Helps reach 30.0% green target"
+    },
+    "action_items": [
+      {
+        "action": "BUY",
+        "priority": "MEDIUM",
+        "details": "Add to portfolio targeting sustainability goals"
+      },
+      {
+        "action": "ALLOCATE",
+        "priority": "MEDIUM",
+        "details": "Count towards 30% green allocation target"
+      }
+    ]
+  }
+}

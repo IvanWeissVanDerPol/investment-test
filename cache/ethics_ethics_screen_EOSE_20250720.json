@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-07-20T18:26:10.786791",
+  "data_type": "ethics",
+  "identifier": "ethics_screen_EOSE_20250720",
+  "data": {
+    "symbol": "EOSE",
+    "status": "mission_critical",
+    "severity": 0,
+    "priority_score": 10,
+    "green_impact": true,
+    "concerns": [],
+    "benefits": [
+      {
+        "category": "energy_storage",
+        "reason": "Grid-scale battery storage solutions enabling renewable energy integration",
+        "impact_areas": [
+          "Energy Storage",
+          "Grid Stability",
+          "Renewable Integration"
+        ],
+        "esg_score": 8.7,
+        "climate_commitment": "Enabling renewable energy transition through storage",
+        "sources": [
+          "Company reports",
+          "Energy storage industry analysis"
+        ]
+      }
+    ],
+    "recommendations": [
+      "[URGENT GREEN ALLOCATION] Currently 20.0%, targeting 30.0% - PRIORITY BUY",
+      "[MISSION CRITICAL] Essential for earth preservation - STRONGLY RECOMMENDED",
+      "ESG Score: 8.7/10 - Climate Leadership",
+      "Impact areas: Energy Storage, Grid Stability, Renewable Integration",
+      "Climate commitment: Enabling renewable energy transition through storage"
+    ],
+    "alternative_suggestions": [],
+    "portfolio_fit": {
+      "current_green_allocation": 0.2,
+      "target_green_allocation": 0.3,
+      "green_allocation_gap": 0.09999999999999998,
+      "portfolio_value": 900
+    },
+    "allocation_recommendations": [
+      "[OPPORTUNITY] 10.0% gap to green target - CONSIDER"
+    ]
+  }
+}

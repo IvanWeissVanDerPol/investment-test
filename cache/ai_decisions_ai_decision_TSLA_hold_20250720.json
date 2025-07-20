@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-07-20T18:28:22.366362",
+  "data_type": "ai_decisions",
+  "identifier": "ai_decision_TSLA_hold_20250720",
+  "data": {
+    "symbol": "TSLA",
+    "decision_type": "hold",
+    "recommendation": "AVOID",
+    "confidence_level": "LOW",
+    "final_score": 0.3,
+    "timestamp": "2025-07-20T18:28:22.366362",
+    "component_scores": {
+      "ethics_score": 0.0,
+      "ai_score": 0.5,
+      "technical_score": 0.5,
+      "market_score": 0.5
+    },
+    "ethics_analysis": {
+      "symbol": "TSLA",
+      "status": "blocked",
+      "severity": 3,
+      "priority_score": -6,
+      "green_impact": false,
+      "concerns": [
+        {
+          "category": "controversial_leadership",
+          "reason": "Elon Musk - Market manipulation, erratic behavior, controversial statements",
+          "leadership_concerns": [
+            "Market manipulation tweets",
+            "Pump and dump schemes",
+            "Political extremism",
+            "Worker rights violations"
+          ],
+          "sources": [
+            "SEC filings",
+            "Twitter/X posts",
+            "Court records"
+          ]
+        }
+      ],
+      "benefits": [],
+      "recommendations": [
+        "[AVOID] High ethical concerns"
+      ],
+      "alternative_suggestions": [
+        "RIVN",
+        "NIO",
+        "LCID",
+        "FSLR",
+        "ENPH"
+      ],
+      "portfolio_fit": {
+        "current_green_allocation": 0.4666666666666667,
+        "target_green_allocation": 0.3,
+        "green_allocation_gap": -0.16666666666666669,
+        "portfolio_value": 900
+      }
+    },
+    "ai_analysis": "Claude API not configured",
+    "market_analysis": "Market analysis unavailable",
+    "key_factors": [
+      "Standard investment analysis completed"
+    ],
+    "risk_factors": [
+      "Elon Musk - Market manipulation, erratic behavior, controversial statements"
+    ],
+    "sustainability_impact": {
+      "environmental_score": 0,
+      "social_score": 0,
+      "governance_score": 0,
+      "overall_impact": "neutral"
+    },
+    "portfolio_fit": {
+      "allocation_fit": "poor",
+      "diversification_impact": "neutral",
+      "risk_balance": "appropriate",
+      "allocation_reason": "Conflicts with ethics standards"
+    },
+    "action_items": [
+      {
+        "action": "SELL",
+        "priority": "HIGH",
+        "details": "Ethics violation - immediate divestment recommended"
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-07-20T18:26:10.798395",
+  "data_type": "ai_decisions",
+  "identifier": "ai_decision_ENPH_buy_20250720",
+  "data": {
+    "symbol": "ENPH",
+    "decision_type": "buy",
+    "recommendation": "BUY",
+    "confidence_level": "LOW",
+    "final_score": 0.7,
+    "timestamp": "2025-07-20T18:26:10.798395",
+    "component_scores": {
+      "ethics_score": 1.0,
+      "ai_score": 0.5,
+      "technical_score": 0.5,
+      "market_score": 0.5
+    },
+    "ethics_analysis": {
+      "symbol": "ENPH",
+      "status": "priority",
+      "severity": 0,
+      "priority_score": 8,
+      "green_impact": true,
+      "concerns": [],
+      "benefits": [
+        {
+          "category": "renewable_energy",
+          "reason": "Microinverter technology enabling distributed solar energy systems",
+          "impact_areas": [
+            "Solar Energy",
+            "Energy Storage",
+            "Grid Modernization"
+          ],
+          "esg_score": 8.2,
+          "climate_commitment": "Carbon neutral operations, renewable energy enabler",
+          "sources": [
+            "Company sustainability reports",
+            "Industry analysis"
+          ]
+        }
+      ],
+      "recommendations": [
+        "[GREEN ALLOCATION OPPORTUNITY] Helps reach 30.0% target - RECOMMENDED",
+        "[PRIORITY] High impact for sustainability - RECOMMENDED",
+        "ESG Score: 8.2/10 - Strong environmental focus",
+        "Impact areas: Solar Energy, Energy Storage, Grid Modernization",
+        "Climate commitment: Carbon neutral operations, renewable energy enabler"
+      ],
+      "alternative_suggestions": [],
+      "portfolio_fit": {
+        "current_green_allocation": 0.2,
+        "target_green_allocation": 0.3,
+        "green_allocation_gap": 0.09999999999999998,
+        "portfolio_value": 900
+      },
+      "allocation_recommendations": [
+        "[OPPORTUNITY] 10.0% gap to green target - CONSIDER"
+      ]
+    },
+    "ai_analysis": "Claude API not configured",
+    "market_analysis": "Market analysis unavailable",
+    "key_factors": [
+      "Strong environmental impact and sustainability credentials"
+    ],
+    "risk_factors": [
+      "Standard market and business risks apply"
+    ],
+    "sustainability_impact": {
+      "environmental_score": 8,
+      "social_score": 0,
+      "governance_score": 0,
+      "overall_impact": "positive"
+    },
+    "portfolio_fit": {
+      "allocation_fit": "excellent",
+      "diversification_impact": "neutral",
+      "risk_balance": "appropriate",
+      "allocation_reason": "Helps reach 30.0% green target"
+    },
+    "action_items": [
+      {
+        "action": "BUY",
+        "priority": "MEDIUM",
+        "details": "Add to portfolio targeting sustainability goals"
+      },
+      {
+        "action": "ALLOCATE",
+        "priority": "MEDIUM",
+        "details": "Count towards 30% green allocation target"
+      }
+    ]
+  }
+}

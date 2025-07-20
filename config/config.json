@@ -7,8 +7,9 @@
     "total_portfolio_value": 900,
     "currency": "USD",
     "risk_tolerance": "medium",
-    "investment_goals": ["AI/robotics growth", "government contract exposure", "smart money following"],
-    "target_ai_allocation_percent": 70,
+    "investment_goals": ["AI/robotics growth", "earth preservation", "clean technology", "government contract exposure", "smart money following"],
+    "target_ai_allocation_percent": 50,
+    "target_green_allocation_percent": 30,
     "max_single_position_percent": 15,
     "last_sync_timestamp": null,
     "account_id": "",
@@ -116,6 +117,37 @@
     "NVIDIA Corporation",
     "Intel Corporation"
   ],
+  "ethics_preferences": {
+    "enable_ethics_screening": true,
+    "prioritize_green_investments": true,
+    "block_controversial_leadership": true,
+    "block_environmental_damage": true,
+    "minimum_esg_score": 7.0,
+    "preferred_green_categories": [
+      "renewable_energy",
+      "clean_technology",
+      "electric_vehicles",
+      "energy_storage",
+      "water_conservation",
+      "waste_management",
+      "sustainable_agriculture"
+    ],
+    "blocked_categories": [
+      "controversial_leadership",
+      "environmental_damage",
+      "fossil_fuels",
+      "political_extremism",
+      "human_rights_violations"
+    ],
+    "ethics_weight_in_scoring": 0.3,
+    "require_climate_commitments": true,
+    "avoid_elon_musk_companies": true
+  },
+  "green_investment_targets": [
+    "FSLR", "ENPH", "SPWR", "RIVN", "NIO", "LCID",
+    "ICLN", "QCLN", "PBW", "XYL", "AWK", "WM", "RSG",
+    "EOSE", "VWDRY", "GE", "DE", "TRMB"
+  ],
   "ai_keywords": [
     "artificial intelligence",
     "machine learning",
@@ -131,5 +163,22 @@
     "algorithmic",
     "predictive analytics",
     "data science"
+  ],
+  "sustainability_keywords": [
+    "renewable energy",
+    "clean technology",
+    "solar energy",
+    "wind energy",
+    "electric vehicle",
+    "battery storage",
+    "carbon neutral",
+    "net zero",
+    "sustainability",
+    "ESG",
+    "climate change",
+    "green technology",
+    "environmental",
+    "circular economy",
+    "water conservation"
   ]
 }

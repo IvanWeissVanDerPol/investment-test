@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-07-20T18:26:10.778200",
+  "data_type": "ethics",
+  "identifier": "ethics_screen_VWDRY_20250720",
+  "data": {
+    "symbol": "VWDRY",
+    "status": "mission_critical",
+    "severity": 0,
+    "priority_score": 10,
+    "green_impact": true,
+    "concerns": [],
+    "benefits": [
+      {
+        "category": "renewable_energy",
+        "reason": "Global leader in wind turbine manufacturing and installation",
+        "impact_areas": [
+          "Wind Energy",
+          "Climate Change Mitigation",
+          "Offshore Wind"
+        ],
+        "esg_score": 9.1,
+        "climate_commitment": "Carbon neutral by 2030, leader in sustainable wind technology",
+        "sources": [
+          "Company sustainability reports",
+          "Global Wind Energy Council"
+        ]
+      }
+    ],
+    "recommendations": [
+      "[URGENT GREEN ALLOCATION] Currently 20.0%, targeting 30.0% - PRIORITY BUY",
+      "[MISSION CRITICAL] Essential for earth preservation - STRONGLY RECOMMENDED",
+      "ESG Score: 9.1/10 - Climate Leadership",
+      "Impact areas: Wind Energy, Climate Change Mitigation, Offshore Wind",
+      "Climate commitment: Carbon neutral by 2030, leader in sustainable wind technology"
+    ],
+    "alternative_suggestions": [],
+    "portfolio_fit": {
+      "current_green_allocation": 0.2,
+      "target_green_allocation": 0.3,
+      "green_allocation_gap": 0.09999999999999998,
+      "portfolio_value": 900
+    },
+    "allocation_recommendations": [
+      "[OPPORTUNITY] 10.0% gap to green target - CONSIDER"
+    ]
+  }
+}

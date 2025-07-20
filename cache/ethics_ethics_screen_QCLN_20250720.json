@@ -1,0 +1,47 @@
+{
+  "timestamp": "2025-07-20T18:26:10.794342",
+  "data_type": "ethics",
+  "identifier": "ethics_screen_QCLN_20250720",
+  "data": {
+    "symbol": "QCLN",
+    "status": "priority",
+    "severity": 0,
+    "priority_score": 8,
+    "green_impact": true,
+    "concerns": [],
+    "benefits": [
+      {
+        "category": "clean_technology",
+        "reason": "Clean energy technology companies focused on environmental solutions",
+        "impact_areas": [
+          "Clean Technology",
+          "Green Energy",
+          "Environmental Innovation"
+        ],
+        "esg_score": 8.8,
+        "climate_commitment": "Clean energy and environmental technology focus",
+        "sources": [
+          "Fund analysis",
+          "Clean technology research"
+        ]
+      }
+    ],
+    "recommendations": [
+      "[GREEN ALLOCATION OPPORTUNITY] Helps reach 30.0% target - RECOMMENDED",
+      "[PRIORITY] High impact for sustainability - RECOMMENDED",
+      "ESG Score: 8.8/10 - Strong environmental focus",
+      "Impact areas: Clean Technology, Green Energy, Environmental Innovation",
+      "Climate commitment: Clean energy and environmental technology focus"
+    ],
+    "alternative_suggestions": [],
+    "portfolio_fit": {
+      "current_green_allocation": 0.2,
+      "target_green_allocation": 0.3,
+      "green_allocation_gap": 0.09999999999999998,
+      "portfolio_value": 900
+    },
+    "allocation_recommendations": [
+      "[OPPORTUNITY] 10.0% gap to green target - CONSIDER"
+    ]
+  }
+}
