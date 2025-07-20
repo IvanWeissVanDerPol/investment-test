@@ -1,0 +1,95 @@
+{
+  "user_profile": {
+    "name": "Ivan",
+    "email": "weissvanderpol.ivan@gmail.com",
+    "dukascopy_balance": 900,
+    "currency": "USD",
+    "risk_tolerance": "medium",
+    "investment_goals": ["AI/robotics growth", "government contract exposure", "smart money following"]
+  },
+  "alpha_vantage": {
+    "api_key": "demo",
+    "base_url": "https://www.alphavantage.co/query"
+  },
+  "email_settings": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "weissvanderpol.ivan@gmail.com",
+    "password": "YOUR_APP_PASSWORD",
+    "recipient": "weissvanderpol.ivan@gmail.com"
+  },
+  "report_schedule": {
+    "daily_report_time": "08:00",
+    "weekly_report_day": "monday",
+    "monthly_report_day": 1
+  },
+  "alert_thresholds": {
+    "strong_buy_confidence": 0.8,
+    "price_movement_alert": 0.05,
+    "volume_spike_threshold": 2.0,
+    "contract_value_alert": 50000000
+  },
+  "target_stocks": [
+    "NVDA", "MSFT", "TSLA", "DE", "TSM",
+    "AMZN", "GOOGL", "META", "AAPL", "CRM",
+    "AMD", "INTC", "QCOM", "PLTR", "SNOW"
+  ],
+  "ai_robotics_etfs": [
+    "KROP", "BOTZ", "SOXX", "ARKQ", "ROBO", "IRBO", "UBOT"
+  ],
+  "sectors": {
+    "AI_Software": ["NVDA", "MSFT", "GOOGL", "META", "CRM", "PLTR", "SNOW"],
+    "AI_Hardware": ["NVDA", "TSM", "AMD", "INTC", "QCOM"],
+    "Robotics": ["DE", "ABB", "FANUY", "ISRG"],
+    "Agriculture_Tech": ["DE", "CNH", "AGCO", "TTI"]
+  },
+  "target_funds": [
+    "ARK Invest",
+    "Tiger Global Management",
+    "Coatue Management", 
+    "Whale Rock Capital",
+    "Berkshire Hathaway",
+    "Bridgewater Associates",
+    "Renaissance Technologies",
+    "RA Capital",
+    "Point72 Asset Management",
+    "Citadel LLC"
+  ],
+  "defense_contractors": [
+    "Lockheed Martin Corporation",
+    "Boeing Company", 
+    "Raytheon Technologies",
+    "General Dynamics Corporation",
+    "Northrop Grumman Corporation",
+    "L3Harris Technologies",
+    "BAE Systems",
+    "Booz Allen Hamilton"
+  ],
+  "tech_companies": [
+    "Microsoft Corporation",
+    "Amazon.com Inc",
+    "Google LLC",
+    "IBM Corporation",
+    "Oracle Corporation",
+    "Palantir Technologies",
+    "NVIDIA Corporation",
+    "Intel Corporation"
+  ],
+  "ai_keywords": [
+    "artificial intelligence",
+    "machine learning",
+    "neural network",
+    "deep learning",
+    "computer vision",
+    "natural language processing",
+    "robotics",
+    "autonomous",
+    "automated",
+    "AI",
+    "ML",
+    "algorithmic",
+    "predictive analytics",
+    "data science"
+  ]
+}

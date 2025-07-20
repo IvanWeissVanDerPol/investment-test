@@ -1,0 +1,102 @@
+{
+  "timestamp": "2025-07-19T23:47:27.730709",
+  "data_type": "news",
+  "identifier": "TSM",
+  "data": [
+    {
+      "title": "Taiwan Semiconductor Q2 Earnings and Revenues Surpass Expectations - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNb3MtQjN4RU9VYUYteHBxaFd1b0NOQ3pvTjZiYUd0NXR5TW93RTJKbjgtYUlrVWJqTFEtWnlhY0pTQ21oWmNGZ1ZBdlN4Ry1fc0Z3VFpGdmgtdDI3dVlDTHg0TkFRMFZ0c3U0V0lTSndYTk94ZEVreUxzUTlCZXROWnU1bWVDMlBRdkdtMjQxZ1c?oc=5",
+      "published_date": "Fri, 18 Jul 2025 12:56:00 GMT",
+      "description": "Taiwan Semiconductor Q2 Earnings and Revenues Surpass Expectations&nbsp;&nbsp;Yahoo Finance",
+      "source": "Google News",
+      "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+      "symbol": "TSM",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.1,
+        "positive_indicators": 1,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 1
+      },
+      "relevance_score": 5.3,
+      "analyzed_at": "2025-07-19T23:47:27.730709"
+    },
+    {
+      "title": "TSMC Stock Rises. Taiwan Semi AI Chips Boom Outweighs Trump Tariff Fears. - Barron's",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQVEU1UGw1V1dLZ3ZyVExRUS1aRkVvV1B3aGhYVG5KbjZkVFVvbUQ3Vy1QRVZacEgyNUlCVHpoVmVkZjcxbXc2TDF3cEp6dFJ1QW8wYXdnT002N1dnenV6X21CNU1lTHFlOUxsbkU2NVc2ek15SHpEZnV0R0ZiU0JhanljajloZGh6TnYzUU5xanR3Zw?oc=5",
+      "published_date": "Thu, 17 Jul 2025 20:14:00 GMT",
+      "description": "TSMC Stock Rises. Taiwan Semi AI Chips Boom Outweighs Trump Tariff Fears.&nbsp;&nbsp;Barron's",
+      "source": "Google News",
+      "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+      "symbol": "TSM",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.1,
+        "positive_indicators": 1,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 1
+      },
+      "relevance_score": 4.8,
+      "analyzed_at": "2025-07-19T23:47:27.730709"
+    },
+    {
+      "title": "Chip Maker TSMC's Stock Rises on Upbeat Outlook for Revenue, Strong AI Demand - Investopedia",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNY2pRTnM1dXhuMi1XLUwzODFNMDU5VlB2WWJ1Q1FXcEc4WFM2MklqYWhjLU95QzBiR0U4RjczT1RkNzM5dk9hT1RDSElSU3l0TVd3WC04QVJtOUJIdHExM08zUGdsaDR0UG9DekpDTGdEbTI5S210QVd2SlpDbjNxRG9iVVlkdUJVQjltcDBTVDNucjJMajZKdzNpUGRyRW9nSGJBRlE4RzhMVjM2SkhVVUdzYlQ?oc=5",
+      "published_date": "Thu, 17 Jul 2025 18:55:27 GMT",
+      "description": "Chip Maker TSMC's Stock Rises on Upbeat Outlook for Revenue, Strong AI Demand&nbsp;&nbsp;Investopedia",
+      "source": "Google News",
+      "query": "\"TSMC\" stock earnings revenue",
+      "symbol": "TSM",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.5,
+        "positive_indicators": 5,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 5
+      },
+      "relevance_score": 3.8,
+      "analyzed_at": "2025-07-19T23:47:27.730709"
+    },
+    {
+      "title": "Chip Bellwether TSMC Tops Q2 Earnings Target, Raises Outlook - Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPM2VWRllqMG8xN2tBazlQZmxhMm1RNkJodl83ZEJBRWxzQ2p1YXBuazloeXpOc1pQa1JVWi1qRnNDd0FxR2hmaEtlR05KdWVQTi1HV2QyQ0w5YzIyVmdmeC1XSFUtRjVaYmljMEdMWUh0TnFHZUY2VlVNR3RfWVoyTUdKN3RnSXFuTGdCNHFfQ1lVbVEtMnc?oc=5",
+      "published_date": "Thu, 17 Jul 2025 21:31:00 GMT",
+      "description": "Chip Bellwether TSMC Tops Q2 Earnings Target, Raises Outlook&nbsp;&nbsp;Investor's Business Daily",
+      "source": "Google News",
+      "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+      "symbol": "TSM",
+      "sentiment_analysis": {
+        "sentiment": "neutral",
+        "confidence": 0.5,
+        "positive_indicators": 0,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 0
+      },
+      "relevance_score": 3.3,
+      "analyzed_at": "2025-07-19T23:47:27.730709"
+    },
+    {
+      "title": "TSMC profit surges 61% to record high fueled by AI chip demand - CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNGFmc25zSDNJSVBPVFM3R0ZUVmg4YkdhMTBzWjhpYU4tZHpuUlBJaG9ZWHNSeVYxRy0ybVAzOXFTcUw4OXJ6bUpoZnBEakZ6QzAtUW5Nb0h4UGtCWjlrT2xXNE9CUnBKV0Jua2JSN0lnX0hsZGpGazRxeUZQOUVlUW92aEctRU9lY1QxTk1DMG1MM0tzZlFVUFBGbDRnWU5KMVcwSjJGS2ZoQWxBVWZJZHpvaldGNEk0dG5N0gHAAUFVX3lxTE5JcGVZRnpCUXdmWDlYdW9JSmhEYmljWXF6bGJUakJieUhGVllpdDJBMTdJWlNockZBSkdFZU1IZVhJX3JPWGdnZ0hGQzBJMmE3TFFCLTlhR0pjUnd1aV92SzM5eUpsQjFJMER1VVBfRXotRWtOTWs0QWZYYXRMcEpiNkZpdUpTQWNTM3FqdThMYThhTDFJX1E1Mmt1emx3QUwyU2dsU0V1MGtTVjREeW1KdVBSdjZLR1BtcU10Uk9mQQ?oc=5",
+      "published_date": "Thu, 17 Jul 2025 05:39:27 GMT",
+      "description": "TSMC profit surges 61% to record high fueled by AI chip demand&nbsp;&nbsp;CNBC",
+      "source": "Google News",
+      "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+      "symbol": "TSM",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.3,
+        "positive_indicators": 3,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 3
+      },
+      "relevance_score": 2.8,
+      "analyzed_at": "2025-07-19T23:47:27.730709"
+    }
+  ]
+}

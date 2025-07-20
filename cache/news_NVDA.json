@@ -1,0 +1,102 @@
+{
+  "timestamp": "2025-07-19T23:47:19.543261",
+  "data_type": "news",
+  "identifier": "NVDA",
+  "data": [
+    {
+      "title": "Stock Market Hits Highs On Nvidia AI Chip News, Taiwan Semi Earnings, Economic Data: Weekly Review - Investor's Business Daily",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVVB0YkhKT0xlaV9UMWliNkFPRVE1MWtLX3pZREUzNVYxR1djSXhXLVF2a29WVWk0V3pMSlZhMDRhLWRMRVN5NnB2c1Y4QTVaOGtIOFp3b1hQVHo3U0VEZDM2YlhYN0lSVlZlX0dhYW5JRHkzTmxzYzVHdjlZR3JxMTl2RlNtN193b1Rrc1NtRERzckdDc0NDVzhsTDlZeURIMmxOSEpBci1zN3JPOENn?oc=5",
+      "published_date": "Fri, 18 Jul 2025 16:52:00 GMT",
+      "description": "Stock Market Hits Highs On Nvidia AI Chip News, Taiwan Semi Earnings, Economic Data: Weekly Review&nbsp;&nbsp;Investor's Business Daily",
+      "source": "Google News",
+      "query": "\"NVIDIA\" stock earnings revenue",
+      "symbol": "NVDA",
+      "sentiment_analysis": {
+        "sentiment": "neutral",
+        "confidence": 0.5,
+        "positive_indicators": 0,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 0
+      },
+      "relevance_score": 3.3,
+      "analyzed_at": "2025-07-19T23:47:19.543261"
+    },
+    {
+      "title": "This Artificial Intelligence (AI) Stock Has Quietly Outperformed Nvidia All Year - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMUlzWnk2RFBnQ1N3OUM5ZnhKcEdNZ09DaFZXX0R1YWh4MDRDY2g0czhCa1BQcHFtbWlySnI3R3huYnVobFhOR2pEVVZ6eXg5TEJJVTZPT1U4Wi0wZkxkNENOV25tYTRSdzlKekQ4by0wcEE5d2F4S2VQSElINGRqWU9HYVprS0FrNFQtdnZ0S0FPTDJZUklN?oc=5",
+      "published_date": "Wed, 16 Jul 2025 22:05:00 GMT",
+      "description": "This Artificial Intelligence (AI) Stock Has Quietly Outperformed Nvidia All Year&nbsp;&nbsp;The Motley Fool",
+      "source": "Google News",
+      "query": "\"NVIDIA\" artificial intelligence AI",
+      "symbol": "NVDA",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.30000000000000004,
+        "positive_indicators": 1,
+        "negative_indicators": 0,
+        "ai_relevance": 1,
+        "score": 2
+      },
+      "relevance_score": 3.1,
+      "analyzed_at": "2025-07-19T23:47:19.543261"
+    },
+    {
+      "title": "Nvidia earnings live: Nvidia stock pops as Wall Street looks through China sales hit - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbFdoVi1sYWZDOTRrTlJnMVlWWkdLY2tlMmZwdEozSVBJY3lSSmZJZWszWkxDaWstSklwMEMxWlBUZXJuTGhjc29MWV8zT09zTmRpOHZUM2Z3UmNWLXZCaXdmYzhIV2R4R09sUWVSS3VFUFI3TFVmallGZnJKQWVOQjJUVlVvUDNfWl9nV21WLVIwY214dkRfVV8yZ1VSTFM5U2FOTnBRSjZpM0M5VG1vSS1VVE9NLURkdmtXSVZPaHV2Qm0yTmtwbWpkY3NhRVk?oc=5",
+      "published_date": "Thu, 29 May 2025 07:00:00 GMT",
+      "description": "Nvidia earnings live: Nvidia stock pops as Wall Street looks through China sales hit&nbsp;&nbsp;Yahoo Finance",
+      "source": "Google News",
+      "query": "\"NVIDIA Corporation\" stock earnings revenue",
+      "symbol": "NVDA",
+      "sentiment_analysis": {
+        "sentiment": "neutral",
+        "confidence": 0.5,
+        "positive_indicators": 0,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 0
+      },
+      "relevance_score": 3.0,
+      "analyzed_at": "2025-07-19T23:47:19.543261"
+    },
+    {
+      "title": "Earnings call transcript: NVIDIA beats Q1 2025 expectations, stock up 4.3% - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVpMc0VUM0FDYVhwaHBENkFseXpibHE2MXY1RnBFekVTcHBRS3Jfb0lRV0FsUEFzR2xSYS11aVFOdVFMRVJHWnM5MXFWemQ1Q2w1SmVIM3I3SVJlOUUwUmJBRERtMUJaenpnakhkZW53ZUhIR1l1S3AzVXNQSmdQWmRoQXNpLWxETUhIRWx3MkFiSGp1ZnNiUzVJUjhLSGRMdTZSZmRENnJ2Uktia3ZTRklPZnMwQkxhdmVsTWEySmhpeEdE?oc=5",
+      "published_date": "Wed, 28 May 2025 07:00:00 GMT",
+      "description": "Earnings call transcript: NVIDIA beats Q1 2025 expectations, stock up 4.3%&nbsp;&nbsp;Investing.com",
+      "source": "Google News",
+      "query": "\"NVIDIA Corporation\" stock earnings revenue",
+      "symbol": "NVDA",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.2,
+        "positive_indicators": 2,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 2
+      },
+      "relevance_score": 3.0,
+      "analyzed_at": "2025-07-19T23:47:19.543261"
+    },
+    {
+      "title": "Nvidia stock hit an all-time high this week. But could it be a bargain, even now? - Yahoo Home",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNR0xMM0xIX0NDYmlmNmFWWG8tTnRnQTVSYWZ0clloVEh0R0phME1ybXBLRUZtOXFqOGUxaFVQZUVrbmZsSUU1cnZkMFYzQ2VuaGdVN19TLVByd1MzQXlpZWgyMS0tNFNnWUNwbm1wbkpwZVpqOHB3N0xtZmNnVzcybQ?oc=5",
+      "published_date": "Sat, 19 Jul 2025 17:29:07 GMT",
+      "description": "Nvidia stock hit an all-time high this week. But could it be a bargain, even now?&nbsp;&nbsp;Yahoo Home",
+      "source": "Google News",
+      "query": "\"NVIDIA\" stock earnings revenue",
+      "symbol": "NVDA",
+      "sentiment_analysis": {
+        "sentiment": "positive",
+        "confidence": 0.1,
+        "positive_indicators": 1,
+        "negative_indicators": 0,
+        "ai_relevance": 0,
+        "score": 1
+      },
+      "relevance_score": 2.8,
+      "analyzed_at": "2025-07-19T23:47:19.543261"
+    }
+  ]
+}

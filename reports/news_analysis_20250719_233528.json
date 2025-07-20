@@ -1,0 +1,1532 @@
+{
+  "generated_at": "2025-07-19T23:34:40.531897",
+  "total_symbols": 10,
+  "stock_analysis": {
+    "NVDA": {
+      "summary": {
+        "symbol": "NVDA",
+        "total_articles": 10,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.5,
+        "sentiment_breakdown": {
+          "positive": 3,
+          "negative": 0,
+          "neutral": 7
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance"
+        ],
+        "top_headlines": [
+          {
+            "title": "Stock Market Hits Highs On Nvidia AI Chip News, Taiwan Semi Earnings, Economic Data: Weekly Review - Investor's Business Daily",
+            "sentiment": "neutral",
+            "relevance": 3.3,
+            "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVVB0YkhKT0xlaV9UMWliNkFPRVE1MWtLX3pZREUzNVYxR1djSXhXLVF2a29WVWk0V3pMSlZhMDRhLWRMRVN5NnB2c1Y4QTVaOGtIOFp3b1hQVHo3U0VEZDM2YlhYN0lSVlZlX0dhYW5JRHkzTmxzYzVHdjlZR3JxMTl2RlNtN193b1Rrc1NtRERzckdDc0NDVzhsTDlZeURIMmxOSEpBci1zN3JPOENn?oc=5"
+          },
+          {
+            "title": "This Artificial Intelligence (AI) Stock Has Quietly Outperformed Nvidia All Year - The Motley Fool",
+            "sentiment": "positive",
+            "relevance": 3.1,
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMUlzWnk2RFBnQ1N3OUM5ZnhKcEdNZ09DaFZXX0R1YWh4MDRDY2g0czhCa1BQcHFtbWlySnI3R3huYnVobFhOR2pEVVZ6eXg5TEJJVTZPT1U4Wi0wZkxkNENOV25tYTRSdzlKekQ4by0wcEE5d2F4S2VQSElINGRqWU9HYVprS0FrNFQtdnZ0S0FPTDJZUklN?oc=5"
+          },
+          {
+            "title": "Nvidia earnings live: Nvidia stock pops as Wall Street looks through China sales hit - Yahoo Finance",
+            "sentiment": "neutral",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbFdoVi1sYWZDOTRrTlJnMVlWWkdLY2tlMmZwdEozSVBJY3lSSmZJZWszWkxDaWstSklwMEMxWlBUZXJuTGhjc29MWV8zT09zTmRpOHZUM2Z3UmNWLXZCaXdmYzhIV2R4R09sUWVSS3VFUFI3TFVmallGZnJKQWVOQjJUVlVvUDNfWl9nV21WLVIwY214dkRfVV8yZ1VSTFM5U2FOTnBRSjZpM0M5VG1vSS1VVE9NLURkdmtXSVZPaHV2Qm0yTmtwbWpkY3NhRVk?oc=5"
+          },
+          {
+            "title": "Earnings call transcript: NVIDIA beats Q1 2025 expectations, stock up 4.3% - Investing.com",
+            "sentiment": "positive",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVpMc0VUM0FDYVhwaHBENkFseXpibHE2MXY1RnBFekVTcHBRS3Jfb0lRV0FsUEFzR2xSYS11aVFOdVFMRVJHWnM5MXFWemQ1Q2w1SmVIM3I3SVJlOUUwUmJBRERtMUJaenpnakhkZW53ZUhIR1l1S3AzVXNQSmdQWmRoQXNpLWxETUhIRWx3MkFiSGp1ZnNiUzVJUjhLSGRMdTZSZmRENnJ2Uktia3ZTRklPZnMwQkxhdmVsTWEySmhpeEdE?oc=5"
+          },
+          {
+            "title": "Nvidia stock hit an all-time high this week. But could it be a bargain, even now? - Yahoo Home",
+            "sentiment": "positive",
+            "relevance": 2.8,
+            "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNR0xMM0xIX0NDYmlmNmFWWG8tTnRnQTVSYWZ0clloVEh0R0phME1ybXBLRUZtOXFqOGUxaFVQZUVrbmZsSUU1cnZkMFYzQ2VuaGdVN19TLVByd1MzQXlpZWgyMS0tNFNnWUNwbm1wbkpwZVpqOHB3N0xtZmNnVzcybQ?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 10.0,
+        "analysis_timestamp": "2025-07-19T23:34:45.238226"
+      },
+      "articles": [
+        {
+          "title": "Stock Market Hits Highs On Nvidia AI Chip News, Taiwan Semi Earnings, Economic Data: Weekly Review - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOVVB0YkhKT0xlaV9UMWliNkFPRVE1MWtLX3pZREUzNVYxR1djSXhXLVF2a29WVWk0V3pMSlZhMDRhLWRMRVN5NnB2c1Y4QTVaOGtIOFp3b1hQVHo3U0VEZDM2YlhYN0lSVlZlX0dhYW5JRHkzTmxzYzVHdjlZR3JxMTl2RlNtN193b1Rrc1NtRERzckdDc0NDVzhsTDlZeURIMmxOSEpBci1zN3JPOENn?oc=5",
+          "published_date": "Fri, 18 Jul 2025 16:52:00 GMT",
+          "description": "Stock Market Hits Highs On Nvidia AI Chip News, Taiwan Semi Earnings, Economic Data: Weekly Review&nbsp;&nbsp;Investor's Business Daily",
+          "source": "Google News",
+          "query": "\"NVIDIA\" stock earnings revenue",
+          "symbol": "NVDA",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.3,
+          "analyzed_at": "2025-07-19T23:34:45.238226"
+        },
+        {
+          "title": "This Artificial Intelligence (AI) Stock Has Quietly Outperformed Nvidia All Year - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMUlzWnk2RFBnQ1N3OUM5ZnhKcEdNZ09DaFZXX0R1YWh4MDRDY2g0czhCa1BQcHFtbWlySnI3R3huYnVobFhOR2pEVVZ6eXg5TEJJVTZPT1U4Wi0wZkxkNENOV25tYTRSdzlKekQ4by0wcEE5d2F4S2VQSElINGRqWU9HYVprS0FrNFQtdnZ0S0FPTDJZUklN?oc=5",
+          "published_date": "Wed, 16 Jul 2025 22:05:00 GMT",
+          "description": "This Artificial Intelligence (AI) Stock Has Quietly Outperformed Nvidia All Year&nbsp;&nbsp;The Motley Fool",
+          "source": "Google News",
+          "query": "\"NVIDIA\" artificial intelligence AI",
+          "symbol": "NVDA",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.30000000000000004,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 1,
+            "score": 2
+          },
+          "relevance_score": 3.1,
+          "analyzed_at": "2025-07-19T23:34:45.238226"
+        },
+        {
+          "title": "Nvidia earnings live: Nvidia stock pops as Wall Street looks through China sales hit - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbFdoVi1sYWZDOTRrTlJnMVlWWkdLY2tlMmZwdEozSVBJY3lSSmZJZWszWkxDaWstSklwMEMxWlBUZXJuTGhjc29MWV8zT09zTmRpOHZUM2Z3UmNWLXZCaXdmYzhIV2R4R09sUWVSS3VFUFI3TFVmallGZnJKQWVOQjJUVlVvUDNfWl9nV21WLVIwY214dkRfVV8yZ1VSTFM5U2FOTnBRSjZpM0M5VG1vSS1VVE9NLURkdmtXSVZPaHV2Qm0yTmtwbWpkY3NhRVk?oc=5",
+          "published_date": "Thu, 29 May 2025 07:00:00 GMT",
+          "description": "Nvidia earnings live: Nvidia stock pops as Wall Street looks through China sales hit&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"NVIDIA Corporation\" stock earnings revenue",
+          "symbol": "NVDA",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:34:45.238226"
+        },
+        {
+          "title": "Earnings call transcript: NVIDIA beats Q1 2025 expectations, stock up 4.3% - Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPWVpMc0VUM0FDYVhwaHBENkFseXpibHE2MXY1RnBFekVTcHBRS3Jfb0lRV0FsUEFzR2xSYS11aVFOdVFMRVJHWnM5MXFWemQ1Q2w1SmVIM3I3SVJlOUUwUmJBRERtMUJaenpnakhkZW53ZUhIR1l1S3AzVXNQSmdQWmRoQXNpLWxETUhIRWx3MkFiSGp1ZnNiUzVJUjhLSGRMdTZSZmRENnJ2Uktia3ZTRklPZnMwQkxhdmVsTWEySmhpeEdE?oc=5",
+          "published_date": "Wed, 28 May 2025 07:00:00 GMT",
+          "description": "Earnings call transcript: NVIDIA beats Q1 2025 expectations, stock up 4.3%&nbsp;&nbsp;Investing.com",
+          "source": "Google News",
+          "query": "\"NVIDIA Corporation\" stock earnings revenue",
+          "symbol": "NVDA",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.2,
+            "positive_indicators": 2,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 2
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:34:45.238226"
+        },
+        {
+          "title": "Nvidia stock hit an all-time high this week. But could it be a bargain, even now? - Yahoo Home",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNR0xMM0xIX0NDYmlmNmFWWG8tTnRnQTVSYWZ0clloVEh0R0phME1ybXBLRUZtOXFqOGUxaFVQZUVrbmZsSUU1cnZkMFYzQ2VuaGdVN19TLVByd1MzQXlpZWgyMS0tNFNnWUNwbm1wbkpwZVpqOHB3N0xtZmNnVzcybQ?oc=5",
+          "published_date": "Sat, 19 Jul 2025 17:29:07 GMT",
+          "description": "Nvidia stock hit an all-time high this week. But could it be a bargain, even now?&nbsp;&nbsp;Yahoo Home",
+          "source": "Google News",
+          "query": "\"NVIDIA\" stock earnings revenue",
+          "symbol": "NVDA",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 2.8,
+          "analyzed_at": "2025-07-19T23:34:45.238226"
+        }
+      ]
+    },
+    "MSFT": {
+      "summary": {
+        "symbol": "MSFT",
+        "total_articles": 10,
+        "overall_sentiment": "positive",
+        "sentiment_score": 1.8,
+        "sentiment_breakdown": {
+          "positive": 7,
+          "negative": 0,
+          "neutral": 3
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Product Launch",
+          "Market Performance",
+          "Leadership"
+        ],
+        "top_headlines": [
+          {
+            "title": "Microsoft Corporation (MSFT): Strong AI-Driven Revenue Growth Expected in Upcoming Quarterly Report - Yahoo Finance",
+            "sentiment": "positive",
+            "relevance": 5.3,
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRXJGNFV5TDJxTUJHdnhyaWtVWW9qOGI4Tkl2LVFrQlZOTWc3S21QWFg5RzItdEhqT1BubXgxTlY2bjRZU3dCNFhBWUtUYmIxeHBGWFhmOEV0TkJqMTh5aHdFWV9MM25xTWpPV1RzcnIzSXloMTd6N0xKMnJ4ck5yaGdEZFQ5MDZKREE?oc=5"
+          },
+          {
+            "title": "Microsoft (MSFT) Stock: Shares Jump 8.4% After Beating Q3 Revenue and Earnings Estimates - CoinCentral",
+            "sentiment": "positive",
+            "relevance": 4.0,
+            "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQjhGR2UzOU9NT0FvajhzbTVKZTNONnlxYWhVQjRlUjZVbFU0Q1lKYVZsOGY5R0VZcmtUSHdQR3hNNmV2QVloYjZwZFdaaHhmS1dmSnVWeTBQOUVqeDk3UjhORXZEa1k4bnRLSnpxX3F2M190bkdjRHJ2SEVlWlB1WmNoM1Z6dF9IZUdmdzdiQ1hOYWVyUVhad3hNcnFOeEdtVkp6dWN1dVh2VndKZnc?oc=5"
+          },
+          {
+            "title": "Microsoft Set for Strong Earnings, Analysts Say. AI and Cloud Revenue Is Critical. - Barron's",
+            "sentiment": "positive",
+            "relevance": 3.8,
+            "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOW1hcm5sa29kV2VFMnlCZVd4WlNhbmdHWVN0SEd2c0VpVEdMUEN5VC1vZ1NXbWNGT29yNFRtbVRuV1g0elVOWWMxcHA5OXhHR3BZRk5QdG9RenJyZHp2dmlGNWR1QTdoNGE5Znh2OEVkS1VPYUVxTVhpaVhMUTRGSg?oc=5"
+          },
+          {
+            "title": "Microsoft stock jumps 6% after topping estimates with $70.1B in revenue, $25.8B in profits - GeekWire",
+            "sentiment": "positive",
+            "relevance": 3.5,
+            "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOFVRWjZuc2RlU0NDZ0pLLWZtU0VXUXViT3JNOVI4WGh3ZGtDMzlwUW5yMThKd2lwYmgyV0lXeVRPNlo4VDQxVHdzVHRCMVMtUTVfd0k3b0xLSXZIdEl6akh3OE1kYVBxY19wVHJRU2IyRTlxV01aejh0ZUVhZTM2bHZtRDVpcnRFcFBoc1JYM0xvLXl1aU55SVUyUmpjRzV4SE1kVEYxZHR3ZVBYWklLaUttNXd6VEIt?oc=5"
+          },
+          {
+            "title": "Is Microsoft the Top Artificial Intelligence (AI) Stock to Buy Right Now? - Yahoo Finance",
+            "sentiment": "neutral",
+            "relevance": 3.1,
+            "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNV2NtSWZQby1SUTl4cUVWWjI0dkhoS0o5R19HX3VISEhDaFNBOE82VWRGQUVnMmVOd282MDdmaHVtZGVtNFlDR1ZaQzlCTFpVVGNvYURkdWFhcEktc2lqSkZ6OF9SaWFLS2dtYktHRXdjaXFCcnlldkNCWlFTRFFmVzVUYUpaT3FZTWVXcndUUQ?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 10.0,
+        "analysis_timestamp": "2025-07-19T23:34:50.515722"
+      },
+      "articles": [
+        {
+          "title": "Microsoft Corporation (MSFT): Strong AI-Driven Revenue Growth Expected in Upcoming Quarterly Report - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRXJGNFV5TDJxTUJHdnhyaWtVWW9qOGI4Tkl2LVFrQlZOTWc3S21QWFg5RzItdEhqT1BubXgxTlY2bjRZU3dCNFhBWUtUYmIxeHBGWFhmOEV0TkJqMTh5aHdFWV9MM25xTWpPV1RzcnIzSXloMTd6N0xKMnJ4ck5yaGdEZFQ5MDZKREE?oc=5",
+          "published_date": "Mon, 27 Jan 2025 08:00:00 GMT",
+          "description": "Microsoft Corporation (MSFT): Strong AI-Driven Revenue Growth Expected in Upcoming Quarterly Report&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Microsoft Corporation\" stock earnings revenue",
+          "symbol": "MSFT",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.4,
+            "positive_indicators": 4,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 4
+          },
+          "relevance_score": 5.3,
+          "analyzed_at": "2025-07-19T23:34:50.515722"
+        },
+        {
+          "title": "Microsoft (MSFT) Stock: Shares Jump 8.4% After Beating Q3 Revenue and Earnings Estimates - CoinCentral",
+          "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQjhGR2UzOU9NT0FvajhzbTVKZTNONnlxYWhVQjRlUjZVbFU0Q1lKYVZsOGY5R0VZcmtUSHdQR3hNNmV2QVloYjZwZFdaaHhmS1dmSnVWeTBQOUVqeDk3UjhORXZEa1k4bnRLSnpxX3F2M190bkdjRHJ2SEVlWlB1WmNoM1Z6dF9IZUdmdzdiQ1hOYWVyUVhad3hNcnFOeEdtVkp6dWN1dVh2VndKZnc?oc=5",
+          "published_date": "Thu, 01 May 2025 07:00:00 GMT",
+          "description": "Microsoft (MSFT) Stock: Shares Jump 8.4% After Beating Q3 Revenue and Earnings Estimates&nbsp;&nbsp;CoinCentral",
+          "source": "Google News",
+          "query": "\"Microsoft Corporation\" stock earnings revenue",
+          "symbol": "MSFT",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.2,
+            "positive_indicators": 2,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 2
+          },
+          "relevance_score": 4.0,
+          "analyzed_at": "2025-07-19T23:34:50.515722"
+        },
+        {
+          "title": "Microsoft Set for Strong Earnings, Analysts Say. AI and Cloud Revenue Is Critical. - Barron's",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOW1hcm5sa29kV2VFMnlCZVd4WlNhbmdHWVN0SEd2c0VpVEdMUEN5VC1vZ1NXbWNGT29yNFRtbVRuV1g0elVOWWMxcHA5OXhHR3BZRk5QdG9RenJyZHp2dmlGNWR1QTdoNGE5Znh2OEVkS1VPYUVxTVhpaVhMUTRGSg?oc=5",
+          "published_date": "Wed, 16 Jul 2025 13:49:00 GMT",
+          "description": "Microsoft Set for Strong Earnings, Analysts Say. AI and Cloud Revenue Is Critical.&nbsp;&nbsp;Barron's",
+          "source": "Google News",
+          "query": "\"Microsoft\" stock earnings revenue",
+          "symbol": "MSFT",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.2,
+            "positive_indicators": 2,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 2
+          },
+          "relevance_score": 3.8,
+          "analyzed_at": "2025-07-19T23:34:50.515722"
+        },
+        {
+          "title": "Microsoft stock jumps 6% after topping estimates with $70.1B in revenue, $25.8B in profits - GeekWire",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOFVRWjZuc2RlU0NDZ0pLLWZtU0VXUXViT3JNOVI4WGh3ZGtDMzlwUW5yMThKd2lwYmgyV0lXeVRPNlo4VDQxVHdzVHRCMVMtUTVfd0k3b0xLSXZIdEl6akh3OE1kYVBxY19wVHJRU2IyRTlxV01aejh0ZUVhZTM2bHZtRDVpcnRFcFBoc1JYM0xvLXl1aU55SVUyUmpjRzV4SE1kVEYxZHR3ZVBYWklLaUttNXd6VEIt?oc=5",
+          "published_date": "Wed, 30 Apr 2025 07:00:00 GMT",
+          "description": "Microsoft stock jumps 6% after topping estimates with $70.1B in revenue, $25.8B in profits&nbsp;&nbsp;GeekWire",
+          "source": "Google News",
+          "query": "\"Microsoft\" stock earnings revenue",
+          "symbol": "MSFT",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.2,
+            "positive_indicators": 2,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 2
+          },
+          "relevance_score": 3.5,
+          "analyzed_at": "2025-07-19T23:34:50.515722"
+        },
+        {
+          "title": "Is Microsoft the Top Artificial Intelligence (AI) Stock to Buy Right Now? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNV2NtSWZQby1SUTl4cUVWWjI0dkhoS0o5R19HX3VISEhDaFNBOE82VWRGQUVnMmVOd282MDdmaHVtZGVtNFlDR1ZaQzlCTFpVVGNvYURkdWFhcEktc2lqSkZ6OF9SaWFLS2dtYktHRXdjaXFCcnlldkNCWlFTRFFmVzVUYUpaT3FZTWVXcndUUQ?oc=5",
+          "published_date": "Thu, 17 Jul 2025 09:15:00 GMT",
+          "description": "Is Microsoft the Top Artificial Intelligence (AI) Stock to Buy Right Now?&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Microsoft\" artificial intelligence AI",
+          "symbol": "MSFT",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.7,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 1,
+            "score": 1
+          },
+          "relevance_score": 3.1,
+          "analyzed_at": "2025-07-19T23:34:50.515722"
+        }
+      ]
+    },
+    "TSLA": {
+      "summary": {
+        "symbol": "TSLA",
+        "total_articles": 10,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.2,
+        "sentiment_breakdown": {
+          "positive": 2,
+          "negative": 0,
+          "neutral": 8
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance",
+          "Growth & Expansion"
+        ],
+        "top_headlines": [
+          {
+            "title": "What Analysts Think of Tesla Stock Ahead of Earnings - Investopedia",
+            "sentiment": "neutral",
+            "relevance": 3.5,
+            "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPY3c1M0lSRHZJNnFiUHRHU3ZMNTRvb3o4cndGc1hFM1pScldpdDRVeWdfV1V5WFFkUGkzVWpLUFpmWG5aeTVCZDZLTjdUb2xZblVyODhkeWhuRjh0dTRMRzE5d0FrXzVmUG5NT2loQ2pQTFdNQmVIc1Y1Tm5vaDZvNllSZTNrWTBGbGJqT3RLdEJ1bFA1?oc=5"
+          },
+          {
+            "title": "Cathie Wood Buys $36 Million Of Tesla As The Stock Forms A New Base Ahead Of Earnings - Investor's Business Daily",
+            "sentiment": "neutral",
+            "relevance": 3.3,
+            "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPYS05VXVmZFBLTFRHd3hZQXVTdk9OTmVIRlJfSWNfSlhrMEpsUTc4aVE5S0U0TExUX2c0TktmaFlXUzZOdjB6LWZrRTVZSFBKNFpZTnFoUjdrZTJ6WjBJSEItNnZXd2t3aXpDYlhkelc3RklabXNVc1RfanRCc1ZTd1A2ZFRnaWNzUTA0QXgtX2VpRG5kLUdvOVNOVGM?oc=5"
+          },
+          {
+            "title": "Going Into Earnings, Is Tesla Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+            "sentiment": "neutral",
+            "relevance": 3.3,
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNYUZSUk9UZ0Fsb3NRTVVvSVNrVW5mekVqZm9hZTczMTdhdjhaZEdtZlhwMXg2SkI4R0t4dm5BcDgwMF8yMUJaZUpFY2Y3bW9CbDRMNWw5OVA2M00yNW5UTXlqcXdta2l4STJmVjhHVmZ4VHFmam41WXU5ckt0MGs5bUR5LXlpXzN5d3k2SzJKSkFJYjVGRkVKaFNfcElMdw?oc=5"
+          },
+          {
+            "title": "Earnings live: Second quarter earnings season off to strong start with Tesla, Google on deck - Yahoo Finance",
+            "sentiment": "positive",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOXpGcXl4emVoWlJoUkxIajR0TnUwZFpfb1FZNzF6UXlTWUxpcWtTY0M4czlLZTlqMURONTRmbVQ4bzNlVVg2WkdDOThHejN1ejRzTjloeHRLa3lVREdjUURyeXRIcXJ3VTZHNVBfNHhsMXZXR3Q5dHpXR045QTRibThxMVJjSHFKUjlYajJmN3daajBtd1hBb05reEJKRFlsZFFRRVhhamludUdkNXdjeUwzTjJaZWNZUkc3bWN5MFJ0ZXpvZnp6OWc1d0xMN1p0VHpYTHhzWk0?oc=5"
+          },
+          {
+            "title": "Tesla (TSLA) Lags Q1 Earnings and Revenue Estimates - Yahoo Finance",
+            "sentiment": "positive",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1palhkWDlsbnozX2Jyal8zdUtSbmxNemx2cFR2VWxzaDJBRW1Jd2pKbk1DejN0S1dpUVI0R0tZSHNaOWZVZTQyYXFwdTMyam5rY3U2ZjdubkxBZHFibDJONkR2SjZkelZNaVBqMl9RRW80N2U2MjBPd3dQZUtxZw?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:34:54.558662"
+      },
+      "articles": [
+        {
+          "title": "What Analysts Think of Tesla Stock Ahead of Earnings - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPY3c1M0lSRHZJNnFiUHRHU3ZMNTRvb3o4cndGc1hFM1pScldpdDRVeWdfV1V5WFFkUGkzVWpLUFpmWG5aeTVCZDZLTjdUb2xZblVyODhkeWhuRjh0dTRMRzE5d0FrXzVmUG5NT2loQ2pQTFdNQmVIc1Y1Tm5vaDZvNllSZTNrWTBGbGJqT3RLdEJ1bFA1?oc=5",
+          "published_date": "Fri, 18 Jul 2025 16:25:32 GMT",
+          "description": "What Analysts Think of Tesla Stock Ahead of Earnings&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"Tesla\" stock earnings revenue",
+          "symbol": "TSLA",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.5,
+          "analyzed_at": "2025-07-19T23:34:54.558662"
+        },
+        {
+          "title": "Cathie Wood Buys $36 Million Of Tesla As The Stock Forms A New Base Ahead Of Earnings - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPYS05VXVmZFBLTFRHd3hZQXVTdk9OTmVIRlJfSWNfSlhrMEpsUTc4aVE5S0U0TExUX2c0TktmaFlXUzZOdjB6LWZrRTVZSFBKNFpZTnFoUjdrZTJ6WjBJSEItNnZXd2t3aXpDYlhkelc3RklabXNVc1RfanRCc1ZTd1A2ZFRnaWNzUTA0QXgtX2VpRG5kLUdvOVNOVGM?oc=5",
+          "published_date": "Thu, 17 Jul 2025 20:07:00 GMT",
+          "description": "Cathie Wood Buys $36 Million Of Tesla As The Stock Forms A New Base Ahead Of Earnings&nbsp;&nbsp;Investor's Business Daily",
+          "source": "Google News",
+          "query": "\"Tesla\" stock earnings revenue",
+          "symbol": "TSLA",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.3,
+          "analyzed_at": "2025-07-19T23:34:54.558662"
+        },
+        {
+          "title": "Going Into Earnings, Is Tesla Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNYUZSUk9UZ0Fsb3NRTVVvSVNrVW5mekVqZm9hZTczMTdhdjhaZEdtZlhwMXg2SkI4R0t4dm5BcDgwMF8yMUJaZUpFY2Y3bW9CbDRMNWw5OVA2M00yNW5UTXlqcXdta2l4STJmVjhHVmZ4VHFmam41WXU5ckt0MGs5bUR5LXlpXzN5d3k2SzJKSkFJYjVGRkVKaFNfcElMdw?oc=5",
+          "published_date": "Thu, 23 Jan 2025 08:00:00 GMT",
+          "description": "Going Into Earnings, Is Tesla Stock a Buy, a Sell, or Fairly Valued?&nbsp;&nbsp;Morningstar",
+          "source": "Google News",
+          "query": "\"Tesla Inc\" stock earnings revenue",
+          "symbol": "TSLA",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.3,
+          "analyzed_at": "2025-07-19T23:34:54.558662"
+        },
+        {
+          "title": "Earnings live: Second quarter earnings season off to strong start with Tesla, Google on deck - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOXpGcXl4emVoWlJoUkxIajR0TnUwZFpfb1FZNzF6UXlTWUxpcWtTY0M4czlLZTlqMURONTRmbVQ4bzNlVVg2WkdDOThHejN1ejRzTjloeHRLa3lVREdjUURyeXRIcXJ3VTZHNVBfNHhsMXZXR3Q5dHpXR045QTRibThxMVJjSHFKUjlYajJmN3daajBtd1hBb05reEJKRFlsZFFRRVhhamludUdkNXdjeUwzTjJaZWNZUkc3bWN5MFJ0ZXpvZnp6OWc1d0xMN1p0VHpYTHhzWk0?oc=5",
+          "published_date": "Fri, 18 Jul 2025 20:31:40 GMT",
+          "description": "Earnings live: Second quarter earnings season off to strong start with Tesla, Google on deck&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Tesla\" stock earnings revenue",
+          "symbol": "TSLA",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:34:54.558662"
+        },
+        {
+          "title": "Tesla (TSLA) Lags Q1 Earnings and Revenue Estimates - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1palhkWDlsbnozX2Jyal8zdUtSbmxNemx2cFR2VWxzaDJBRW1Jd2pKbk1DejN0S1dpUVI0R0tZSHNaOWZVZTQyYXFwdTMyam5rY3U2ZjdubkxBZHFibDJONkR2SjZkelZNaVBqMl9RRW80N2U2MjBPd3dQZUtxZw?oc=5",
+          "published_date": "Tue, 22 Apr 2025 07:00:00 GMT",
+          "description": "Tesla (TSLA) Lags Q1 Earnings and Revenue Estimates&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Tesla Inc\" stock earnings revenue",
+          "symbol": "TSLA",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:34:54.558662"
+        }
+      ]
+    },
+    "DE": {
+      "summary": {
+        "symbol": "DE",
+        "total_articles": 9,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.22,
+        "sentiment_breakdown": {
+          "positive": 3,
+          "negative": 2,
+          "neutral": 4
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance",
+          "Growth & Expansion"
+        ],
+        "top_headlines": [
+          {
+            "title": "Earnings call transcript: Deere & Company Q2 2025 beats expectations, stock rises - Investing.com",
+            "sentiment": "positive",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbklvaHpLbEU2RHY0STRBalF0UmxFdjltbXJKUi1EV21HSzZ0OVpMWGpKMUNtcVNRUTNDa0JxaTJwNGtOYnBxa3FzS2xDNEg0RXZxdndBelhDOFg2dmJhdmp2Z2lCVTZVekNIbjhzVWlEUFdCcnNqREFkYkFZTjR4cGowSlZWMG1LbkFXNmVVbG9lMHg4ZG50OE9CTlVodmVCNi1GTHZoLVdjb01iaGdTamNNSmNvdGlReVB4NE5hUGxsT0NkTWNLaVJTSVJNYTQ?oc=5"
+          },
+          {
+            "title": "Earnings Preview: Can Deere & Company (DE) return to growth in Q2 2025? - AlphaStreet",
+            "sentiment": "positive",
+            "relevance": 2.5,
+            "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRy1SeEFqNEpmSWM0dkhsX1kxVzhZcl80c2ZFOGVkU2pvWWpsbC1kWDBOanNKM3hWc09Tay15YW5wRFhIbWpzenp5SEVFZXhhM0s2NDhJdTIwZzlMc0NSVW5pdGp2X2ZyWnFJeWFOQTdBWFp1MEtoUkFwM2plQ01rNXVHVmRnTXczWjZtN1JGR3Ytc2lkNHdHWndDTQ?oc=5"
+          },
+          {
+            "title": "Deere Reports Second Quarter Net Income of $1.804 Billion - PR Newswire",
+            "sentiment": "neutral",
+            "relevance": 0.5,
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPenUwYnZESXdLRXN3Y0JkZE0zb1RzZ0FXRzJfcXIxMFlkck9fV3R6czlXaURpbnBITkN3YUpXSkt5M1hDNmltUjdqZ1RzRHBXX0dNelYzNWx3NkdvWXJoNm0xbmpRclE3U2p0Q0lCbGxyLXlDMG9sN21feVFGbDM0dXhmazBQdkpXeHRfdWtDOFBzRHlWSjAyV3FCdFRoc24tV3MzYlpUR3dJUWk0UmdKZURn?oc=5"
+          },
+          {
+            "title": "Deere reports Q1 earnings decline; expects more in year ahead - Quad Cities Business Journal",
+            "sentiment": "negative",
+            "relevance": 0.5,
+            "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQakU0MkhReFNFS0Y1bjFneU9ZalUwRGRudkxiWUdXXzZsM0s1X3RTMEtLSHNZLUxHWWloMjdHX3R2UVM2QU12Rkl5Wmcwb2otUnFPX0VrUDZ1Wll1bnU0QjJfZHFJQkVHNmZBaGdTUGNsVXVDUmpRcTdNVUZrSUNORFdtNFptdWRsY1ZaR3NuS1hkaC1Ya2dn?oc=5"
+          },
+          {
+            "title": "Deere Stock Hits All-Time High as Q2 Results Top Estimates - Investopedia",
+            "sentiment": "neutral",
+            "relevance": 0.5,
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRXlpMG0xdFE2a0ZNQmsybV9QX2E5Nng5bUx2Y09iUERwSEdQOGFPZmFiOF8xa293R01vZ2JkY0hra0VSZUk0QmVBU1pGMjJUbXowekN1cXNqU2oxTzUxNm8xNTRtcmtlaE5DcmtiaW5mWHhvTHREZDMybE9RUnhFRXhtd2hFVXVUM3JFdWduRUhyTGJGQWExY1dzcTgtQQ?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:34:58.278512"
+      },
+      "articles": [
+        {
+          "title": "Earnings call transcript: Deere & Company Q2 2025 beats expectations, stock rises - Investing.com",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQbklvaHpLbEU2RHY0STRBalF0UmxFdjltbXJKUi1EV21HSzZ0OVpMWGpKMUNtcVNRUTNDa0JxaTJwNGtOYnBxa3FzS2xDNEg0RXZxdndBelhDOFg2dmJhdmp2Z2lCVTZVekNIbjhzVWlEUFdCcnNqREFkYkFZTjR4cGowSlZWMG1LbkFXNmVVbG9lMHg4ZG50OE9CTlVodmVCNi1GTHZoLVdjb01iaGdTamNNSmNvdGlReVB4NE5hUGxsT0NkTWNLaVJTSVJNYTQ?oc=5",
+          "published_date": "Thu, 15 May 2025 07:00:00 GMT",
+          "description": "Earnings call transcript: Deere & Company Q2 2025 beats expectations, stock rises&nbsp;&nbsp;Investing.com",
+          "source": "Google News",
+          "query": "\"Deere & Company\" stock earnings revenue",
+          "symbol": "DE",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.2,
+            "positive_indicators": 2,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 2
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:34:58.278512"
+        },
+        {
+          "title": "Earnings Preview: Can Deere & Company (DE) return to growth in Q2 2025? - AlphaStreet",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRy1SeEFqNEpmSWM0dkhsX1kxVzhZcl80c2ZFOGVkU2pvWWpsbC1kWDBOanNKM3hWc09Tay15YW5wRFhIbWpzenp5SEVFZXhhM0s2NDhJdTIwZzlMc0NSVW5pdGp2X2ZyWnFJeWFOQTdBWFp1MEtoUkFwM2plQ01rNXVHVmRnTXczWjZtN1JGR3Ytc2lkNHdHWndDTQ?oc=5",
+          "published_date": "Mon, 12 May 2025 07:00:00 GMT",
+          "description": "Earnings Preview: Can Deere & Company (DE) return to growth in Q2 2025?&nbsp;&nbsp;AlphaStreet",
+          "source": "Google News",
+          "query": "\"Deere & Company\" stock earnings revenue",
+          "symbol": "DE",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 2.5,
+          "analyzed_at": "2025-07-19T23:34:58.278512"
+        },
+        {
+          "title": "Deere Reports Second Quarter Net Income of $1.804 Billion - PR Newswire",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPenUwYnZESXdLRXN3Y0JkZE0zb1RzZ0FXRzJfcXIxMFlkck9fV3R6czlXaURpbnBITkN3YUpXSkt5M1hDNmltUjdqZ1RzRHBXX0dNelYzNWx3NkdvWXJoNm0xbmpRclE3U2p0Q0lCbGxyLXlDMG9sN21feVFGbDM0dXhmazBQdkpXeHRfdWtDOFBzRHlWSjAyV3FCdFRoc24tV3MzYlpUR3dJUWk0UmdKZURn?oc=5",
+          "published_date": "Thu, 15 May 2025 07:00:00 GMT",
+          "description": "Deere Reports Second Quarter Net Income of $1.804 Billion&nbsp;&nbsp;PR Newswire",
+          "source": "Google News",
+          "query": "\"John Deere\" stock earnings revenue",
+          "symbol": "DE",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 0.5,
+          "analyzed_at": "2025-07-19T23:34:58.278512"
+        },
+        {
+          "title": "Deere reports Q1 earnings decline; expects more in year ahead - Quad Cities Business Journal",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQakU0MkhReFNFS0Y1bjFneU9ZalUwRGRudkxiWUdXXzZsM0s1X3RTMEtLSHNZLUxHWWloMjdHX3R2UVM2QU12Rkl5Wmcwb2otUnFPX0VrUDZ1Wll1bnU0QjJfZHFJQkVHNmZBaGdTUGNsVXVDUmpRcTdNVUZrSUNORFdtNFptdWRsY1ZaR3NuS1hkaC1Ya2dn?oc=5",
+          "published_date": "Thu, 13 Feb 2025 08:00:00 GMT",
+          "description": "Deere reports Q1 earnings decline; expects more in year ahead&nbsp;&nbsp;Quad Cities Business Journal",
+          "source": "Google News",
+          "query": "\"John Deere\" stock earnings revenue",
+          "symbol": "DE",
+          "sentiment_analysis": {
+            "sentiment": "negative",
+            "confidence": 0.1,
+            "positive_indicators": 0,
+            "negative_indicators": 1,
+            "ai_relevance": 0,
+            "score": -1
+          },
+          "relevance_score": 0.5,
+          "analyzed_at": "2025-07-19T23:34:58.278512"
+        },
+        {
+          "title": "Deere Stock Hits All-Time High as Q2 Results Top Estimates - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPRXlpMG0xdFE2a0ZNQmsybV9QX2E5Nng5bUx2Y09iUERwSEdQOGFPZmFiOF8xa293R01vZ2JkY0hra0VSZUk0QmVBU1pGMjJUbXowekN1cXNqU2oxTzUxNm8xNTRtcmtlaE5DcmtiaW5mWHhvTHREZDMybE9RUnhFRXhtd2hFVXVUM3JFdWduRUhyTGJGQWExY1dzcTgtQQ?oc=5",
+          "published_date": "Thu, 15 May 2025 07:00:00 GMT",
+          "description": "Deere Stock Hits All-Time High as Q2 Results Top Estimates&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"John Deere\" stock earnings revenue",
+          "symbol": "DE",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 0.5,
+          "analyzed_at": "2025-07-19T23:34:58.278512"
+        }
+      ]
+    },
+    "TSM": {
+      "summary": {
+        "symbol": "TSM",
+        "total_articles": 7,
+        "overall_sentiment": "positive",
+        "sentiment_score": 1.71,
+        "sentiment_breakdown": {
+          "positive": 5,
+          "negative": 0,
+          "neutral": 2
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance",
+          "Growth & Expansion"
+        ],
+        "top_headlines": [
+          {
+            "title": "Taiwan Semiconductor Q2 Earnings and Revenues Surpass Expectations - Yahoo Finance",
+            "sentiment": "positive",
+            "relevance": 5.3,
+            "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNb3MtQjN4RU9VYUYteHBxaFd1b0NOQ3pvTjZiYUd0NXR5TW93RTJKbjgtYUlrVWJqTFEtWnlhY0pTQ21oWmNGZ1ZBdlN4Ry1fc0Z3VFpGdmgtdDI3dVlDTHg0TkFRMFZ0c3U0V0lTSndYTk94ZEVreUxzUTlCZXROWnU1bWVDMlBRdkdtMjQxZ1c?oc=5"
+          },
+          {
+            "title": "TSMC Stock Rises. Taiwan Semi AI Chips Boom Outweighs Trump Tariff Fears. - Barron's",
+            "sentiment": "positive",
+            "relevance": 4.8,
+            "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQVEU1UGw1V1dLZ3ZyVExRUS1aRkVvV1B3aGhYVG5KbjZkVFVvbUQ3Vy1QRVZacEgyNUlCVHpoVmVkZjcxbXc2TDF3cEp6dFJ1QW8wYXdnT002N1dnenV6X21CNU1lTHFlOUxsbkU2NVc2ek15SHpEZnV0R0ZiU0JhanljajloZGh6TnYzUU5xanR3Zw?oc=5"
+          },
+          {
+            "title": "Chip Maker TSMC's Stock Rises on Upbeat Outlook for Revenue, Strong AI Demand - Investopedia",
+            "sentiment": "positive",
+            "relevance": 3.8,
+            "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNY2pRTnM1dXhuMi1XLUwzODFNMDU5VlB2WWJ1Q1FXcEc4WFM2MklqYWhjLU95QzBiR0U4RjczT1RkNzM5dk9hT1RDSElSU3l0TVd3WC04QVJtOUJIdHExM08zUGdsaDR0UG9DekpDTGdEbTI5S210QVd2SlpDbjNxRG9iVVlkdUJVQjltcDBTVDNucjJMajZKdzNpUGRyRW9nSGJBRlE4RzhMVjM2SkhVVUdzYlQ?oc=5"
+          },
+          {
+            "title": "Chip Bellwether TSMC Tops Q2 Earnings Target, Raises Outlook - Investor's Business Daily",
+            "sentiment": "neutral",
+            "relevance": 3.3,
+            "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPM2VWRllqMG8xN2tBazlQZmxhMm1RNkJodl83ZEJBRWxzQ2p1YXBuazloeXpOc1pQa1JVWi1qRnNDd0FxR2hmaEtlR05KdWVQTi1HV2QyQ0w5YzIyVmdmeC1XSFUtRjVaYmljMEdMWUh0TnFHZUY2VlVNR3RfWVoyTUdKN3RnSXFuTGdCNHFfQ1lVbVEtMnc?oc=5"
+          },
+          {
+            "title": "TSMC profit surges 61% to record high fueled by AI chip demand - CNBC",
+            "sentiment": "positive",
+            "relevance": 2.8,
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNGFmc25zSDNJSVBPVFM3R0ZUVmg4YkdhMTBzWjhpYU4tZHpuUlBJaG9ZWHNSeVYxRy0ybVAzOXFTcUw4OXJ6bUpoZnBEakZ6QzAtUW5Nb0h4UGtCWjlrT2xXNE9CUnBKV0Jua2JSN0lnX0hsZGpGazRxeUZQOUVlUW92aEctRU9lY1QxTk1DMG1MM0tzZlFVUFBGbDRnWU5KMVcwSjJGS2ZoQWxBVWZJZHpvaldGNEk0dG5N0gHAAUFVX3lxTE5JcGVZRnpCUXdmWDlYdW9JSmhEYmljWXF6bGJUakJieUhGVllpdDJBMTdJWlNockZBSkdFZU1IZVhJX3JPWGdnZ0hGQzBJMmE3TFFCLTlhR0pjUnd1aV92SzM5eUpsQjFJMER1VVBfRXotRWtOTWs0QWZYYXRMcEpiNkZpdUpTQWNTM3FqdThMYThhTDFJX1E1Mmt1emx3QUwyU2dsU0V1MGtTVjREeW1KdVBSdjZLR1BtcU10Uk9mQQ?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:35:02.652569"
+      },
+      "articles": [
+        {
+          "title": "Taiwan Semiconductor Q2 Earnings and Revenues Surpass Expectations - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNb3MtQjN4RU9VYUYteHBxaFd1b0NOQ3pvTjZiYUd0NXR5TW93RTJKbjgtYUlrVWJqTFEtWnlhY0pTQ21oWmNGZ1ZBdlN4Ry1fc0Z3VFpGdmgtdDI3dVlDTHg0TkFRMFZ0c3U0V0lTSndYTk94ZEVreUxzUTlCZXROWnU1bWVDMlBRdkdtMjQxZ1c?oc=5",
+          "published_date": "Fri, 18 Jul 2025 12:56:00 GMT",
+          "description": "Taiwan Semiconductor Q2 Earnings and Revenues Surpass Expectations&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+          "symbol": "TSM",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 5.3,
+          "analyzed_at": "2025-07-19T23:35:02.652569"
+        },
+        {
+          "title": "TSMC Stock Rises. Taiwan Semi AI Chips Boom Outweighs Trump Tariff Fears. - Barron's",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQVEU1UGw1V1dLZ3ZyVExRUS1aRkVvV1B3aGhYVG5KbjZkVFVvbUQ3Vy1QRVZacEgyNUlCVHpoVmVkZjcxbXc2TDF3cEp6dFJ1QW8wYXdnT002N1dnenV6X21CNU1lTHFlOUxsbkU2NVc2ek15SHpEZnV0R0ZiU0JhanljajloZGh6TnYzUU5xanR3Zw?oc=5",
+          "published_date": "Thu, 17 Jul 2025 20:14:00 GMT",
+          "description": "TSMC Stock Rises. Taiwan Semi AI Chips Boom Outweighs Trump Tariff Fears.&nbsp;&nbsp;Barron's",
+          "source": "Google News",
+          "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+          "symbol": "TSM",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 4.8,
+          "analyzed_at": "2025-07-19T23:35:02.652569"
+        },
+        {
+          "title": "Chip Maker TSMC's Stock Rises on Upbeat Outlook for Revenue, Strong AI Demand - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNY2pRTnM1dXhuMi1XLUwzODFNMDU5VlB2WWJ1Q1FXcEc4WFM2MklqYWhjLU95QzBiR0U4RjczT1RkNzM5dk9hT1RDSElSU3l0TVd3WC04QVJtOUJIdHExM08zUGdsaDR0UG9DekpDTGdEbTI5S210QVd2SlpDbjNxRG9iVVlkdUJVQjltcDBTVDNucjJMajZKdzNpUGRyRW9nSGJBRlE4RzhMVjM2SkhVVUdzYlQ?oc=5",
+          "published_date": "Thu, 17 Jul 2025 18:55:27 GMT",
+          "description": "Chip Maker TSMC's Stock Rises on Upbeat Outlook for Revenue, Strong AI Demand&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"TSMC\" stock earnings revenue",
+          "symbol": "TSM",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.5,
+            "positive_indicators": 5,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 5
+          },
+          "relevance_score": 3.8,
+          "analyzed_at": "2025-07-19T23:35:02.652569"
+        },
+        {
+          "title": "Chip Bellwether TSMC Tops Q2 Earnings Target, Raises Outlook - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPM2VWRllqMG8xN2tBazlQZmxhMm1RNkJodl83ZEJBRWxzQ2p1YXBuazloeXpOc1pQa1JVWi1qRnNDd0FxR2hmaEtlR05KdWVQTi1HV2QyQ0w5YzIyVmdmeC1XSFUtRjVaYmljMEdMWUh0TnFHZUY2VlVNR3RfWVoyTUdKN3RnSXFuTGdCNHFfQ1lVbVEtMnc?oc=5",
+          "published_date": "Thu, 17 Jul 2025 21:31:00 GMT",
+          "description": "Chip Bellwether TSMC Tops Q2 Earnings Target, Raises Outlook&nbsp;&nbsp;Investor's Business Daily",
+          "source": "Google News",
+          "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+          "symbol": "TSM",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.3,
+          "analyzed_at": "2025-07-19T23:35:02.652569"
+        },
+        {
+          "title": "TSMC profit surges 61% to record high fueled by AI chip demand - CNBC",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNGFmc25zSDNJSVBPVFM3R0ZUVmg4YkdhMTBzWjhpYU4tZHpuUlBJaG9ZWHNSeVYxRy0ybVAzOXFTcUw4OXJ6bUpoZnBEakZ6QzAtUW5Nb0h4UGtCWjlrT2xXNE9CUnBKV0Jua2JSN0lnX0hsZGpGazRxeUZQOUVlUW92aEctRU9lY1QxTk1DMG1MM0tzZlFVUFBGbDRnWU5KMVcwSjJGS2ZoQWxBVWZJZHpvaldGNEk0dG5N0gHAAUFVX3lxTE5JcGVZRnpCUXdmWDlYdW9JSmhEYmljWXF6bGJUakJieUhGVllpdDJBMTdJWlNockZBSkdFZU1IZVhJX3JPWGdnZ0hGQzBJMmE3TFFCLTlhR0pjUnd1aV92SzM5eUpsQjFJMER1VVBfRXotRWtOTWs0QWZYYXRMcEpiNkZpdUpTQWNTM3FqdThMYThhTDFJX1E1Mmt1emx3QUwyU2dsU0V1MGtTVjREeW1KdVBSdjZLR1BtcU10Uk9mQQ?oc=5",
+          "published_date": "Thu, 17 Jul 2025 05:39:27 GMT",
+          "description": "TSMC profit surges 61% to record high fueled by AI chip demand&nbsp;&nbsp;CNBC",
+          "source": "Google News",
+          "query": "\"Taiwan Semiconductor\" stock earnings revenue",
+          "symbol": "TSM",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.3,
+            "positive_indicators": 3,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 3
+          },
+          "relevance_score": 2.8,
+          "analyzed_at": "2025-07-19T23:35:02.652569"
+        }
+      ]
+    },
+    "AMZN": {
+      "summary": {
+        "symbol": "AMZN",
+        "total_articles": 9,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.11,
+        "sentiment_breakdown": {
+          "positive": 1,
+          "negative": 0,
+          "neutral": 8
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Product Launch",
+          "Market Performance",
+          "Growth & Expansion"
+        ],
+        "top_headlines": [
+          {
+            "title": "What You Need to Know Ahead of Amazon.com's Earnings Release - Nasdaq",
+            "sentiment": "neutral",
+            "relevance": 4.5,
+            "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNkRNeE5BM0RaZlBwNnQ1QUZ6bmF1ekJtNVNxVlhsS01MaHpSOXRfVVpHRDBlblA5c2x2OEQxdkRKY09WQzFKOGhSazc0dXdTOGtPSnFGSlFqYTFDY08yS3ZVZk56R182eHVqQlVuVFUwZ2xJT3hUZjBUVWxveHcxaU9OQkJPYW5sX2VRQw?oc=5"
+          },
+          {
+            "title": "Amazon Earnings: Good Quarter Overall With AWS Decent; Guidance Light on Operating Income - Morningstar",
+            "sentiment": "neutral",
+            "relevance": 4.0,
+            "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM3RJSU5MWW9VTUhubHpRcG82T0thTmpudUhfczRjNTNyNWQ3dmFINHVoMjhLNXlJdXNONDNoNEhSZWllWkQ3czI0ZEY4Z3l1M2tEQ0kyTWZ1NGtZVzByam5rem9VRWhlOXV5X0s2MzMyTmNLeENITUJxMTJ4R094bkJzZDR1blZuNEZRSl9IYnVoa1RubWo0b2ItWlJJMzVRQzhKWl85QVZ5R0QxeEdIWGUzVEdBQ29wSDRYc1lfYkZqbWt1eHln?oc=5"
+          },
+          {
+            "title": "Amazon Earnings Beat But Stock Falls On Mixed Guidance, Slight Cloud Miss - Investor's Business Daily",
+            "sentiment": "neutral",
+            "relevance": 3.8,
+            "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVl6dGY0cXVRU3lsSzdwSTE2NndRX29pYXFOMTFXdm90X2UzcWpCYURTcWNhbndLbGJOY0ZpZW9ldHJoNUZrUUtKRGpPaHhLX1JLbTZaTUF5RS1pVTQ5cU41MFlQc3ppS1Q5N00yM2tOU1VpVHZ2V09EMEczYUpmZldWM0k2eWZyS05uQTBjZEFnZ1VKcVl0bzRB?oc=5"
+          },
+          {
+            "title": "What Analysts Think of Amazon Stock Ahead of Earnings - Investopedia",
+            "sentiment": "neutral",
+            "relevance": 3.5,
+            "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUFhlbVE3eWRjN0s3dGxCMjhwMzNIR3M4UWRJelpjV25uVFdMSnhQajdWc3VQenFIVjIybnNrR2Y1bDNIUUFfdjFWbm9yWG1EUnVWcW9nRy16ZXhrQlo4Slg5WXJIcWFpSTVpT0tnY1ZfNGtuS0g0TWxXUl9Vd3pwZXZnMkpIMzBjaFhoOHdMdDI1bE9TbHZiSk5zR3V0NHRPMVdxcVlpVGVGX1Zx?oc=5"
+          },
+          {
+            "title": "Amazon Stock Slips After Earnings. How It Fell Short of Microsoft\u2019s Bar. - Barron's",
+            "sentiment": "neutral",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1neEVwcDZ1bkctbnM2a2dLd2xveDh6MTc4a2RFbE1KTFRRSGpadXNBOERJM1pVQjQ4Yk9NUllPTU4wdVRIWkhIdHRMYnY1eHkwYW5GRDhpMFdnVG40cUNhRG9CcnE5MFUzWC1FeGlvZEFLNmJSM0tJTg?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:35:06.676000"
+      },
+      "articles": [
+        {
+          "title": "What You Need to Know Ahead of Amazon.com's Earnings Release - Nasdaq",
+          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQNkRNeE5BM0RaZlBwNnQ1QUZ6bmF1ekJtNVNxVlhsS01MaHpSOXRfVVpHRDBlblA5c2x2OEQxdkRKY09WQzFKOGhSazc0dXdTOGtPSnFGSlFqYTFDY08yS3ZVZk56R182eHVqQlVuVFUwZ2xJT3hUZjBUVWxveHcxaU9OQkJPYW5sX2VRQw?oc=5",
+          "published_date": "Mon, 21 Apr 2025 07:00:00 GMT",
+          "description": "What You Need to Know Ahead of Amazon.com's Earnings Release&nbsp;&nbsp;Nasdaq",
+          "source": "Google News",
+          "query": "\"Amazon.com\" stock earnings revenue",
+          "symbol": "AMZN",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.5,
+          "analyzed_at": "2025-07-19T23:35:06.676000"
+        },
+        {
+          "title": "Amazon Earnings: Good Quarter Overall With AWS Decent; Guidance Light on Operating Income - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQM3RJSU5MWW9VTUhubHpRcG82T0thTmpudUhfczRjNTNyNWQ3dmFINHVoMjhLNXlJdXNONDNoNEhSZWllWkQ3czI0ZEY4Z3l1M2tEQ0kyTWZ1NGtZVzByam5rem9VRWhlOXV5X0s2MzMyTmNLeENITUJxMTJ4R094bkJzZDR1blZuNEZRSl9IYnVoa1RubWo0b2ItWlJJMzVRQzhKWl85QVZ5R0QxeEdIWGUzVEdBQ29wSDRYc1lfYkZqbWt1eHln?oc=5",
+          "published_date": "Fri, 02 May 2025 07:00:00 GMT",
+          "description": "Amazon Earnings: Good Quarter Overall With AWS Decent; Guidance Light on Operating Income&nbsp;&nbsp;Morningstar",
+          "source": "Google News",
+          "query": "\"Amazon.com\" stock earnings revenue",
+          "symbol": "AMZN",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.0,
+          "analyzed_at": "2025-07-19T23:35:06.676000"
+        },
+        {
+          "title": "Amazon Earnings Beat But Stock Falls On Mixed Guidance, Slight Cloud Miss - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONVl6dGY0cXVRU3lsSzdwSTE2NndRX29pYXFOMTFXdm90X2UzcWpCYURTcWNhbndLbGJOY0ZpZW9ldHJoNUZrUUtKRGpPaHhLX1JLbTZaTUF5RS1pVTQ5cU41MFlQc3ppS1Q5N00yM2tOU1VpVHZ2V09EMEczYUpmZldWM0k2eWZyS05uQTBjZEFnZ1VKcVl0bzRB?oc=5",
+          "published_date": "Thu, 01 May 2025 07:00:00 GMT",
+          "description": "Amazon Earnings Beat But Stock Falls On Mixed Guidance, Slight Cloud Miss&nbsp;&nbsp;Investor's Business Daily",
+          "source": "Google News",
+          "query": "\"Amazon\" stock earnings revenue",
+          "symbol": "AMZN",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 2,
+            "negative_indicators": 2,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.8,
+          "analyzed_at": "2025-07-19T23:35:06.676000"
+        },
+        {
+          "title": "What Analysts Think of Amazon Stock Ahead of Earnings - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQUFhlbVE3eWRjN0s3dGxCMjhwMzNIR3M4UWRJelpjV25uVFdMSnhQajdWc3VQenFIVjIybnNrR2Y1bDNIUUFfdjFWbm9yWG1EUnVWcW9nRy16ZXhrQlo4Slg5WXJIcWFpSTVpT0tnY1ZfNGtuS0g0TWxXUl9Vd3pwZXZnMkpIMzBjaFhoOHdMdDI1bE9TbHZiSk5zR3V0NHRPMVdxcVlpVGVGX1Zx?oc=5",
+          "published_date": "Thu, 01 May 2025 07:00:00 GMT",
+          "description": "What Analysts Think of Amazon Stock Ahead of Earnings&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"Amazon\" stock earnings revenue",
+          "symbol": "AMZN",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.5,
+          "analyzed_at": "2025-07-19T23:35:06.676000"
+        },
+        {
+          "title": "Amazon Stock Slips After Earnings. How It Fell Short of Microsoft\u2019s Bar. - Barron's",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1neEVwcDZ1bkctbnM2a2dLd2xveDh6MTc4a2RFbE1KTFRRSGpadXNBOERJM1pVQjQ4Yk9NUllPTU4wdVRIWkhIdHRMYnY1eHkwYW5GRDhpMFdnVG40cUNhRG9CcnE5MFUzWC1FeGlvZEFLNmJSM0tJTg?oc=5",
+          "published_date": "Fri, 02 May 2025 07:00:00 GMT",
+          "description": "Amazon Stock Slips After Earnings. How It Fell Short of Microsoft\u2019s Bar.&nbsp;&nbsp;Barron's",
+          "source": "Google News",
+          "query": "\"Amazon\" stock earnings revenue",
+          "symbol": "AMZN",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:35:06.676000"
+        }
+      ]
+    },
+    "GOOGL": {
+      "summary": {
+        "symbol": "GOOGL",
+        "total_articles": 10,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.2,
+        "sentiment_breakdown": {
+          "positive": 2,
+          "negative": 0,
+          "neutral": 8
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance"
+        ],
+        "top_headlines": [
+          {
+            "title": "Google-Parent Alphabet, IBM Set To Kick Off Tech Earnings Season; 3 Defense Contractors To Watch - Investor's Business Daily",
+            "sentiment": "neutral",
+            "relevance": 4.8,
+            "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaFN3OU01ak1wM1lEMUZ0OHZDSElzdGY2UjhsMm04Wk5EOXYwOWU4dDFEM0l3NEdkZHhVX2QzTW9vRGs1SlNSSXJTTS1LVk80S3cyM181MndyM2ZVdl9tM1hTUDVPR3RndHdlbXpHcnkyazFoSzA2Wm5aS0N2aFNKZ2c0UGhBYm80ZDVYNGJjdm1yNFNHekx0eWJ5YlQyb0E3aEptWU9WMU5GUDN5TzlPdWk4LWdQTHpIRHc?oc=5"
+          },
+          {
+            "title": "Analysts revamp Alphabet stock price target before key earnings - TheStreet",
+            "sentiment": "neutral",
+            "relevance": 4.0,
+            "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONkVnd2RkczU0YlN3YVc3b2FFSGtRdmdiUk5Kd3dBTnlnWDd6bGhkLWZaNTBIZDRRZGdxWElPa3B5RWFINTFTREZMbjhTdkdyQlo1cC1ZaDFhY2xnQlh2UVFzZ21nRkNkWlhQNURycTFzYUZxOWpBUlpuamd5a1NGbXhTVENQaFRIRXJsRVhHNXdPQ1phc3BmN0xIdUpuVlFC?oc=5"
+          },
+          {
+            "title": "What Analysts Think of Alphabet's Stock Ahead of Earnings - Investopedia",
+            "sentiment": "neutral",
+            "relevance": 3.5,
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWlNGV19ZZGdPdzV2bV9RbHR3S1FfZU4tSmJxVU5IbEJYWlFuV194U1RkS1BjNjZjWVpzamNaZ05TNVJkNm51VUgwNEhVVWlZdHdSLVp6bzMzLS1DaXE1NURFaGFDNTVCSi1jNWg2S2dCbFRCaUEwMEt4bk83Tkc5QldYU2lKN3VpTHhMRXJaLXRicXhDWWZoNks0dDktTHh5QW4takY0MlRTRVU?oc=5"
+          },
+          {
+            "title": "Earnings live: Second quarter earnings season off to strong start with Tesla, Google on deck - Yahoo Finance",
+            "sentiment": "positive",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOXpGcXl4emVoWlJoUkxIajR0TnUwZFpfb1FZNzF6UXlTWUxpcWtTY0M4czlLZTlqMURONTRmbVQ4bzNlVVg2WkdDOThHejN1ejRzTjloeHRLa3lVREdjUURyeXRIcXJ3VTZHNVBfNHhsMXZXR3Q5dHpXR045QTRibThxMVJjSHFKUjlYajJmN3daajBtd1hBb05reEJKRFlsZFFRRVhhamludUdkNXdjeUwzTjJaZWNZUkc3bWN5MFJ0ZXpvZnp6OWc1d0xMN1p0VHpYTHhzWk0?oc=5"
+          },
+          {
+            "title": "Google Earnings: Stock Soars As Q1 Results Shatter Expectations - Forbes",
+            "sentiment": "neutral",
+            "relevance": 3.0,
+            "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTVZVRXRDZWpCOTNsMkNDdXJDcHZtVVBULWNackNrZ0xtdFVTM0FtSEJkTmo1Y2YxWF9rVGw3MTlSMXljTkNMTzlheFg5QXdYM2U1TGd0ODhvT0N3Q1JCVFVZUFMtOHBiOVZRY2NoSVNCZzNBTF9QUzVPUE9pSjFlS0lYLThaZ2FVOE5xZ1BLNXFZcDJFNmhrZXBzSThJQWRKaUlybWtVamx6QjFoazRwUWJDbw?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:35:12.534965"
+      },
+      "articles": [
+        {
+          "title": "Google-Parent Alphabet, IBM Set To Kick Off Tech Earnings Season; 3 Defense Contractors To Watch - Investor's Business Daily",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQaFN3OU01ak1wM1lEMUZ0OHZDSElzdGY2UjhsMm04Wk5EOXYwOWU4dDFEM0l3NEdkZHhVX2QzTW9vRGs1SlNSSXJTTS1LVk80S3cyM181MndyM2ZVdl9tM1hTUDVPR3RndHdlbXpHcnkyazFoSzA2Wm5aS0N2aFNKZ2c0UGhBYm80ZDVYNGJjdm1yNFNHekx0eWJ5YlQyb0E3aEptWU9WMU5GUDN5TzlPdWk4LWdQTHpIRHc?oc=5",
+          "published_date": "Fri, 18 Jul 2025 12:00:00 GMT",
+          "description": "Google-Parent Alphabet, IBM Set To Kick Off Tech Earnings Season; 3 Defense Contractors To Watch&nbsp;&nbsp;Investor's Business Daily",
+          "source": "Google News",
+          "query": "\"Google\" stock earnings revenue",
+          "symbol": "GOOGL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.8,
+          "analyzed_at": "2025-07-19T23:35:12.534965"
+        },
+        {
+          "title": "Analysts revamp Alphabet stock price target before key earnings - TheStreet",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONkVnd2RkczU0YlN3YVc3b2FFSGtRdmdiUk5Kd3dBTnlnWDd6bGhkLWZaNTBIZDRRZGdxWElPa3B5RWFINTFTREZMbjhTdkdyQlo1cC1ZaDFhY2xnQlh2UVFzZ21nRkNkWlhQNURycTFzYUZxOWpBUlpuamd5a1NGbXhTVENQaFRIRXJsRVhHNXdPQ1phc3BmN0xIdUpuVlFC?oc=5",
+          "published_date": "Fri, 18 Jul 2025 13:47:00 GMT",
+          "description": "Analysts revamp Alphabet stock price target before key earnings&nbsp;&nbsp;TheStreet",
+          "source": "Google News",
+          "query": "\"Alphabet\" stock earnings revenue",
+          "symbol": "GOOGL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.0,
+          "analyzed_at": "2025-07-19T23:35:12.534965"
+        },
+        {
+          "title": "What Analysts Think of Alphabet's Stock Ahead of Earnings - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWlNGV19ZZGdPdzV2bV9RbHR3S1FfZU4tSmJxVU5IbEJYWlFuV194U1RkS1BjNjZjWVpzamNaZ05TNVJkNm51VUgwNEhVVWlZdHdSLVp6bzMzLS1DaXE1NURFaGFDNTVCSi1jNWg2S2dCbFRCaUEwMEt4bk83Tkc5QldYU2lKN3VpTHhMRXJaLXRicXhDWWZoNks0dDktTHh5QW4takY0MlRTRVU?oc=5",
+          "published_date": "Fri, 18 Jul 2025 17:27:32 GMT",
+          "description": "What Analysts Think of Alphabet's Stock Ahead of Earnings&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"Google\" stock earnings revenue",
+          "symbol": "GOOGL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.5,
+          "analyzed_at": "2025-07-19T23:35:12.534965"
+        },
+        {
+          "title": "Earnings live: Second quarter earnings season off to strong start with Tesla, Google on deck - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOOXpGcXl4emVoWlJoUkxIajR0TnUwZFpfb1FZNzF6UXlTWUxpcWtTY0M4czlLZTlqMURONTRmbVQ4bzNlVVg2WkdDOThHejN1ejRzTjloeHRLa3lVREdjUURyeXRIcXJ3VTZHNVBfNHhsMXZXR3Q5dHpXR045QTRibThxMVJjSHFKUjlYajJmN3daajBtd1hBb05reEJKRFlsZFFRRVhhamludUdkNXdjeUwzTjJaZWNZUkc3bWN5MFJ0ZXpvZnp6OWc1d0xMN1p0VHpYTHhzWk0?oc=5",
+          "published_date": "Fri, 18 Jul 2025 20:31:40 GMT",
+          "description": "Earnings live: Second quarter earnings season off to strong start with Tesla, Google on deck&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Google\" stock earnings revenue",
+          "symbol": "GOOGL",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:35:12.534965"
+        },
+        {
+          "title": "Google Earnings: Stock Soars As Q1 Results Shatter Expectations - Forbes",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTVZVRXRDZWpCOTNsMkNDdXJDcHZtVVBULWNackNrZ0xtdFVTM0FtSEJkTmo1Y2YxWF9rVGw3MTlSMXljTkNMTzlheFg5QXdYM2U1TGd0ODhvT0N3Q1JCVFVZUFMtOHBiOVZRY2NoSVNCZzNBTF9QUzVPUE9pSjFlS0lYLThaZ2FVOE5xZ1BLNXFZcDJFNmhrZXBzSThJQWRKaUlybWtVamx6QjFoazRwUWJDbw?oc=5",
+          "published_date": "Thu, 24 Apr 2025 07:00:00 GMT",
+          "description": "Google Earnings: Stock Soars As Q1 Results Shatter Expectations&nbsp;&nbsp;Forbes",
+          "source": "Google News",
+          "query": "\"Google\" stock earnings revenue",
+          "symbol": "GOOGL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.0,
+          "analyzed_at": "2025-07-19T23:35:12.534965"
+        }
+      ]
+    },
+    "META": {
+      "summary": {
+        "symbol": "META",
+        "total_articles": 10,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.9,
+        "sentiment_breakdown": {
+          "positive": 5,
+          "negative": 0,
+          "neutral": 5
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance",
+          "Leadership",
+          "Growth & Expansion"
+        ],
+        "top_headlines": [
+          {
+            "title": "Top Analysts Boost Meta Platforms Stock Price Target Ahead of Q2 Earnings - TipRanks",
+            "sentiment": "neutral",
+            "relevance": 6.0,
+            "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYXRsN3BJa1NmdGxxcThpXzVrS3daRzRoRWNxTUtfZVpER3l4bVFHTkhxaVhtOGFrNkp5VG5NV3A3Z1E4ZFhxelFpTFRTY2NqTVJmcEFzUjRVMWJKaTlUYlNQRzVlVWx6WjJnZi05NDBQcFV3TEVFOVlqdWpQb0hVZm1LWXFnOURXY1NUbG5QSDlrY0kwUVo0Z2lCS01ZbzZkd0toblhR?oc=5"
+          },
+          {
+            "title": "Meta earnings recap: Stock pops on revenue, earnings beats, while Mark Zuckerberg talks AI, increased spending - Business Insider",
+            "sentiment": "positive",
+            "relevance": 5.8,
+            "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQaWk0UFV2cGM4eXJZSTk4dFFFWGhHWmRQS0lmb0s0aWtWTldZSDFfVWRaUlZNX3VSMEhGQWI5WjFqd1RlWVRVZHhoeU9hZkRYaU1JaVFJM2xkUHFhb1ZFcU5VU2FLdUJyTTNDX1ZZTWdsb1ZqNmUzdVFOYUJMZU5wOXd4X1ZnSjloN0hN?oc=5"
+          },
+          {
+            "title": "Meta CEO Mark Zuckerberg Just Assembled a \"Super Intelligence Avengers\" Team That Could Totally Change the Game in Artificial Intelligence (AI). Here's Why That Makes Meta a \"Must-Own\" AI Stock. - The Motley Fool",
+            "sentiment": "positive",
+            "relevance": 5.1,
+            "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUjBvX3ZubWVBTjZvMzlmSG81TTA4aXFSWWR6ZnJleU9HRkY3Qk1KUmdjeE1OWlZmTUJOdDVfOW5vdlhQQXlrR2JKcEUybkF4SlZFS0lqUFlueGJRSXd2QnhSOVdoRjZFTmdRZ0ZBanFWT1M5Z3BYZWVkenRNdmlIeDA0OHZfTEpuXzNaVXN5emtqM2VhbDhSUQ?oc=5"
+          },
+          {
+            "title": "Facebook-Parent Meta Stock Jumps on Strong Earnings. There Was 1 Possible Disappointment. - Barron's",
+            "sentiment": "positive",
+            "relevance": 5.0,
+            "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPWTBTUkJULUExcWJBV3dQTUg3blpuTG5ZZnlXMXlfZkZ6ZEoxc0hYbGpkMXl3RTkzUllpdjRWX1hNVVVFWnFjT2hWQmxadi1qX0g1Y3B3ZDFXQlJfelpZRjRRM0RHY0trYm16YUtWVFJ0NmRzTFN3VUtvZjBHWmN2RzNR?oc=5"
+          },
+          {
+            "title": "How Facebook parent Meta's investment in Scale AI may be a \u2018problem\u2019 for the startup\u2019s employees - The Times of India",
+            "sentiment": "neutral",
+            "relevance": 4.3,
+            "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNNlFOOEVfc2NsTGZFY3J2SEZtNlVCenMwM0pmTkNnQlJBNEVPcGRfU0RXZE5vWFExam1PUjlDQnd3S09HQmJiQnd1d0doaHpMSnR2TGxwODUtbTB5MXdPd3h4eDFlTGRqaW8zOE83anZrcjJ6RWkta1lXTlBOV3JmTDlqNm1pdWVNak9iNEZ6LVR0SGNyV1hic3N1YWlpelRzRFB2RkZPT2pNZTFGSHE3cDVteXJ6YmFIcC12QWd5RUQwcy11UTRaR1I3RDhGczFWbUY0Y2lialZMRGdhbEYxcWZCR2FGRF8zZWJ5Zi1iUXhuemkyb1hsRVN1d2lwWDRkZS1hRTBR0gGLAkFVX3lxTE9weEJiSWREV1hSZXNDZV91RXU3WFNCY1FwNFM4bjBNTVlrMFB3UzAyY08yRHMwekpVSnVPcndwN0xKalUyMVNNeXJ5cVFER2N4aThKRVlJNlE5MWVyWGhsUlZXb0V3QkJQXzFWUEZINGRXZ3U2QktZV0FjYVEzb0d0emFwQlNmcDVWeENqa29VNlNLMXcxcXZqSTZYcFpQcUhtdkNyck51b2djb0dXUmp3RkdvZG9HMHAtOElGLVlRWm80UVczWlF4RzVCc1VkcjF3UVZVXzBFdTNpZW9vQVJ1MlozVXJ6Q2RWLXYtVDV5QkxyRXJOOXJwSzJ5TUwzZWc0cEJuS01IVHBfNA?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 10.0,
+        "analysis_timestamp": "2025-07-19T23:35:18.127500"
+      },
+      "articles": [
+        {
+          "title": "Top Analysts Boost Meta Platforms Stock Price Target Ahead of Q2 Earnings - TipRanks",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYXRsN3BJa1NmdGxxcThpXzVrS3daRzRoRWNxTUtfZVpER3l4bVFHTkhxaVhtOGFrNkp5VG5NV3A3Z1E4ZFhxelFpTFRTY2NqTVJmcEFzUjRVMWJKaTlUYlNQRzVlVWx6WjJnZi05NDBQcFV3TEVFOVlqdWpQb0hVZm1LWXFnOURXY1NUbG5QSDlrY0kwUVo0Z2lCS01ZbzZkd0toblhR?oc=5",
+          "published_date": "Thu, 17 Jul 2025 10:20:03 GMT",
+          "description": "Top Analysts Boost Meta Platforms Stock Price Target Ahead of Q2 Earnings&nbsp;&nbsp;TipRanks",
+          "source": "Google News",
+          "query": "\"Meta\" stock earnings revenue",
+          "symbol": "META",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 6.0,
+          "analyzed_at": "2025-07-19T23:35:18.127500"
+        },
+        {
+          "title": "Meta earnings recap: Stock pops on revenue, earnings beats, while Mark Zuckerberg talks AI, increased spending - Business Insider",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQaWk0UFV2cGM4eXJZSTk4dFFFWGhHWmRQS0lmb0s0aWtWTldZSDFfVWRaUlZNX3VSMEhGQWI5WjFqd1RlWVRVZHhoeU9hZkRYaU1JaVFJM2xkUHFhb1ZFcU5VU2FLdUJyTTNDX1ZZTWdsb1ZqNmUzdVFOYUJMZU5wOXd4X1ZnSjloN0hN?oc=5",
+          "published_date": "Wed, 30 Apr 2025 07:00:00 GMT",
+          "description": "Meta earnings recap: Stock pops on revenue, earnings beats, while Mark Zuckerberg talks AI, increased spending&nbsp;&nbsp;Business Insider",
+          "source": "Google News",
+          "query": "\"Facebook\" stock earnings revenue",
+          "symbol": "META",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.3,
+            "positive_indicators": 3,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 3
+          },
+          "relevance_score": 5.8,
+          "analyzed_at": "2025-07-19T23:35:18.127500"
+        },
+        {
+          "title": "Meta CEO Mark Zuckerberg Just Assembled a \"Super Intelligence Avengers\" Team That Could Totally Change the Game in Artificial Intelligence (AI). Here's Why That Makes Meta a \"Must-Own\" AI Stock. - The Motley Fool",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUjBvX3ZubWVBTjZvMzlmSG81TTA4aXFSWWR6ZnJleU9HRkY3Qk1KUmdjeE1OWlZmTUJOdDVfOW5vdlhQQXlrR2JKcEUybkF4SlZFS0lqUFlueGJRSXd2QnhSOVdoRjZFTmdRZ0ZBanFWT1M5Z3BYZWVkenRNdmlIeDA0OHZfTEpuXzNaVXN5emtqM2VhbDhSUQ?oc=5",
+          "published_date": "Sat, 19 Jul 2025 10:17:00 GMT",
+          "description": "Meta CEO Mark Zuckerberg Just Assembled a \"Super Intelligence Avengers\" Team That Could Totally Change the Game in Artificial Intelligence (AI). Here's Why That Makes Meta a \"Must-Own\" AI Stock.&nbsp;&nbsp;The Motley Fool",
+          "source": "Google News",
+          "query": "\"Meta\" artificial intelligence AI",
+          "symbol": "META",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.30000000000000004,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 1,
+            "score": 2
+          },
+          "relevance_score": 5.1,
+          "analyzed_at": "2025-07-19T23:35:18.127500"
+        },
+        {
+          "title": "Facebook-Parent Meta Stock Jumps on Strong Earnings. There Was 1 Possible Disappointment. - Barron's",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPWTBTUkJULUExcWJBV3dQTUg3blpuTG5ZZnlXMXlfZkZ6ZEoxc0hYbGpkMXl3RTkzUllpdjRWX1hNVVVFWnFjT2hWQmxadi1qX0g1Y3B3ZDFXQlJfelpZRjRRM0RHY0trYm16YUtWVFJ0NmRzTFN3VUtvZjBHWmN2RzNR?oc=5",
+          "published_date": "Thu, 01 May 2025 07:00:00 GMT",
+          "description": "Facebook-Parent Meta Stock Jumps on Strong Earnings. There Was 1 Possible Disappointment.&nbsp;&nbsp;Barron's",
+          "source": "Google News",
+          "query": "\"Facebook\" stock earnings revenue",
+          "symbol": "META",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 5.0,
+          "analyzed_at": "2025-07-19T23:35:18.127500"
+        },
+        {
+          "title": "How Facebook parent Meta's investment in Scale AI may be a \u2018problem\u2019 for the startup\u2019s employees - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNNlFOOEVfc2NsTGZFY3J2SEZtNlVCenMwM0pmTkNnQlJBNEVPcGRfU0RXZE5vWFExam1PUjlDQnd3S09HQmJiQnd1d0doaHpMSnR2TGxwODUtbTB5MXdPd3h4eDFlTGRqaW8zOE83anZrcjJ6RWkta1lXTlBOV3JmTDlqNm1pdWVNak9iNEZ6LVR0SGNyV1hic3N1YWlpelRzRFB2RkZPT2pNZTFGSHE3cDVteXJ6YmFIcC12QWd5RUQwcy11UTRaR1I3RDhGczFWbUY0Y2lialZMRGdhbEYxcWZCR2FGRF8zZWJ5Zi1iUXhuemkyb1hsRVN1d2lwWDRkZS1hRTBR0gGLAkFVX3lxTE9weEJiSWREV1hSZXNDZV91RXU3WFNCY1FwNFM4bjBNTVlrMFB3UzAyY08yRHMwekpVSnVPcndwN0xKalUyMVNNeXJ5cVFER2N4aThKRVlJNlE5MWVyWGhsUlZXb0V3QkJQXzFWUEZINGRXZ3U2QktZV0FjYVEzb0d0emFwQlNmcDVWeENqa29VNlNLMXcxcXZqSTZYcFpQcUhtdkNyck51b2djb0dXUmp3RkdvZG9HMHAtOElGLVlRWm80UVczWlF4RzVCc1VkcjF3UVZVXzBFdTNpZW9vQVJ1MlozVXJ6Q2RWLXYtVDV5QkxyRXJOOXJwSzJ5TUwzZWc0cEJuS01IVHBfNA?oc=5",
+          "published_date": "Wed, 16 Jul 2025 19:32:00 GMT",
+          "description": "How Facebook parent Meta's investment in Scale AI may be a \u2018problem\u2019 for the startup\u2019s employees&nbsp;&nbsp;The Times of India",
+          "source": "Google News",
+          "query": "\"Facebook\" artificial intelligence AI",
+          "symbol": "META",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 1,
+            "negative_indicators": 1,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.3,
+          "analyzed_at": "2025-07-19T23:35:18.127500"
+        }
+      ]
+    },
+    "AAPL": {
+      "summary": {
+        "symbol": "AAPL",
+        "total_articles": 8,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.12,
+        "sentiment_breakdown": {
+          "positive": 2,
+          "negative": 1,
+          "neutral": 5
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance"
+        ],
+        "top_headlines": [
+          {
+            "title": "Earnings Update: Apple Inc. (NASDAQ:AAPL) Just Reported Its Second-Quarter Results And Analysts Are Updating Their Forecasts - Yahoo Finance",
+            "sentiment": "positive",
+            "relevance": 5.5,
+            "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWXdDeEFMMjVLQkhXenpzTmhPal9PZkZtS2EwQnVRUVhsaFhxaklQa3BLdm1Fa0VOMXpFYkhfY3B4bl81dEpXY0VCRXpLQmFFdHpQX0lQSXpZTHFmdGpkejUxUUNuVUlVTU4xaG1QbGZDSmtzSWpTTF9CSF9XaUNvSGRB?oc=5"
+          },
+          {
+            "title": "With all eyes on Apple\u2019s next earnings report, one research firm calls on Tim Cook to step aside - Fortune",
+            "sentiment": "neutral",
+            "relevance": 4.5,
+            "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMVNLcFN4ZnlsRVRVdTFqUzJTRTA0TXFSWTVyYVEteklwWG5EX01ueWVHTU9fZUpSVGtrTHZjaWtnb1g2MWdsV19NVlZxdUptWUQtdVhuMVJrUktRUW1KcFJYMHF3N3dpNlFkWG5HZlFxS1h6S0tzR2o4ZTJZMUx4eGI0S0R5NXdf?oc=5"
+          },
+          {
+            "title": "What Analysts Think of Apple Stock Ahead of Earnings - Investopedia",
+            "sentiment": "neutral",
+            "relevance": 3.5,
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR096WUNKd1RXblNRLXB1VmlZelRBcGY2LVZ6RGh4VC1nVUExZHppUWR2djQ1aXR4WENabm1lQS1TdmdOVEZ1dGw4eEhRenVoSXdUcm1GTHQtWjh1OXZocnppWWlGUXliZUVHVDBEM1Fia2FIMWIwQW4wd3Nha2lBTS1lc0Vsa1QwS1I4X0FSZXNyREY1RnczbUIwd2szNlNwM2xyakFjdF9nOFU?oc=5"
+          },
+          {
+            "title": "Going Into Earnings, Is Apple Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+            "sentiment": "neutral",
+            "relevance": 3.3,
+            "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQR0tXeW9Wa1d1OHJ1YVp5UGhSMV92dTUwQ0lGX1pabjRHZWNCVC10Q1NMakkzVS02eXhjempZZWFQS1dwMnJHUnlFcFFUZHU5MHh1dFpkVFEtWXRFQWcxX1FJamNrdkdkS19Gd1ZzWGg4WERsZW9xUnhmRXlSRl9Hd19yXzJCa2JSMXBOZ0lvck9vLVgxTjdnVWhQZV9WZw?oc=5"
+          },
+          {
+            "title": "Should You Sell Apple's Stock Before July 31? - The Globe and Mail",
+            "sentiment": "neutral",
+            "relevance": 2.8,
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNaDhRNlExX2R0Y2lzZWY0TDMtS1VRbGozR1Z5MDRVNFM0SmJ0QWVhQkhZcENqODNsenRrc1BDNVJqRllKeHpYOXJiTXZnNFpzeU8yMWJmdVBjWUJrbzFZUHdCaS1YR1l3OHdpYUxKMy1GM2ZGeUhhSC01LXNDYzB4UTJQQWpHcl9JVG5rbEUzYjNnWUY4NmxWYkJGWDA2cnZyMWRxLWdBRC1nMVc5YTFaNTEteHdKRVoxakNFRndXSklMSXVvV1FQd09ncw?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:35:22.329027"
+      },
+      "articles": [
+        {
+          "title": "Earnings Update: Apple Inc. (NASDAQ:AAPL) Just Reported Its Second-Quarter Results And Analysts Are Updating Their Forecasts - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWXdDeEFMMjVLQkhXenpzTmhPal9PZkZtS2EwQnVRUVhsaFhxaklQa3BLdm1Fa0VOMXpFYkhfY3B4bl81dEpXY0VCRXpLQmFFdHpQX0lQSXpZTHFmdGpkejUxUUNuVUlVTU4xaG1QbGZDSmtzSWpTTF9CSF9XaUNvSGRB?oc=5",
+          "published_date": "Tue, 06 May 2025 07:00:00 GMT",
+          "description": "Earnings Update: Apple Inc. (NASDAQ:AAPL) Just Reported Its Second-Quarter Results And Analysts Are Updating Their Forecasts&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Apple Inc\" stock earnings revenue",
+          "symbol": "AAPL",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 5.5,
+          "analyzed_at": "2025-07-19T23:35:22.329027"
+        },
+        {
+          "title": "With all eyes on Apple\u2019s next earnings report, one research firm calls on Tim Cook to step aside - Fortune",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMVNLcFN4ZnlsRVRVdTFqUzJTRTA0TXFSWTVyYVEteklwWG5EX01ueWVHTU9fZUpSVGtrTHZjaWtnb1g2MWdsV19NVlZxdUptWUQtdVhuMVJrUktRUW1KcFJYMHF3N3dpNlFkWG5HZlFxS1h6S0tzR2o4ZTJZMUx4eGI0S0R5NXdf?oc=5",
+          "published_date": "Wed, 16 Jul 2025 14:37:00 GMT",
+          "description": "With all eyes on Apple\u2019s next earnings report, one research firm calls on Tim Cook to step aside&nbsp;&nbsp;Fortune",
+          "source": "Google News",
+          "query": "\"Apple\" stock earnings revenue",
+          "symbol": "AAPL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.5,
+          "analyzed_at": "2025-07-19T23:35:22.329027"
+        },
+        {
+          "title": "What Analysts Think of Apple Stock Ahead of Earnings - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPR096WUNKd1RXblNRLXB1VmlZelRBcGY2LVZ6RGh4VC1nVUExZHppUWR2djQ1aXR4WENabm1lQS1TdmdOVEZ1dGw4eEhRenVoSXdUcm1GTHQtWjh1OXZocnppWWlGUXliZUVHVDBEM1Fia2FIMWIwQW4wd3Nha2lBTS1lc0Vsa1QwS1I4X0FSZXNyREY1RnczbUIwd2szNlNwM2xyakFjdF9nOFU?oc=5",
+          "published_date": "Thu, 01 May 2025 07:00:00 GMT",
+          "description": "What Analysts Think of Apple Stock Ahead of Earnings&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"Apple\" stock earnings revenue",
+          "symbol": "AAPL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.5,
+          "analyzed_at": "2025-07-19T23:35:22.329027"
+        },
+        {
+          "title": "Going Into Earnings, Is Apple Stock a Buy, a Sell, or Fairly Valued? - Morningstar",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQR0tXeW9Wa1d1OHJ1YVp5UGhSMV92dTUwQ0lGX1pabjRHZWNCVC10Q1NMakkzVS02eXhjempZZWFQS1dwMnJHUnlFcFFUZHU5MHh1dFpkVFEtWXRFQWcxX1FJamNrdkdkS19Gd1ZzWGg4WERsZW9xUnhmRXlSRl9Hd19yXzJCa2JSMXBOZ0lvck9vLVgxTjdnVWhQZV9WZw?oc=5",
+          "published_date": "Fri, 25 Apr 2025 07:00:00 GMT",
+          "description": "Going Into Earnings, Is Apple Stock a Buy, a Sell, or Fairly Valued?&nbsp;&nbsp;Morningstar",
+          "source": "Google News",
+          "query": "\"Apple\" stock earnings revenue",
+          "symbol": "AAPL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.3,
+          "analyzed_at": "2025-07-19T23:35:22.329027"
+        },
+        {
+          "title": "Should You Sell Apple's Stock Before July 31? - The Globe and Mail",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNaDhRNlExX2R0Y2lzZWY0TDMtS1VRbGozR1Z5MDRVNFM0SmJ0QWVhQkhZcENqODNsenRrc1BDNVJqRllKeHpYOXJiTXZnNFpzeU8yMWJmdVBjWUJrbzFZUHdCaS1YR1l3OHdpYUxKMy1GM2ZGeUhhSC01LXNDYzB4UTJQQWpHcl9JVG5rbEUzYjNnWUY4NmxWYkJGWDA2cnZyMWRxLWdBRC1nMVc5YTFaNTEteHdKRVoxakNFRndXSklMSXVvV1FQd09ncw?oc=5",
+          "published_date": "Fri, 18 Jul 2025 21:43:14 GMT",
+          "description": "Should You Sell Apple's Stock Before July 31?&nbsp;&nbsp;The Globe and Mail",
+          "source": "Google News",
+          "query": "\"Apple\" stock earnings revenue",
+          "symbol": "AAPL",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 2.8,
+          "analyzed_at": "2025-07-19T23:35:22.329027"
+        }
+      ]
+    },
+    "CRM": {
+      "summary": {
+        "symbol": "CRM",
+        "total_articles": 10,
+        "overall_sentiment": "neutral",
+        "sentiment_score": 0.9,
+        "sentiment_breakdown": {
+          "positive": 4,
+          "negative": 0,
+          "neutral": 6
+        },
+        "key_themes": [
+          "Earnings & Revenue",
+          "AI & Technology",
+          "Market Performance",
+          "Leadership"
+        ],
+        "top_headlines": [
+          {
+            "title": "Salesforce shares rise after earnings beat on revenue, fourth-quarter guidance - CNBC",
+            "sentiment": "positive",
+            "relevance": 4.5,
+            "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOMFZOQV9JZkpUSHVYR2F6QmZKUVc4WEFuekh2WXBMZTAwaHFRcURMNmpEUXRwRl9WU3E0N01JOEl1SVpWQkRBN2V1c2FLOVR2MXoyVjQxN2lub0dteTNWTHcyZU1JM1dzbllCRUZtcEVjWU41Q1gteG95NjlPVmhjS9IBhgFBVV95cUxQQjZ2WDRrUFBSazFWQWkwNkJNMnNURlNzRnpqN2NHVFJsQmI4Y192YVNldEpIZVlsRUR1Z053TlR2cUczUWZwTXZKbElxTDJaLTlFYnpPcG00ZEhHd1FobVN0eV9rTmZUSzU5dVEtaWlaZmJTQlZ2TmxYT0FITG81Rzg2cnMxdw?oc=5"
+          },
+          {
+            "title": "Salesforce.com (CRM) Earnings Expected to Grow: Should You Buy? - Yahoo Finance",
+            "sentiment": "neutral",
+            "relevance": 4.5,
+            "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWnI5RDJRZ2ZjaEQtRFVtOWgxRi0ybW12SmM4TlBnYlppWGxQU2l4VDgyb1ZqSk5XWnVSQm9PTWJ3UUFZT2szZHlybUxmeExCTjl5Vy14d1pGWG9NejZvb2NFc1B2QTM0UF9rdHFaUGtqUHd3TmFMLXlVdHA2ZGdMa041S0IxUll1RHc?oc=5"
+          },
+          {
+            "title": "Earnings Preview: What To Expect From Salesforce.com - Forbes",
+            "sentiment": "neutral",
+            "relevance": 4.5,
+            "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPLXlqVTNLNlgwMWdFamlPajc5YmFUMUh3MWh1S0tGZENtSzBwNGhGUS16RGlwOG9hX19RQ2VpM05GLWdJWnJqZnBGTWI3NDRFSWZORV9nOFZMSVFJdXhQNW41MnNVb1YtcER4YTl4YWdRX0ZjeWR6WDZadWZuOVlsXzFNR0syQnpaYlZISERaWU5qMGRIcHhDUm1UaDNyRkI1bmxZUQ?oc=5"
+          },
+          {
+            "title": "Watch Salesforce\u2019s Marc Benioff discuss how AI agents are transforming major enterprises - Computerworld",
+            "sentiment": "positive",
+            "relevance": 4.3,
+            "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPU2I1M1Z4VWo1Q2ltazBGWjQ3bHd2V3Q4bVJmZG9NTjNPbDQ4RVpWcnN5aGNsLXNXWUZNUEdiamxLYkF3enVCRVhzWHNIYnNmY3plMFlKODRuX3NWaDBKbGduTDFSazhPbll1cVFOcUxGZUNmODdHRy1PaThGZ1kzQVU4eVRqOGx5QUw1eHNXQ29KTlNSeW1yX2FDWHdieVotclI2N3hWYWxCREN3UUpZSUE0c2lUZnI1eWVFLXBmb0NWMHc1aHNTMDhEYw?oc=5"
+          },
+          {
+            "title": "What Analysts Think of Salesforce Stock Ahead of Earnings - Investopedia",
+            "sentiment": "neutral",
+            "relevance": 3.5,
+            "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0MyTDMyQmdaWG1zdzd5N2F4a0xYa09KM2JDbkRUSkhyeDl0ZXJzWVNtbEZMeUVaMTZ6aGlmZjZFTmNfLTRJUFZJc0Q5dW5qeUxHMWlqX3lxNGxKRGZjMjg1blhUX1BxMmdLdTdpcEN1dnZOQXR2UElndGd4NmdzbUd6UUU0TWFaUEUxR2VPenV3SkJkU2pRV0tfamV1cl9TZDRQYlQ5OVVsZ2cyMDIzQnp3?oc=5"
+          }
+        ],
+        "ai_relevance": "low",
+        "ai_mention_percentage": 0.0,
+        "analysis_timestamp": "2025-07-19T23:35:27.591330"
+      },
+      "articles": [
+        {
+          "title": "Salesforce shares rise after earnings beat on revenue, fourth-quarter guidance - CNBC",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOMFZOQV9JZkpUSHVYR2F6QmZKUVc4WEFuekh2WXBMZTAwaHFRcURMNmpEUXRwRl9WU3E0N01JOEl1SVpWQkRBN2V1c2FLOVR2MXoyVjQxN2lub0dteTNWTHcyZU1JM1dzbllCRUZtcEVjWU41Q1gteG95NjlPVmhjS9IBhgFBVV95cUxQQjZ2WDRrUFBSazFWQWkwNkJNMnNURlNzRnpqN2NHVFJsQmI4Y192YVNldEpIZVlsRUR1Z053TlR2cUczUWZwTXZKbElxTDJaLTlFYnpPcG00ZEhHd1FobVN0eV9rTmZUSzU5dVEtaWlaZmJTQlZ2TmxYT0FITG81Rzg2cnMxdw?oc=5",
+          "published_date": "Tue, 03 Dec 2024 08:00:00 GMT",
+          "description": "Salesforce shares rise after earnings beat on revenue, fourth-quarter guidance&nbsp;&nbsp;CNBC",
+          "source": "Google News",
+          "query": "\"Salesforce\" stock earnings revenue",
+          "symbol": "CRM",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.4,
+            "positive_indicators": 4,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 4
+          },
+          "relevance_score": 4.5,
+          "analyzed_at": "2025-07-19T23:35:27.591330"
+        },
+        {
+          "title": "Salesforce.com (CRM) Earnings Expected to Grow: Should You Buy? - Yahoo Finance",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQWnI5RDJRZ2ZjaEQtRFVtOWgxRi0ybW12SmM4TlBnYlppWGxQU2l4VDgyb1ZqSk5XWnVSQm9PTWJ3UUFZT2szZHlybUxmeExCTjl5Vy14d1pGWG9NejZvb2NFc1B2QTM0UF9rdHFaUGtqUHd3TmFMLXlVdHA2ZGdMa041S0IxUll1RHc?oc=5",
+          "published_date": "Wed, 21 May 2025 07:00:00 GMT",
+          "description": "Salesforce.com (CRM) Earnings Expected to Grow: Should You Buy?&nbsp;&nbsp;Yahoo Finance",
+          "source": "Google News",
+          "query": "\"Salesforce.com\" stock earnings revenue",
+          "symbol": "CRM",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.5,
+          "analyzed_at": "2025-07-19T23:35:27.591330"
+        },
+        {
+          "title": "Earnings Preview: What To Expect From Salesforce.com - Forbes",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPLXlqVTNLNlgwMWdFamlPajc5YmFUMUh3MWh1S0tGZENtSzBwNGhGUS16RGlwOG9hX19RQ2VpM05GLWdJWnJqZnBGTWI3NDRFSWZORV9nOFZMSVFJdXhQNW41MnNVb1YtcER4YTl4YWdRX0ZjeWR6WDZadWZuOVlsXzFNR0syQnpaYlZISERaWU5qMGRIcHhDUm1UaDNyRkI1bmxZUQ?oc=5",
+          "published_date": "Tue, 03 Dec 2024 08:00:00 GMT",
+          "description": "Earnings Preview: What To Expect From Salesforce.com&nbsp;&nbsp;Forbes",
+          "source": "Google News",
+          "query": "\"Salesforce.com\" stock earnings revenue",
+          "symbol": "CRM",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 4.5,
+          "analyzed_at": "2025-07-19T23:35:27.591330"
+        },
+        {
+          "title": "Watch Salesforce\u2019s Marc Benioff discuss how AI agents are transforming major enterprises - Computerworld",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPU2I1M1Z4VWo1Q2ltazBGWjQ3bHd2V3Q4bVJmZG9NTjNPbDQ4RVpWcnN5aGNsLXNXWUZNUEdiamxLYkF3enVCRVhzWHNIYnNmY3plMFlKODRuX3NWaDBKbGduTDFSazhPbll1cVFOcUxGZUNmODdHRy1PaThGZ1kzQVU4eVRqOGx5QUw1eHNXQ29KTlNSeW1yX2FDWHdieVotclI2N3hWYWxCREN3UUpZSUE0c2lUZnI1eWVFLXBmb0NWMHc1aHNTMDhEYw?oc=5",
+          "published_date": "Thu, 17 Apr 2025 07:00:00 GMT",
+          "description": "Watch Salesforce\u2019s Marc Benioff discuss how AI agents are transforming major enterprises&nbsp;&nbsp;Computerworld",
+          "source": "Google News",
+          "query": "\"Salesforce.com\" artificial intelligence AI",
+          "symbol": "CRM",
+          "sentiment_analysis": {
+            "sentiment": "positive",
+            "confidence": 0.1,
+            "positive_indicators": 1,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 1
+          },
+          "relevance_score": 4.3,
+          "analyzed_at": "2025-07-19T23:35:27.591330"
+        },
+        {
+          "title": "What Analysts Think of Salesforce Stock Ahead of Earnings - Investopedia",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNN0MyTDMyQmdaWG1zdzd5N2F4a0xYa09KM2JDbkRUSkhyeDl0ZXJzWVNtbEZMeUVaMTZ6aGlmZjZFTmNfLTRJUFZJc0Q5dW5qeUxHMWlqX3lxNGxKRGZjMjg1blhUX1BxMmdLdTdpcEN1dnZOQXR2UElndGd4NmdzbUd6UUU0TWFaUEUxR2VPenV3SkJkU2pRV0tfamV1cl9TZDRQYlQ5OVVsZ2cyMDIzQnp3?oc=5",
+          "published_date": "Wed, 28 May 2025 07:00:00 GMT",
+          "description": "What Analysts Think of Salesforce Stock Ahead of Earnings&nbsp;&nbsp;Investopedia",
+          "source": "Google News",
+          "query": "\"Salesforce\" stock earnings revenue",
+          "symbol": "CRM",
+          "sentiment_analysis": {
+            "sentiment": "neutral",
+            "confidence": 0.5,
+            "positive_indicators": 0,
+            "negative_indicators": 0,
+            "ai_relevance": 0,
+            "score": 0
+          },
+          "relevance_score": 3.5,
+          "analyzed_at": "2025-07-19T23:35:27.591330"
+        }
+      ]
+    }
+  },
+  "portfolio_summary": {
+    "overall_sentiment": "positive",
+    "positive_stocks": [
+      {
+        "symbol": "MSFT",
+        "sentiment_score": 1.8
+      },
+      {
+        "symbol": "TSM",
+        "sentiment_score": 1.71
+      }
+    ],
+    "negative_stocks": [],
+    "high_ai_relevance": [],
+    "major_news_alerts": []
+  }
+}

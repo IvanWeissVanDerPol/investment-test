@@ -1,0 +1,71 @@
+
+=== AUTOMATED INVESTMENT ANALYSIS REPORT ===
+Generated: 2025-07-19 23:47
+
+YOUR INVESTMENT PROFILE:
+• Dukascopy Balance: $900
+• Available for Investment: $700
+• Focus: AI/Robotics with government contract exposure
+
+TOP INVESTMENT OPPORTUNITIES:
+
+STRONG BUY SIGNALS:
+  + TSLA: $329.65 (+3.2%)
+     Confidence: 80.0% | Signals: Above 20-day average, Above 50-day average
+
+BUY SIGNALS:
+  * AMZN: $226.13 (+1.0%)
+     Confidence: 60.0% | Signals: Above 20-day average, Above 50-day average
+  * GOOGL: $185.06 (+0.8%)
+     Confidence: 60.0% | Signals: Above 20-day average, Above 50-day average
+  * AAPL: $211.18 (+0.6%)
+     Confidence: 60.0% | Signals: Above 20-day average, Above 50-day average
+  * NVDA: $172.41 (-0.3%)
+     Confidence: 40.0% | Signals: Above 20-day average, Above 50-day average
+  * MSFT: $510.05 (-0.3%)
+     Confidence: 40.0% | Signals: Above 20-day average, Above 50-day average
+  * TSM: $240.4 (-2.1%)
+     Confidence: 40.0% | Signals: Above 20-day average, Above 50-day average
+  * META: $704.28 (+0.4%)
+     Confidence: 40.0% | Signals: Above 50-day average, Positive daily move
+
+ETF OPPORTUNITIES:
+  > KROP: $10.73 (+0.6%)
+     Recommendation: BUY | Confidence: 60.0%
+  > SOXX: $246.73 (+0.1%)
+     Recommendation: BUY | Confidence: 60.0%
+  > ARKQ: $99.96 (+0.2%)
+     Recommendation: BUY | Confidence: 60.0%
+  > BOTZ: $33.16 (-0.2%)
+     Recommendation: BUY | Confidence: 40.0%
+  > ROBO: $61.39 (-0.3%)
+     Recommendation: BUY | Confidence: 40.0%
+
+RECOMMENDED PORTFOLIO ALLOCATION:
+  • TSLA: $140.0 (20.0%)
+  • AMZN: $100 (14.3%)
+  • GOOGL: $100 (14.3%)
+  • KROP: $100 (14.3%)
+
+Total Investment: $440.0
+Remaining Cash: $260.0
+Cash Allocation: 37.1%
+
+NEWS SENTIMENT ANALYSIS:
+  NVDA: NEUTRAL sentiment (5 articles)
+     Recent: Stock Market Hits Highs On Nvidia AI Chip News, Taiwan Semi Earnings, Economic Data: Weekly Review -...
+  MSFT: POSITIVE sentiment (5 articles)
+     Recent: Microsoft Corporation (MSFT): Strong AI-Driven Revenue Growth Expected in Upcoming Quarterly Report ...
+  TSLA: NEUTRAL sentiment (5 articles)
+     Recent: What Analysts Think of Tesla Stock Ahead of Earnings - Investopedia
+  DE: NEUTRAL sentiment (5 articles)
+     Recent: Earnings call transcript: Deere & Company Q2 2025 beats expectations, stock rises - Investing.com
+  TSM: POSITIVE sentiment (5 articles)
+     Recent: Taiwan Semiconductor Q2 Earnings and Revenues Surpass Expectations - Yahoo Finance
+
+NEXT ACTIONS:
+  1. Review the strong buy recommendations above
+  2. Check your Dukascopy account for available funds
+  3. Consider starting with smaller position sizes
+  4. Monitor daily for changes in recommendations
+  5. Keep 20-30% in cash for opportunities
