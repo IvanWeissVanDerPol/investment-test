@@ -1,0 +1,97 @@
+# Pre-commit hooks for Investment Analysis System
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: debug-statements
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        language_version: python3
+        files: ^tools/.*\.py$
+        args: ['--line-length=88']
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        files: ^tools/.*\.py$
+        args: ['--profile=black', '--line-length=88']
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        files: ^tools/.*\.py$
+        args: ['--max-line-length=88', '--ignore=E203,W503']
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+      - id: mypy
+        files: ^tools/.*\.py$
+        args: ['--ignore-missing-imports']
+        additional_dependencies: [types-requests]
+
+  # Investment-specific hooks
+  - repo: local
+    hooks:
+      - id: config-validation
+        name: Validate investment config
+        entry: python
+        language: python
+        files: ^tools/config\.json$
+        args: ['-c', 'import json; json.load(open("tools/config.json"))']
+        
+      - id: api-key-check
+        name: Check for exposed API keys
+        entry: python
+        language: python
+        files: ^tools/.*\.py$
+        args: ['-c', 'import sys; content = open(sys.argv[1]).read(); assert "sk-" not in content and "API_KEY" not in content.upper(), "Potential API key exposure detected"']
+        
+      - id: pre-analysis-hook
+        name: Pre-analysis validation
+        entry: python
+        language: python
+        files: ^tools/(quick_analysis|comprehensive_analyzer)\.py$
+        args: ['.claude/hooks/pre_analysis_hook.py']
+        pass_filenames: false
+        
+      - id: portfolio-balance-check
+        name: Validate portfolio balance
+        entry: python
+        language: python
+        files: ^tools/config\.json$
+        args: ['-c', 'import json; config = json.load(open("tools/config.json")); assert config["user_profile"]["dukascopy_balance"] == 900, "Portfolio balance should be $900"']
+        
+      - id: risk-tolerance-check
+        name: Validate risk tolerance
+        entry: python
+        language: python
+        files: ^tools/config\.json$
+        args: ['-c', 'import json; config = json.load(open("tools/config.json")); assert config["user_profile"]["risk_tolerance"] == "medium", "Risk tolerance should be medium"']
+
+# Configuration
+default_language_version:
+  python: python3.9
+
+ci:
+  autofix_commit_msg: |
+    [pre-commit.ci] auto fixes from pre-commit hooks
+    
+    for more information, see https://pre-commit.ci
+  autofix_prs: true
+  autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false

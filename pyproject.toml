@@ -1,0 +1,144 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "investment-analysis-system"
+version = "1.0.0"
+description = "AI-powered investment analysis system for AI/Robotics stocks and ETFs"
+authors = [
+    {name = "Ivan", email = "weissvanderpol.ivan@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "pandas>=1.5.0",
+    "numpy>=1.24.0",
+    "requests>=2.28.0",
+    "yfinance>=0.2.0",
+    "schedule>=1.2.0",
+    "beautifulsoup4>=4.11.0",
+    "lxml>=4.9.0",
+    "python-dotenv>=1.0.0",
+    "dataclasses-json>=0.6.0",
+    "typing-extensions>=4.8.0",
+    "twelvedata",
+    "alpaca-trade-api",
+    "finnhub-python",
+    "newsapi-python"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=3.0.0"
+]
+
+monitoring = [
+    "psutil>=5.9.0",
+    "memory-profiler>=0.60.0"
+]
+
+notifications = [
+    "smtplib",
+    "email"
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | cache
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["tools"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503", "E501"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "cache",
+    "reports",
+    ".pytest_cache",
+    ".mypy_cache"
+]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+exclude = [
+    "cache/",
+    "reports/",
+    "__pycache__/"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--disable-warnings",
+    "--cov=tools",
+    "--cov-report=term-missing",
+    "--cov-report=html:htmlcov"
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "api: marks tests that require API access",
+    "portfolio: marks tests related to portfolio calculations"
+]
+
+[tool.coverage.run]
+source = ["tools"]
+omit = [
+    "*/tests/*",
+    "*/cache/*",
+    "*/reports/*",
+    "*/__pycache__/*"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:"
+]
