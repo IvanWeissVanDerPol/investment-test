@@ -14,8 +14,8 @@ echo.
 echo Press Ctrl+C to stop monitoring
 echo.
 
-cd "C:\Users\jandr\Documents\ivan\tools"
-python system_monitor.py --interval=15
+cd "C:\Users\jandr\Documents\ivan"
+python -m src.investment_system.monitoring.system_monitor --interval=15
 
 echo.
 echo ===============================================

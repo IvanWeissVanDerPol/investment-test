@@ -5,8 +5,8 @@ echo ===============================================
 echo Starting daily analysis...
 echo.
 
-cd "C:\Users\jandr\Documents\ivan\tools"
-python quick_analysis.py
+cd "C:\Users\jandr\Documents\ivan"
+python -m src.investment_system.analysis.quick_analysis
 
 echo.
 echo ===============================================

@@ -14,8 +14,8 @@ echo.
 echo This will take 10-15 minutes to complete.
 echo.
 
-cd "C:\Users\jandr\Documents\ivan\tools"
-python comprehensive_analyzer.py
+cd "C:\Users\jandr\Documents\ivan"
+python -m src.investment_system.analysis.comprehensive_analyzer
 
 echo.
 echo ===============================================
