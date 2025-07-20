@@ -3,9 +3,27 @@
     "name": "Ivan",
     "email": "weissvanderpol.ivan@gmail.com",
     "dukascopy_balance": 900,
+    "interactive_brokers_balance": 0,
+    "total_portfolio_value": 900,
     "currency": "USD",
     "risk_tolerance": "medium",
-    "investment_goals": ["AI/robotics growth", "government contract exposure", "smart money following"]
+    "investment_goals": ["AI/robotics growth", "government contract exposure", "smart money following"],
+    "target_ai_allocation_percent": 70,
+    "max_single_position_percent": 15,
+    "last_sync_timestamp": null,
+    "account_id": "",
+    "created_date": "2025-01-20",
+    "timezone": "UTC"
+  },
+  "interactive_brokers": {
+    "enabled": true,
+    "connection_type": "auto",
+    "host": "127.0.0.1",
+    "tws_port": 7497,
+    "gateway_port": 4001,
+    "client_id": 1,
+    "auto_sync": true,
+    "sync_interval_minutes": 15
   },
   "alpha_vantage": {
     "api_key": "demo",
@@ -24,11 +42,33 @@
     "weekly_report_day": "monday",
     "monthly_report_day": 1
   },
-  "alert_thresholds": {
-    "strong_buy_confidence": 0.8,
-    "price_movement_alert": 0.05,
-    "volume_spike_threshold": 2.0,
-    "contract_value_alert": 50000000
+  "analysis_settings": {
+    "confidence_thresholds": {
+      "strong_buy": 0.8,
+      "buy": 0.6,
+      "hold": 0.4,
+      "sell": 0.3,
+      "strong_sell": 0.2
+    },
+    "alert_thresholds": {
+      "price_movement_alert": 0.05,
+      "volume_spike_threshold": 2.0,
+      "contract_value_alert": 50000000,
+      "rsi_oversold": 30,
+      "rsi_overbought": 70
+    },
+    "analysis_timeframes": {
+      "quick_analysis_days": 5,
+      "comprehensive_analysis_days": 30,
+      "trend_analysis_days": 90
+    },
+    "output_settings": {
+      "detailed_logging": true,
+      "save_analysis_reports": true,
+      "console_colors": true,
+      "show_timestamps": true,
+      "log_level": "INFO"
+    }
   },
   "target_stocks": [
     "NVDA", "MSFT", "TSLA", "DE", "TSM",

@@ -1,0 +1,193 @@
+{
+  "technology_sectors": {
+    "artificial_intelligence": ["NVDA", "AMD", "GOOGL", "MSFT", "META", "AAPL", "TSLA", "PLTR", "C3AI", "AI", "SOUN", "BBAI"],
+    "machine_learning": ["NVDA", "GOOGL", "MSFT", "IBM", "ORCL", "CRM", "NOW", "SNOW", "MDB", "DDOG", "PLTR"],
+    "computer_vision": ["NVDA", "INTC", "QCOM", "MVIS", "VUZI", "CGNX", "COGNEX", "AMBA", "CEVA", "MAXR"],
+    "natural_language_processing": ["GOOGL", "MSFT", "META", "AMZN", "IBM", "ORCL", "AI", "SOUN", "PATH", "U"],
+    "quantum_computing": ["IBM", "GOOGL", "MSFT", "IONQ", "RGTI", "QUBT", "ARQQ", "QMCO", "ATOM", "QUANTA"],
+    "edge_computing": ["NVDA", "AMD", "INTC", "QCOM", "MRVL", "NET", "FSLY", "AKAMAI", "LOGI", "SMCI"],
+    "cloud_infrastructure": ["AMZN", "MSFT", "GOOGL", "CRM", "NOW", "NET", "FSLY", "DDOG", "SNOW", "MDB"],
+    "cybersecurity": ["CRWD", "ZS", "OKTA", "PANW", "FTNT", "CYBR", "TENB", "QLYS", "FEYE", "VRNS"],
+    "blockchain_crypto": ["COIN", "MSTR", "RIOT", "MARA", "HUT", "BITF", "SQ", "PYPL", "TSLA", "NVDA"],
+    "virtual_reality": ["META", "GOOGL", "AAPL", "MSFT", "NVDA", "U", "RBLX", "TTWO", "EA", "VUZI"],
+    "augmented_reality": ["AAPL", "META", "GOOGL", "MSFT", "SNAP", "VUZI", "MVIS", "KOPN", "LWLG", "WIMI"],
+    "internet_of_things": ["CSCO", "IBM", "ORCL", "SAP", "INTU", "VEEV", "QCOM", "MRVL", "SWKS", "SLAB"],
+    "5g_wireless": ["QCOM", "AVGO", "SWKS", "QRVO", "MRVL", "VZ", "T", "TMUS", "NOK", "ERIC"],
+    "semiconductor_design": ["NVDA", "AMD", "QCOM", "AVGO", "MRVL", "XLNX", "CDNS", "SNPS", "CEVA", "SYNA"],
+    "semiconductor_manufacturing": ["TSM", "INTC", "AMAT", "LRCX", "KLAC", "ASX", "UMC", "SMIC", "ASML", "TEL"],
+    "memory_storage": ["MU", "WDC", "STX", "NTNX", "PSTG", "PURE", "HPE", "DELL", "NTAP", "DDD"],
+    "quantum_sensors": ["QUBT", "ARQQ", "QMCO", "RGTI", "IONQ", "IBM", "GOOGL", "MSFT", "HONEYWELL", "IBM"]
+  },
+
+  "robotics_automation": {
+    "industrial_robotics": ["ABB", "FANUY", "KUKA", "YASK", "ROK", "EMR", "ETN", "PH", "ITW", "DOV"],
+    "medical_robotics": ["ISRG", "STRE", "MZOR", "ZBH", "SYK", "MDT", "BSX", "EW", "HOLX", "VAR"],
+    "service_robotics": ["IRBT", "BLUE", "KTOS", "AVAV", "UAVS", "IRDM", "VUZI", "KODK", "EKSO", "RWLK"],
+    "agricultural_robotics": ["DE", "CNH", "AGCO", "TTI", "DEERE", "CNHI", "TTC", "KUBOTA", "MAHINDRA", "CASE"],
+    "military_robotics": ["LMT", "BA", "RTX", "GD", "NOC", "KTOS", "AVAV", "TDG", "HWM", "CW"],
+    "underwater_robotics": ["SAAB", "KONGSBERG", "TELEDYNE", "ECA", "FURUNO", "BLUEPRINT", "OCEAN", "SUBSEA"],
+    "space_robotics": ["MAXR", "GILT", "HOL", "IRDM", "RKLB", "ASTR", "PL", "LUNR", "VORB", "ASTS"],
+    "warehouse_automation": ["AMZN", "KIVA", "SYMBOTIC", "GREY", "FANUC", "ABB", "KUKA", "OMRON", "SICK"],
+    "construction_robotics": ["CAT", "DE", "CMI", "TEREX", "MANITOWOC", "OSHKOSH", "PACCAR", "VOLVO"],
+    "cleaning_robotics": ["IRBT", "TENNANT", "NILFISK", "KARCHER", "TASKI", "DIVERSEY", "3M", "PG"]
+  },
+
+  "healthcare_biotech": {
+    "gene_therapy": ["CRSP", "EDIT", "BEAM", "IONS", "FOLD", "VERV", "PACB", "NVTA", "ILMN", "TMO"],
+    "cell_therapy": ["GILD", "KITE", "JUNO", "NOVARTIS", "ROCHE", "BRISTOL", "CELGENE", "CAR-T"],
+    "immunotherapy": ["GILD", "AMGN", "BIIB", "REGN", "VRTX", "BMRN", "SRPT", "RARE", "FOLD", "IONS"],
+    "precision_medicine": ["ILMN", "TMO", "A", "DHR", "BDX", "ZBH", "DXCM", "ISRG", "PODD", "TANDEM"],
+    "digital_therapeutics": ["TDOC", "VEEV", "DXCM", "ISRG", "PODD", "TANDEM", "OMCL", "NOVT", "CERN", "MDRX"],
+    "telemedicine": ["TDOC", "AMWL", "HIMS", "MDlive", "Doctor", "Doxy", "Simple", "Zoom", "Teams"],
+    "medical_devices": ["MDT", "ABT", "JNJ", "BSX", "ISRG", "EW", "ZBH", "SYK", "HOLX", "VAR"],
+    "pharmaceutical": ["JNJ", "PFE", "ROCHE", "NOVARTIS", "MERCK", "BRISTOL", "ABBV", "GILD", "AMGN"],
+    "biotech": ["GILD", "AMGN", "BIIB", "REGN", "VRTX", "BMRN", "SRPT", "RARE", "FOLD", "IONS"],
+    "mental_health": ["COMPASS", "MMEDF", "FTRPF", "CYBN", "DRUG", "MINDMED", "NUMI", "PSYB", "TRYP"],
+    "longevity_research": ["UNITY", "AGEN", "CRIS", "FATE", "EDIT", "CRSP", "BEAM", "VERV", "FOLD"],
+    "organ_printing": ["CELLINK", "ORGANOVO", "PRELLIS", "ALLEVI", "REGENHU", "ASPECT", "FLUICELL"]
+  },
+
+  "energy_sustainability": {
+    "solar_energy": ["FSLR", "ENPH", "SEDG", "SPWR", "CSIQ", "JKS", "TSL", "DAQO", "MAXN", "RUN"],
+    "wind_energy": ["GE", "VWDRY", "NEE", "AEP", "DUK", "SO", "EXC", "XEL", "WEC", "ES"],
+    "hydroelectric": ["BEP", "AQN", "PCG", "D", "NEE", "SO", "AEP", "DUK", "EXC", "XEL"],
+    "geothermal": ["ORMAT", "CALPINE", "CHEVRON", "ENEL", "ORKA", "ICELAND", "KENYA", "TURKEY"],
+    "nuclear_energy": ["NEE", "EXC", "DUK", "SO", "AEP", "D", "ETR", "FE", "AEE", "CMS"],
+    "energy_storage": ["TSLA", "ENPH", "SEDG", "BE", "QS", "SLDP", "STEM", "MVST", "SES", "EOSE"],
+    "smart_grid": ["GE", "ITRON", "LANDIS", "SCHNEIDER", "ABB", "SIEMENS", "HONEYWELL", "EMERSON"],
+    "carbon_capture": ["CCUS", "CARBON", "CLIMEWORKS", "GLOBAL", "THERANOS", "ORIGEN", "SOLIDIA"],
+    "hydrogen_fuel": ["PLUG", "BLDP", "FE", "BE", "HYLN", "CLNE", "NKLA", "HYMC", "AMRC", "UUUU"],
+    "biofuels": ["REG", "GEVO", "KIOR", "SYNTHETIC", "FULCRUM", "DIAMOND", "NESTE", "RENEWABLE"],
+    "ocean_energy": ["OCEAN", "WAVE", "TIDAL", "CURRENT", "SEAGEN", "PELAMIS", "AQUAMARINE"]
+  },
+
+  "transportation_mobility": {
+    "electric_vehicles": ["TSLA", "NIO", "XPEV", "LI", "LCID", "RIVN", "NKLA", "RIDE", "GOEV", "WKHS"],
+    "autonomous_vehicles": ["TSLA", "WAYMO", "CRUISE", "UBER", "LYFT", "MOBILEYE", "NVIDIA", "INTEL"],
+    "ev_charging": ["CHPT", "BLNK", "EVGO", "NIO", "TSLA", "STEM", "BE", "QS", "SLDP", "SES"],
+    "flying_cars": ["LILIUM", "EHANG", "JOBY", "ARCHER", "BETA", "EVTOL", "URBAN", "AIRBUS"],
+    "hyperloop": ["VIRGIN", "ELON", "HYPERLOOP", "TT", "TRANSPORT", "FUTURE", "SPEED", "VACUUM"],
+    "ride_sharing": ["UBER", "LYFT", "DIDI", "GRAB", "OLA", "CAREEM", "GOJEK", "TAXIS"],
+    "delivery_drones": ["AMZN", "UPS", "FDX", "WING", "DRONE", "ZIPLINE", "MATTERNET", "FLYTREX"],
+    "logistics_automation": ["AMZN", "FDX", "UPS", "CHRW", "XPO", "ODFL", "SAIA", "ARCB", "JBHT"],
+    "maritime_shipping": ["MAERSK", "COSCO", "MSC", "CMA", "HAPAG", "ONE", "YANG", "MING"],
+    "rail_transport": ["UNP", "CSX", "NSC", "CNI", "CP", "KSU", "RAIL", "BNSF", "FREIGHT"],
+    "aerospace": ["BA", "AIRBUS", "LMT", "RTX", "GD", "NOC", "SAFRAN", "ROLLS", "ROYCE"]
+  },
+
+  "manufacturing_industrial": {
+    "3d_printing": ["SSYS", "DDD", "XONE", "PRLB", "MTLS", "NNDM", "VJET", "MARK", "PRNT", "HPQ"],
+    "industrial_iot": ["GE", "SIEMENS", "ABB", "HONEYWELL", "EMERSON", "ROCKWELL", "SCHNEIDER"],
+    "predictive_maintenance": ["GE", "IBM", "MSFT", "ORCL", "SAP", "PTCT", "SMTC", "COHU", "ACLS"],
+    "quality_control": ["COGNEX", "KEYENCE", "OMRON", "SICK", "BANNER", "PEPPERL", "FUCHS"],
+    "supply_chain": ["ORCL", "SAP", "IBM", "MSFT", "INFOR", "JDA", "MANHATTAN", "BLUE", "YONDER"],
+    "warehouse_management": ["AMZN", "WMT", "TGT", "COST", "HD", "LOW", "KROGER", "CVS", "WBA"],
+    "inventory_optimization": ["ORCL", "SAP", "IBM", "MSFT", "INFOR", "JDA", "MANHATTAN", "BLUE"],
+    "lean_manufacturing": ["TOYOTA", "HONEYWELL", "GE", "SIEMENS", "ABB", "EMERSON", "ROCKWELL"],
+    "digital_twin": ["GE", "SIEMENS", "ANSYS", "DASSAULT", "PTC", "AUTODESK", "UNITY", "NVIDIA"],
+    "advanced_materials": ["DOW", "DU", "BASF", "3M", "LYB", "CE", "EMN", "ALB", "SHW", "RPM"]
+  },
+
+  "financial_technology": {
+    "digital_payments": ["SQ", "PYPL", "V", "MA", "ADYEY", "SHOP", "MELI", "STNE", "PAGS", "NU"],
+    "cryptocurrency": ["COIN", "MSTR", "RIOT", "MARA", "HUT", "BITF", "CAN", "SQ", "PYPL"],
+    "neobanking": ["SOFI", "LC", "UPST", "AFRM", "NU", "ROOT", "LMND", "OPEN", "COMP", "TREE"],
+    "robo_advisors": ["SCHW", "IBKR", "HOOD", "SOFI", "BETTERMENT", "WEALTHFRONT", "ACORNS"],
+    "insurtech": ["ROOT", "LMND", "MTCH", "OSCAR", "CLOVER", "BRIGHT", "HEALTH", "METROMILE"],
+    "regtech": ["NICE", "ACTIMIZE", "FICO", "SAS", "IBM", "ORCL", "THOMSON", "REUTERS"],
+    "trading_platforms": ["HOOD", "SOFI", "COIN", "IBKR", "SCHW", "TDA", "ETFC", "ALLY"],
+    "alternative_lending": ["LC", "UPST", "AFRM", "SOFI", "PAYPAL", "SQUARE", "KABBAGE", "ONDECK"],
+    "wealth_management": ["MS", "GS", "JPM", "BAC", "WFC", "C", "UBS", "CS", "DB", "BARC"],
+    "credit_scoring": ["FICO", "EXPERIAN", "EQUIFAX", "TRANSUNION", "UPSTART", "ZEST", "KENSHO"]
+  },
+
+  "agriculture_food": {
+    "precision_agriculture": ["DE", "CNH", "AGCO", "TTI", "DEERE", "CNHI", "TTC", "KUBOTA"],
+    "vertical_farming": ["APPH", "AVO", "BYND", "OTLY", "VERY", "GRWG", "HYFM", "AERO", "FARMS"],
+    "agricultural_biotech": ["CTVA", "DD", "ADM", "BG", "CF", "FMC", "MOS", "NTR", "IFF", "SYN"],
+    "food_technology": ["BYND", "OTLY", "TTD", "VERY", "APPH", "AVO", "GRWG", "HYFM", "IMPOSSIBLE"],
+    "plant_based_meat": ["BYND", "IMPOSSIBLE", "KELLOGG", "NESTLE", "UNILEVER", "TYSON", "MAPLE"],
+    "alternative_protein": ["BYND", "OTLY", "IMPOSSIBLE", "PERFECT", "DAY", "MEMPHIS", "MEATS"],
+    "aquaculture": ["MOWI", "SALMAR", "GRIEG", "SEAFOOD", "LERØY", "SEAFOOD", "COOKE"],
+    "food_safety": ["3M", "THERMO", "FISHER", "NEOGEN", "ROMER", "LABS", "BIOCONTROL"],
+    "agricultural_drones": ["DE", "CNH", "AGCO", "DJI", "PARROT", "PRECISIONHAWK", "AGRIBOTIX"],
+    "crop_monitoring": ["DE", "CNH", "AGCO", "CLIMATE", "CORP", "FARMERS", "EDGE", "GRANULAR"],
+    "livestock_monitoring": ["ALLFLEX", "SCR", "DAIRY", "MASTER", "LELY", "DELAVAL", "AFIMILK"],
+    "food_delivery": ["UBER", "DASH", "GRUB", "JUST", "EAT", "DELIVERY", "HERO", "TAKEAWAY"]
+  },
+
+  "real_estate_construction": {
+    "proptech": ["ZILLOW", "REDFIN", "OPENDOOR", "OFFERPAD", "COMPASS", "REALOGY", "ANYWHERE"],
+    "construction_tech": ["CAT", "DE", "CMI", "TEREX", "MANITOWOC", "OSHKOSH", "PACCAR", "VOLVO"],
+    "smart_buildings": ["HONEYWELL", "JCI", "SIEMENS", "SCHNEIDER", "ABB", "EMERSON", "CARRIER"],
+    "real_estate_investment": ["PLD", "AMT", "CCI", "EQIX", "DLR", "SPG", "REG", "EXR", "PSA"],
+    "home_automation": ["GOOGL", "AMZN", "AAPL", "HONEYWELL", "ADT", "RING", "NEST", "ECOBEE"],
+    "building_materials": ["VMC", "MLM", "CRH", "LOWE", "HD", "SHW", "RPM", "PPG", "SW", "NUE"],
+    "architecture_design": ["AUTODESK", "BENTLEY", "TRIMBLE", "DASSAULT", "PTC", "ANSYS"],
+    "facility_management": ["JLL", "CBRE", "CUSHMAN", "WAKEFIELD", "COLLIERS", "NEWMARK"],
+    "coworking_spaces": ["WE", "WORK", "IWG", "REGUS", "SPACES", "KNOTEL", "CONVENE"],
+    "property_management": ["APPFOLIO", "REALPAGE", "YARDI", "ENTRATA", "RENT", "MANAGER"],
+    "mortgage_lending": ["ROCKET", "COMPANIES", "UNITED", "WHOLESALE", "MORTGAGE", "FREEDOM"],
+    "title_insurance": ["FNF", "FAF", "STEWART", "OLD", "REPUBLIC", "FIRST", "AMERICAN"]
+  },
+
+  "entertainment_media": {
+    "streaming_services": ["NFLX", "DIS", "ROKU", "SPOT", "WARNER", "PARAMOUNT", "PEACOCK"],
+    "gaming": ["RBLX", "TTWO", "EA", "ATVI", "UNITY", "UBISOFT", "EPIC", "VALVE", "STEAM"],
+    "social_media": ["META", "SNAP", "TWTR", "PINTEREST", "LINKEDIN", "TIKTOK", "DISCORD"],
+    "content_creation": ["ADOBE", "UNITY", "AUTODESK", "MAXON", "BLACKMAGIC", "AVID"],
+    "virtual_events": ["ZOOM", "TEAMS", "WEBEX", "HOPIN", "EVENTBRITE", "CVENT", "MEETUP"],
+    "esports": ["ATVI", "EA", "TTWO", "UNITY", "RBLX", "NVIDIA", "AMD", "CORSAIR"],
+    "music_streaming": ["SPOT", "AAPL", "AMZN", "GOOGL", "PANDORA", "TIDAL", "DEEZER"],
+    "podcasting": ["SPOT", "AAPL", "GOOGL", "AMZN", "SIRIUS", "XM", "IHEARTMEDIA"],
+    "digital_advertising": ["GOOGL", "META", "AMZN", "TTD", "ROKU", "SNAP", "PINTEREST"],
+    "influencer_marketing": ["META", "GOOGL", "SNAP", "TIKTOK", "YOUTUBE", "INSTAGRAM"],
+    "augmented_reality_content": ["META", "SNAP", "AAPL", "GOOGL", "UNITY", "NVIDIA"],
+    "virtual_reality_content": ["META", "VALVE", "HTC", "PICO", "VARJO", "MAGIC", "LEAP"]
+  },
+
+  "education_training": {
+    "edtech": ["CHEGG", "COURSERA", "UDEMY", "KHAN", "ACADEMY", "DUOLINGO", "SKILLSHARE"],
+    "online_learning": ["ZOOM", "TEAMS", "BLACKBOARD", "CANVAS", "MOODLE", "EDMODO"],
+    "language_learning": ["DUOLINGO", "BABBEL", "ROSETTA", "STONE", "BUSUU", "MEMRISE"],
+    "corporate_training": ["LINKEDIN", "LEARNING", "PLURALSIGHT", "UDEMY", "COURSERA"],
+    "educational_content": ["PEARSON", "MCGRAW", "HILL", "CENGAGE", "WILEY", "ELSEVIER"],
+    "student_information": ["POWERSCHOOL", "INFINITE", "CAMPUS", "SKYWARD", "SYNERGY"],
+    "virtual_classrooms": ["ZOOM", "TEAMS", "GOOGLE", "CLASSROOM", "SCHOOLOGY", "CANVAS"],
+    "educational_games": ["ROBLOX", "MINECRAFT", "KAHOOT", "QUIZLET", "DUOLINGO", "SCRATCH"],
+    "skill_assessment": ["HACKERRANK", "CODILITY", "LEETCODE", "PLURALSIGHT", "COURSERA"],
+    "career_services": ["LINKEDIN", "INDEED", "GLASSDOOR", "MONSTER", "ZIPRECRUITER"],
+    "certification_platforms": ["COURSERA", "UDACITY", "EDUREKA", "SIMPLILEARN", "PLURALSIGHT"],
+    "research_collaboration": ["MENDELEY", "ZOTERO", "RESEARCHGATE", "ACADEMIA", "SCHOLAR"]
+  },
+
+  "retail_ecommerce": {
+    "online_marketplaces": ["AMZN", "SHOP", "ETSY", "EBAY", "MELI", "SE", "BABA", "JD"],
+    "fashion_retail": ["LULU", "NKE", "ADIDAS", "PUMA", "UA", "VFC", "PVH", "RL", "CAPRI"],
+    "beauty_cosmetics": ["EL", "L", "ULTA", "COTY", "REV", "IFF", "UNILEVER", "PG"],
+    "grocery_delivery": ["INSTACART", "UBER", "EATS", "DASH", "DOOR", "AMAZON", "FRESH"],
+    "furniture_home": ["WAYFAIR", "OVERSTOCK", "WILLIAMS", "SONOMA", "RH", "HOME", "DEPOT"],
+    "sporting_goods": ["NKE", "ADIDAS", "PUMA", "UA", "DICKS", "SPORTING", "GOODS", "FOOT"],
+    "luxury_goods": ["LVMH", "KERING", "RICHEMONT", "HERMES", "CHANEL", "TIFFANY", "ROLEX"],
+    "subscription_boxes": ["STITCH", "FIX", "BLUE", "APRON", "HELLO", "FRESH", "BIRCHBOX"],
+    "social_commerce": ["PINTEREST", "INSTAGRAM", "TIKTOK", "FACEBOOK", "SNAPCHAT"],
+    "price_comparison": ["GOOGLE", "SHOPPING", "PRICEGRABBER", "SHOPPING", "BIZRATE"],
+    "customer_reviews": ["YELP", "TRUSTPILOT", "TRIPADVISOR", "GLASSDOOR", "GOOGLE"],
+    "loyalty_programs": ["STARBUCKS", "AMAZON", "PRIME", "TARGET", "CIRCLE", "WALMART"]
+  },
+
+  "travel_hospitality": {
+    "online_travel": ["BKNG", "EXPE", "TRIP", "AIRBNB", "UBER", "LYFT", "GRAB", "OLA"],
+    "airlines": ["AAL", "DAL", "UAL", "LUV", "JBLU", "ALK", "HA", "SAVE", "SPIRIT"],
+    "hotels_lodging": ["MAR", "HLT", "IHG", "WYN", "H", "ACCOR", "CHOICE", "BEST"],
+    "cruise_lines": ["CCL", "RCL", "NCLH", "MSC", "VIRGIN", "VOYAGES", "DISNEY"],
+    "car_rental": ["HTZ", "AVIS", "ENTERPRISE", "BUDGET", "NATIONAL", "ALAMO", "THRIFTY"],
+    "travel_technology": ["AMADEUS", "SABRE", "TRAVELPORT", "EXPEDIA", "BOOKING", "AIRBNB"],
+    "destination_management": ["DISNEY", "UNIVERSAL", "SIX", "FLAGS", "CEDAR", "FAIR"],
+    "travel_insurance": ["AXA", "ALLIANZ", "ZURICH", "AIG", "CHUBB", "BERKSHIRE"],
+    "business_travel": ["CONCUR", "EXPENSIFY", "CHROME", "RIVER", "EGENCIA", "CWT"],
+    "vacation_rentals": ["AIRBNB", "VRBO", "HOMEAWAY", "VACASA", "TURNKEY", "REDAWNING"],
+    "travel_apps": ["UBER", "LYFT", "AIRBNB", "BOOKING", "EXPEDIA", "TRIPADVISOR"],
+    "sustainable_travel": ["TESLA", "BYD", "NIO", "XPEV", "LI", "LCID", "RIVN", "NKLA"]
+  }
+}

@@ -10,12 +10,31 @@ from typing import Dict, List, Optional
 import logging
 import time
 
-# Import all our advanced modules
-from advanced_market_analyzer import AdvancedMarketAnalyzer
-from ai_prediction_engine import AIPredictionEngine
-from social_sentiment_analyzer import SocialSentimentAnalyzer
-from news_sentiment_analyzer import NewsSentimentAnalyzer
-from quick_analysis import get_stock_analysis
+# Import all our advanced modules (with error handling)
+try:
+    from advanced_market_analyzer import AdvancedMarketAnalyzer
+except ImportError:
+    AdvancedMarketAnalyzer = None
+
+try:
+    from ai_prediction_engine import AIPredictionEngine
+except ImportError:
+    AIPredictionEngine = None
+
+try:
+    from social_sentiment_analyzer import SocialSentimentAnalyzer
+except ImportError:
+    SocialSentimentAnalyzer = None
+
+try:
+    from news_sentiment_analyzer import NewsSentimentAnalyzer
+except ImportError:
+    NewsSentimentAnalyzer = None
+
+try:
+    from quick_analysis import get_stock_analysis
+except ImportError:
+    get_stock_analysis = None
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

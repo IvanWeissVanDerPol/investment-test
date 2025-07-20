@@ -12,7 +12,20 @@ import logging
 import re
 from urllib.parse import quote
 import xml.etree.ElementTree as ET
-from cache_manager import cache_manager
+try:
+    from cache_manager import cache_manager
+except ImportError:
+    # Simple cache fallback
+    class SimpleCacheManager:
+        def __init__(self):
+            self.cache = {}
+        def get(self, key, default=None):
+            return self.cache.get(key, default)
+        def set(self, key, value, ttl=300):
+            self.cache[key] = value
+        def clear(self):
+            self.cache.clear()
+    cache_manager = SimpleCacheManager()
 import random
 
 logging.basicConfig(level=logging.INFO)

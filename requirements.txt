@@ -12,3 +12,4 @@ twelvedata
 alpaca-trade-api
 finnhub-python
 newsapi-python
+ib_insync>=0.9.86

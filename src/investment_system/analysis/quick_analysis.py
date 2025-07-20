@@ -7,7 +7,10 @@ import yfinance as yf
 import pandas as pd
 from datetime import datetime
 import logging
-from news_sentiment_analyzer import NewsSentimentAnalyzer
+try:
+    from news_sentiment_analyzer import NewsSentimentAnalyzer
+except ImportError:
+    NewsSentimentAnalyzer = None
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

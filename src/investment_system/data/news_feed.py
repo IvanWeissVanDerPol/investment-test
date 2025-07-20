@@ -46,6 +46,52 @@ def fetch_yfinance_news(symbol):
     ticker = yf.Ticker(symbol)
     return ticker.news
 
+class NewsFeed:
+    """News feed collector for AI/Robotics investment analysis"""
+    
+    def __init__(self):
+        load_dotenv()
+        self.tracking_dir = TRACKING_DIR
+        self.finnhub_client = finnhub_client
+    
+    def get_sector_news(self, keywords=None):
+        """Get news for AI/Robotics sectors"""
+        if keywords is None:
+            keywords = ['artificial intelligence', 'robotics', 'semiconductors', 'AI hardware']
+        
+        all_news = {}
+        for query in keywords:
+            newsapi_data = fetch_newsapi_news(query)
+            all_news[query] = newsapi_data
+        
+        return all_news
+    
+    def get_company_news(self, symbols=None):
+        """Get news for specific companies"""
+        if symbols is None:
+            symbols = ['NVDA', 'MSFT', 'GOOGL', 'TSLA', 'DE']
+        
+        company_news = {}
+        for symbol in symbols:
+            try:
+                finnhub_news = fetch_finnhub_company_news(symbol)
+                yfinance_news = fetch_yfinance_news(symbol)
+                company_news[symbol] = {
+                    'finnhub': finnhub_news,
+                    'yfinance': yfinance_news
+                }
+            except Exception as e:
+                print(f"Error fetching news for {symbol}: {e}")
+                company_news[symbol] = {'finnhub': [], 'yfinance': []}
+        
+        return company_news
+    
+    def save_news_data(self, data, prefix):
+        """Save news data to files"""
+        save_to_json(data, prefix)
+        return True
+
+
 if __name__ == "__main__":
     keywords = ['agriculture technology', 'robotics', 'semiconductors', 'AI hardware']
     symbols = ['SOXX', 'BOTZ', 'MOO', 'NVDA', 'MSFT', 'GOOGL', 'TSLA']
