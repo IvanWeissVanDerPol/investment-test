@@ -83,7 +83,10 @@
       "mcp__puppeteer",
       "Bash(copy:*)",
       "Bash(grep:*)",
-      "Bash(.run_daily_analysis.bat)"
+      "Bash(.run_daily_analysis.bat)",
+      "Bash(scriptsvalidate_organization.bat)",
+      "Bash(move:*)",
+      "Bash(move setup.bat scripts )"
     ],
     "deny": []
   }

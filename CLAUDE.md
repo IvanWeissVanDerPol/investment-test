@@ -2,6 +2,16 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚨 CRITICAL: Project Organization Rules
+
+**MANDATORY FILE PLACEMENT:**
+- **ALL Python code MUST go in `src/investment_system/`**
+- **ALL documentation MUST go in `docs/`** 
+- **NO .py files in root directory**
+- **NO .md files outside docs/ (except README.md, CHANGELOG.md, LICENSE.md)**
+
+See detailed rules in `.claude/rules/QUICK_ORGANIZATION_RULES.md`
+
 # Automated Investment Analysis System
 
 ## Project Overview

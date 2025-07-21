@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-20T18:28:22.365359",
+  "timestamp": "2025-07-20T22:27:14.782719",
   "data_type": "ethics",
   "identifier": "ethics_screen_TSLA_20250720",
   "data": {
@@ -37,10 +37,10 @@
       "ENPH"
     ],
     "portfolio_fit": {
-      "current_green_allocation": 0.4666666666666667,
+      "current_green_allocation": 0.25,
       "target_green_allocation": 0.3,
-      "green_allocation_gap": -0.16666666666666669,
-      "portfolio_value": 900
+      "green_allocation_gap": 0.04999999999999999,
+      "portfolio_value": 1000
     }
   }
 }
