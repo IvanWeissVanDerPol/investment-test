@@ -1,0 +1,283 @@
+{
+  "social_platforms": {
+    "reddit": {
+      "subreddits": {
+        "primary": [
+          "wallstreetbets",
+          "stocks", 
+          "investing",
+          "SecurityAnalysis",
+          "stockmarket"
+        ],
+        "secondary": [
+          "ValueInvesting",
+          "financialindependence",
+          "SecurityAnalysis",
+          "options",
+          "pennystocks"
+        ],
+        "green_investing": [
+          "greeninvestor",
+          "ESG",
+          "sustainablefinance",
+          "CleanTech",
+          "renewable"
+        ]
+      },
+      "search_parameters": {
+        "restrict_sr": 1,
+        "sort_options": ["hot", "new", "top", "relevance"],
+        "default_sort": "hot",
+        "time_filters": ["day", "week", "month", "year"],
+        "default_time_filter": "day",
+        "max_results": 100
+      },
+      "content_filters": {
+        "min_score": 5,
+        "min_comments": 2,
+        "exclude_deleted": true,
+        "exclude_removed": true
+      }
+    },
+    "twitter": {
+      "search_terms": {
+        "general": ["$", "stock", "investing", "trading"],
+        "ai_terms": ["AI", "artificial intelligence", "machine learning", "robotics"],
+        "green_terms": ["ESG", "sustainable", "clean energy", "renewable"]
+      },
+      "hashtags": [
+        "#stocks",
+        "#investing", 
+        "#trading",
+        "#AI",
+        "#ESG",
+        "#cleanenergy",
+        "#sustainability"
+      ],
+      "influencers": [
+        "@elonmusk",
+        "@chamath",
+        "@cathiedwood",
+        "@jimcramer"
+      ]
+    },
+    "youtube": {
+      "channels": {
+        "financial_news": [
+          {
+            "name": "Yahoo Finance",
+            "channel_url": "https://www.youtube.com/@YahooFinance",
+            "category": "news",
+            "priority": "high",
+            "subscriber_count": 1800000
+          },
+          {
+            "name": "Bloomberg Markets",
+            "channel_url": "https://www.youtube.com/@markets",
+            "category": "news", 
+            "priority": "high",
+            "subscriber_count": 1200000
+          },
+          {
+            "name": "Benzinga",
+            "channel_url": "https://www.youtube.com/@Benzinga",
+            "category": "news",
+            "priority": "medium",
+            "subscriber_count": 500000
+          }
+        ],
+        "analysis": [
+          {
+            "name": "StockCharts TV",
+            "channel_url": "https://www.youtube.com/@StockChartsTV",
+            "category": "technical_analysis",
+            "priority": "high",
+            "subscriber_count": 300000
+          },
+          {
+            "name": "In The Money",
+            "channel_url": "https://www.youtube.com/@InTheMoney",
+            "category": "education",
+            "priority": "medium",
+            "subscriber_count": 800000
+          }
+        ],
+        "green_investing": [
+          {
+            "name": "Pensioncraft",
+            "channel_url": "https://www.youtube.com/@Pensioncraft",
+            "category": "sustainable_investing",
+            "priority": "medium",
+            "subscriber_count": 200000
+          }
+        ]
+      },
+      "content_filters": {
+        "min_subscriber_count": 50000,
+        "min_view_count": 1000,
+        "max_video_age_days": 30,
+        "exclude_shorts": false
+      }
+    },
+    "rate_limits": {
+      "reddit_delay": 0.5,
+      "twitter_delay": 1.0,
+      "youtube_delay": 2.0,
+      "general_delay": 1.0,
+      "burst_limit": 10,
+      "burst_window_seconds": 60
+    },
+    "sentiment_keywords": {
+      "bullish": [
+        "buy", "bullish", "moon", "rocket", "to the moon", 
+        "diamond hands", "hodl", "strong buy", "undervalued",
+        "breakout", "rally", "surge", "pump"
+      ],
+      "bearish": [
+        "sell", "bearish", "crash", "dump", "overvalued",
+        "bubble", "short", "puts", "decline", "drop",
+        "correction", "bear market"
+      ],
+      "neutral": [
+        "hold", "sideways", "consolidation", "range bound",
+        "wait and see", "neutral", "mixed signals"
+      ]
+    },
+    "data_collection": {
+      "max_posts_per_subreddit": 50,
+      "max_comments_per_post": 20,
+      "collection_frequency_hours": 6,
+      "historical_data_days": 30,
+      "real_time_monitoring": true
+    },
+    "content_analysis": {
+      "extract_tickers": true,
+      "sentiment_analysis": true,
+      "volume_tracking": true,
+      "trend_detection": true,
+      "influence_scoring": true
+    },
+    "storage_settings": {
+      "cache_social_data": true,
+      "cache_duration_hours": 24,
+      "compress_old_data": true,
+      "max_storage_mb": 1000
+    }
+  },
+  "file_patterns": {
+    "reports": {
+      "patterns": {
+        "daily_report": "daily_investment_report_{timestamp}.json",
+        "risk_report": "risk_report_{timestamp}.json",
+        "sustainability_report": "daily_sustainability_{timestamp}.json",
+        "smart_money_report": "smart_money_report_{timestamp}.json",
+        "government_report": "government_intel_report_{timestamp}.json",
+        "backtest_report": "backtest_results_{timestamp}.json",
+        "comprehensive_analysis": "comprehensive_analysis_{timestamp}.json",
+        "ai_analysis": "ai_analysis_{timestamp}.json",
+        "social_sentiment": "social_sentiment_{timestamp}.json"
+      },
+      "latest_files": {
+        "daily_latest": "daily_investment_latest.json",
+        "sustainability_latest": "daily_sustainability_latest.json",
+        "risk_latest": "risk_analysis_latest.json",
+        "smart_money_latest": "smart_money_latest.json"
+      },
+      "summary_files": {
+        "daily_summary": "daily_summary_{timestamp}.txt",
+        "weekly_summary": "weekly_summary_{timestamp}.txt",
+        "monthly_summary": "monthly_summary_{timestamp}.txt"
+      }
+    },
+    "logs": {
+      "patterns": {
+        "analysis_log": "investment_analysis_{date}.log",
+        "system_log": "system_monitor_{date}.log",
+        "alerts_log": "alerts_log.json",
+        "error_log": "errors_{date}.log",
+        "performance_log": "performance_{date}.log",
+        "api_log": "api_requests_{date}.log"
+      },
+      "rotation": {
+        "max_size_mb": 100,
+        "max_files": 30,
+        "compress_old": true
+      }
+    },
+    "cache": {
+      "patterns": {
+        "general": "{data_type}_{identifier}.json",
+        "news": "news_{symbol}.json",
+        "social": "social_{platform}_{symbol}.json",
+        "ethics": "ethics_{screen_type}_{symbol}_{date}.json",
+        "ai_decisions": "ai_decisions_{decision_type}_{symbol}_{action}_{date}.json",
+        "market_data": "market_{symbol}_{period}_{date}.json"
+      },
+      "directories": {
+        "main_cache": "cache",
+        "temp_cache": "cache/temp",
+        "archive": "cache/archive"
+      },
+      "cleanup": {
+        "auto_cleanup": true,
+        "max_age_days": 30,
+        "max_size_mb": 1000
+      }
+    },
+    "data": {
+      "export_formats": {
+        "json": ".json",
+        "csv": ".csv", 
+        "excel": ".xlsx",
+        "pdf": ".pdf"
+      },
+      "import_formats": [".json", ".csv", ".xlsx"],
+      "backup_patterns": {
+        "config_backup": "config_backup_{timestamp}.zip",
+        "data_backup": "data_backup_{timestamp}.zip",
+        "full_backup": "full_backup_{timestamp}.zip"
+      }
+    },
+    "timestamps": {
+      "formats": {
+        "file_timestamp": "%Y%m%d_%H%M%S",
+        "date_only": "%Y%m%d",
+        "readable": "%Y-%m-%d %H:%M:%S",
+        "iso_format": "%Y-%m-%dT%H:%M:%S",
+        "log_format": "%Y-%m-%d %H:%M:%S"
+      },
+      "timezone": "UTC"
+    },
+    "directories": {
+      "base_paths": {
+        "reports": "reports",
+        "logs": "logs", 
+        "cache": "cache",
+        "config": "config",
+        "data": "data",
+        "temp": "temp",
+        "archive": "archive"
+      },
+      "create_if_missing": true,
+      "permissions": "0755"
+    },
+    "file_operations": {
+      "encoding": "utf-8",
+      "line_endings": "auto",
+      "backup_before_overwrite": true,
+      "atomic_writes": true,
+      "compression": {
+        "enabled": true,
+        "algorithm": "gzip",
+        "level": 6
+      }
+    },
+    "validation": {
+      "check_file_integrity": true,
+      "validate_json": true,
+      "max_file_size_mb": 100,
+      "allowed_extensions": [".json", ".csv", ".txt", ".log", ".xlsx", ".pdf"],
+      "quarantine_invalid": true
+    }
+  }
+}

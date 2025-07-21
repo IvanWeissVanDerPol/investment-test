@@ -1,0 +1,270 @@
+{
+  "network": {
+    "interactive_brokers": {
+      "hosts": {
+        "localhost": "127.0.0.1",
+        "gateway_host": "localhost",
+        "tws_host": "127.0.0.1"
+      },
+      "ports": {
+        "tws_port": 7497,
+        "gateway_port": 4001,
+        "api_port": 5000,
+        "paper_trading_port": 7497
+      },
+      "connection_settings": {
+        "client_id": 1,
+        "connection_type": "auto",
+        "auto_sync": true,
+        "sync_interval_minutes": 15,
+        "max_connection_attempts": 5,
+        "connection_retry_delay": 10
+      },
+      "timeouts": {
+        "connection_timeout": 30,
+        "api_timeout": 10,
+        "auth_timeout": 5,
+        "data_timeout": 15
+      }
+    },
+    "api_endpoints": {
+      "sec": {
+        "base_url": "https://data.sec.gov",
+        "company_facts": "/api/xbrl/companyfacts/CIK{cik}.json",
+        "submissions": "/submissions/CIK{cik}.json"
+      },
+      "government": {
+        "usaspending": "https://api.usaspending.gov/api/v2",
+        "sam_gov": "https://api.sam.gov",
+        "contracts_endpoint": "/search/spending_by_award"
+      },
+      "financial_data": {
+        "yahoo_finance": "https://query1.finance.yahoo.com/v1/finance/search",
+        "alpha_vantage": "https://www.alphavantage.co/query",
+        "polygon": "https://api.polygon.io/v2",
+        "finnhub": "https://finnhub.io/api/v1"
+      },
+      "social_media": {
+        "reddit_rss": "https://www.reddit.com/r/{subreddit}/search.rss",
+        "google_search": "https://www.google.com/search"
+      }
+    },
+    "user_agents": {
+      "default": "Investment Research Tool 1.0",
+      "sec_requests": "Investment Research ivan@example.com",
+      "social_scraping": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    },
+    "request_headers": {
+      "accept": "application/json",
+      "content_type": "application/json",
+      "cache_control": "no-cache"
+    },
+    "ssl_settings": {
+      "verify_ssl": true,
+      "ssl_timeout": 30,
+      "cert_path": null
+    },
+    "proxy_settings": {
+      "enabled": false,
+      "http_proxy": null,
+      "https_proxy": null,
+      "no_proxy": ["localhost", "127.0.0.1"]
+    },
+    "connection_pooling": {
+      "max_connections": 100,
+      "max_connections_per_host": 10,
+      "pool_timeout": 30,
+      "keep_alive": true
+    }
+  },
+  "api_keys": {
+    "api_providers": {
+      "alpha_vantage": {
+        "api_key": "YOUR_ALPHA_VANTAGE_API_KEY",
+        "base_url": "https://www.alphavantage.co/query",
+        "rate_limit": "5_calls_per_minute",
+        "enabled": true
+      },
+      "polygon": {
+        "api_key": "YOUR_POLYGON_API_KEY",
+        "base_url": "https://api.polygon.io/v2",
+        "rate_limit": "5_calls_per_minute",
+        "enabled": false
+      },
+      "finnhub": {
+        "api_key": "YOUR_FINNHUB_API_KEY", 
+        "base_url": "https://finnhub.io/api/v1",
+        "rate_limit": "60_calls_per_minute",
+        "enabled": true
+      },
+      "newsapi": {
+        "api_key": "YOUR_NEWSAPI_KEY",
+        "base_url": "https://newsapi.org/v2",
+        "rate_limit": "1000_calls_per_day",
+        "enabled": false
+      },
+      "twelvedata": {
+        "api_key": "YOUR_TWELVEDATA_API_KEY",
+        "base_url": "https://api.twelvedata.com",
+        "rate_limit": "800_calls_per_day",
+        "enabled": false
+      },
+      "whalewisdom": {
+        "api_key": "YOUR_WHALEWISDOM_API_KEY",
+        "base_url": "https://api.whalewisdom.com",
+        "rate_limit": "100_calls_per_day",
+        "enabled": false
+      },
+      "claude": {
+        "api_key": "YOUR_CLAUDE_API_KEY",
+        "base_url": "https://api.anthropic.com",
+        "rate_limit": "1000_calls_per_day",
+        "enabled": true
+      }
+    },
+    "trading_platforms": {
+      "alpaca": {
+        "api_key": "YOUR_ALPACA_API_KEY",
+        "api_secret": "YOUR_ALPACA_API_SECRET",
+        "base_url": "https://paper-api.alpaca.markets",
+        "paper_trading": true,
+        "enabled": false
+      },
+      "interactive_brokers": {
+        "username": "YOUR_IB_USERNAME",
+        "password": "YOUR_IB_PASSWORD",
+        "account_id": "YOUR_IB_ACCOUNT_ID",
+        "paper_trading": true,
+        "enabled": true
+      }
+    },
+    "notification_services": {
+      "email": {
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "username": "your_email@gmail.com",
+        "password": "YOUR_APP_PASSWORD",
+        "recipient": "recipient@gmail.com",
+        "enabled": false
+      },
+      "slack": {
+        "webhook_url": "YOUR_SLACK_WEBHOOK_URL",
+        "channel": "#investments",
+        "enabled": false
+      },
+      "discord": {
+        "webhook_url": "YOUR_DISCORD_WEBHOOK_URL",
+        "enabled": false
+      }
+    },
+    "environment_variables": {
+      "required": [
+        "CLAUDE_API_KEY",
+        "FINNHUB_API_KEY"
+      ],
+      "optional": [
+        "ALPHA_VANTAGE_API_KEY",
+        "POLYGON_API_KEY",
+        "NEWSAPI_KEY",
+        "TWELVEDATA_API_KEY",
+        "WHALEWISDOM_API_KEY",
+        "ALPACA_API_KEY",
+        "ALPACA_API_SECRET"
+      ]
+    },
+    "security": {
+      "encrypt_keys": false,
+      "key_rotation_days": 90,
+      "audit_api_usage": true,
+      "log_api_calls": false,
+      "mask_keys_in_logs": true
+    },
+    "fallback_options": {
+      "use_demo_keys": true,
+      "demo_mode_apis": ["alpha_vantage"],
+      "graceful_degradation": true,
+      "cache_on_api_failure": true
+    },
+    "usage_monitoring": {
+      "track_api_calls": true,
+      "daily_usage_alerts": true,
+      "cost_tracking": true,
+      "usage_reports": "weekly"
+    }
+  },
+  "timeframes": {
+    "data_collection": {
+      "historical_periods": {
+        "short_term": "5d",
+        "medium_term": "3mo", 
+        "long_term": "1y",
+        "extended": "2y",
+        "max_history": "5y"
+      },
+      "analysis_windows": {
+        "quick_analysis_days": 5,
+        "comprehensive_analysis_days": 30,
+        "trend_analysis_days": 90,
+        "long_term_analysis_days": 365,
+        "backtesting_days": 365
+      },
+      "intervals": {
+        "intraday": "1m",
+        "hourly": "1h", 
+        "daily": "1d",
+        "weekly": "1wk",
+        "monthly": "1mo"
+      }
+    },
+    "cache_settings": {
+      "default_expiry_hours": 24,
+      "news_cache_hours": 6,
+      "price_cache_minutes": 15,
+      "analysis_cache_hours": 12,
+      "cleanup_threshold_days": 7,
+      "max_cache_age_days": 30
+    },
+    "monitoring_intervals": {
+      "real_time_seconds": 60,
+      "price_check_minutes": 5,
+      "portfolio_sync_minutes": 15,
+      "alert_check_minutes": 1,
+      "system_health_minutes": 30,
+      "daily_report_hour": 8
+    },
+    "rate_limiting": {
+      "api_delay_seconds": 1.0,
+      "reddit_delay_seconds": 0.5,
+      "news_delay_seconds": 0.5,
+      "sec_api_delay_seconds": 2.0,
+      "general_delay_seconds": 1.0
+    },
+    "timeout_settings": {
+      "api_timeout_seconds": 30,
+      "connection_timeout_seconds": 10,
+      "authentication_timeout_seconds": 5,
+      "file_operation_timeout_seconds": 15,
+      "database_timeout_seconds": 20
+    },
+    "retry_settings": {
+      "max_retries": 3,
+      "retry_delay_seconds": 5,
+      "exponential_backoff": true,
+      "max_retry_delay_seconds": 60
+    },
+    "business_hours": {
+      "market_open_hour": 9,
+      "market_open_minute": 30,
+      "market_close_hour": 16,
+      "market_close_minute": 0,
+      "timezone": "US/Eastern",
+      "trading_days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    },
+    "reporting_schedule": {
+      "daily_report_time": "08:00",
+      "weekly_report_day": "monday",
+      "monthly_report_day": 1,
+      "quarterly_review_months": [3, 6, 9, 12]
+    }
+  }
+}
