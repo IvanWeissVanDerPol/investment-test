@@ -9,6 +9,7 @@ from datetime import datetime
 from typing import Dict, List, Optional
 import logging
 import time
+from pathlib import Path
 
 # Import all our advanced modules (with error handling)
 try:
@@ -899,7 +900,10 @@ TOP OPPORTUNITIES IDENTIFIED:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             filename = f"comprehensive_analysis_{timestamp}.json"
         
-        filepath = f"C:\\Users\\jandr\\Documents\\ivan\\reports\\{filename}"
+        # Ensure comprehensive reports directory exists
+        reports_dir = Path("reports/comprehensive")
+        reports_dir.mkdir(parents=True, exist_ok=True)
+        filepath = reports_dir / filename
         
         try:
             with open(filepath, 'w', encoding='utf-8') as f:
@@ -909,7 +913,7 @@ TOP OPPORTUNITIES IDENTIFIED:
             # Also save executive summary
             summary = self.create_executive_summary(report)
             summary_filename = filename.replace('.json', '_summary.txt')
-            summary_filepath = f"C:\\Users\\jandr\\Documents\\ivan\\reports\\{summary_filename}"
+            summary_filepath = reports_dir / summary_filename
             
             with open(summary_filepath, 'w', encoding='utf-8') as f:
                 f.write(summary)

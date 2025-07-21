@@ -46,7 +46,8 @@
       },
       "social_media": {
         "reddit_rss": "https://www.reddit.com/r/{subreddit}/search.rss",
-        "google_search": "https://www.google.com/search"
+        "google_search": "https://www.google.com/search",
+        "youtube_api": "https://www.googleapis.com/youtube/v3"
       }
     },
     "user_agents": {
@@ -119,6 +120,12 @@
         "api_key": "YOUR_CLAUDE_API_KEY",
         "base_url": "https://api.anthropic.com",
         "rate_limit": "1000_calls_per_day",
+        "enabled": true
+      },
+      "youtube": {
+        "api_key": "YOUR_YOUTUBE_API_KEY",
+        "base_url": "https://www.googleapis.com/youtube/v3",
+        "rate_limit": "10000_calls_per_day",
         "enabled": true
       }
     },
@@ -265,6 +272,28 @@
       "weekly_report_day": "monday",
       "monthly_report_day": 1,
       "quarterly_review_months": [3, 6, 9, 12]
+    }
+  },
+  "youtube_api": {
+    "requests_per_day": 10000,
+    "requests_per_second": 100,
+    "max_results_per_request": 50,
+    "days_lookback": 7,
+    "cache_duration_hours": 6,
+    "transcript_cache_hours": 168,
+    "preferred_languages": ["en", "es", "pt", "fr", "de", "it", "ja", "ko", "zh"],
+    "channel_monitoring": {
+      "check_interval_hours": 6,
+      "max_videos_per_check": 25,
+      "parallel_processing": true,
+      "max_concurrent_requests": 5
+    },
+    "content_processing": {
+      "extract_transcripts": true,
+      "analyze_sentiment": true,
+      "extract_stock_mentions": true,
+      "min_video_duration_seconds": 300,
+      "max_video_duration_seconds": 3600
     }
   }
 }

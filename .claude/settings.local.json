@@ -87,7 +87,10 @@
       "Bash(scriptsvalidate_organization.bat)",
       "Bash(move:*)",
       "Bash(move setup.bat scripts )",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(scripts\\test_enhanced_decision_engine.bat)",
+      "Bash(cmd /c:*)",
+      "Bash(set PYTHONIOENCODING=utf-8)"
     ],
     "deny": []
   }

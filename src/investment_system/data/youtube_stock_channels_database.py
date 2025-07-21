@@ -7,6 +7,8 @@ from typing import Dict, List, Optional
 from dataclasses import dataclass
 from enum import Enum
 import logging
+import json
+from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
@@ -17,6 +19,18 @@ class ChannelType(Enum):
     TRADING_INSIGHTS = "trading_insights"
     EARNINGS_ANALYSIS = "earnings_analysis"
     SECTOR_ANALYSIS = "sector_analysis"
+    LONG_TERM_INVESTING = "long_term_investing"
+    OPTIONS_TRADING = "options_trading"
+    CRYPTO_STOCKS = "crypto_stocks"
+    DIVIDEND_INVESTING = "dividend_investing"
+    PENNY_STOCKS = "penny_stocks"
+    INTERNATIONAL_MARKETS = "international_markets"
+    ECONOMIC_ANALYSIS = "economic_analysis"
+    IPO_ANALYSIS = "ipo_analysis"
+    MERGER_ACQUISITION = "merger_acquisition"
+    EDUCATIONAL = "educational"
+    LIVE_TRADING = "live_trading"
+    PORTFOLIO_MANAGEMENT = "portfolio_management"
 
 class Region(Enum):
     NORTH_AMERICA = "north_america"
@@ -80,129 +94,340 @@ class YouTubeStockChannel:
 class YouTubeStockChannelsDatabase:
     """Database of YouTube channels providing stock analysis and market insights"""
     
-    def __init__(self):
-        self.channels = self._initialize_channels()
-        logger.info(f"Initialized YouTube stock channels database with {len(self.channels)} channels")
+    def __init__(self, config_path: Optional[str] = None):
+        """Initialize the YouTube Stock Channels Database
+        
+        Args:
+            config_path: Path to the main config.json file. If None, uses default path.
+        """
+        if config_path is None:
+            # Default to main config.json in the config directory
+            current_dir = Path(__file__).parent
+            project_root = current_dir.parent.parent.parent
+            config_path = project_root / "config" / "config.json"
+        
+        self.config_path = Path(config_path)
+        self.channels: List[YouTubeStockChannel] = []
+        self.channels_by_id: Dict[str, YouTubeStockChannel] = {}
+        self.channels_by_name: Dict[str, YouTubeStockChannel] = {}
+        self.last_loaded = None
+        
+        # Load channels from config
+        self._load_channels_from_config()
+        logger.info(f"Loaded {len(self.channels)} YouTube channels from config")
     
-    def _initialize_channels(self) -> Dict[str, YouTubeStockChannel]:
-        """Initialize the comprehensive database of stock analysis YouTube channels"""
+    def _load_channels_from_config(self) -> None:
+        """Load YouTube channels from the consolidated config.json file"""
+        try:
+            if not self.config_path.exists():
+                logger.error(f"Config file not found: {self.config_path}")
+                return
+            
+            with open(self.config_path, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
+            
+            youtube_config = config_data.get('youtube_channels', {})
+            if not youtube_config.get('enabled', False):
+                logger.warning("YouTube channels are disabled in config")
+                return
+            
+            channels_data = youtube_config.get('channels', [])
+            
+            # Load channels
+            for channel_data in channels_data:
+                try:
+                    channel = self._create_channel_from_dict(channel_data)
+                    if channel:
+                        self.channels.append(channel)
+                        self.channels_by_id[channel.channel_id] = channel
+                        self.channels_by_name[channel.channel_name.lower()] = channel
+                except Exception as e:
+                    logger.error(f"Error loading channel {channel_data.get('channel_name', 'unknown')}: {e}")
+                    continue
+            
+            from datetime import datetime
+            self.last_loaded = datetime.now()
+            
+        except Exception as e:
+            logger.error(f"Error loading YouTube channels config: {e}")
+            # Initialize with empty data to prevent crashes
+            self.channels = []
+            self.channels_by_id = {}
+            self.channels_by_name = {}
+    
+    def _create_channel_from_dict(self, channel_data: Dict) -> Optional[YouTubeStockChannel]:
+        """Create a YouTubeStockChannel from dictionary data"""
+        try:
+            # Convert string enums to enum objects
+            region_str = channel_data.get('region', 'north_america')
+            language_str = channel_data.get('language', 'en')
+            primary_focus_str = channel_data.get('primary_focus', 'market_news')
+            
+            # Map strings to enums
+            region = Region(region_str)
+            language = Language(language_str)
+            primary_focus = ChannelType(primary_focus_str)
+            
+            # Handle secondary focus list
+            secondary_focus = []
+            for focus_str in channel_data.get('secondary_focus', []):
+                try:
+                    secondary_focus.append(ChannelType(focus_str))
+                except ValueError:
+                    logger.warning(f"Unknown channel type: {focus_str}")
+            
+            # Create channel object
+            channel = YouTubeStockChannel(
+                channel_id=channel_data['channel_id'],
+                channel_name=channel_data['channel_name'],
+                channel_url=channel_data['channel_url'],
+                handle=channel_data.get('handle'),
+                region=region,
+                language=language,
+                primary_focus=primary_focus,
+                secondary_focus=secondary_focus,
+                subscriber_count=channel_data.get('subscriber_count'),
+                average_views=channel_data.get('average_views'),
+                upload_frequency=channel_data.get('upload_frequency', 'unknown'),
+                covers_markets=channel_data.get('covers_markets', []),
+                specializes_in=channel_data.get('specializes_in', []),
+                typical_video_length=channel_data.get('typical_video_length', 'medium'),
+                provides_charts=channel_data.get('provides_charts', False),
+                provides_price_targets=channel_data.get('provides_price_targets', False),
+                tracks_performance=channel_data.get('tracks_performance', False),
+                has_live_streams=channel_data.get('has_live_streams', False),
+                years_active=channel_data.get('years_active', 0),
+                professional_background=channel_data.get('professional_background', ''),
+                accuracy_notes=channel_data.get('accuracy_notes', ''),
+                has_transcripts=channel_data.get('has_transcripts', False),
+                typical_upload_time=channel_data.get('typical_upload_time'),
+                last_checked=channel_data.get('last_checked')
+            )
+            
+            return channel
+            
+        except Exception as e:
+            logger.error(f"Error creating channel from data: {e}")
+            return None
+    
+    def get_channel(self, channel_id: str) -> Optional[YouTubeStockChannel]:
+        """Get a channel by its ID"""
+        return self.channels_by_id.get(channel_id)
+    
+    def get_channel_by_name(self, channel_name: str) -> Optional[YouTubeStockChannel]:
+        """Get a channel by its name (case insensitive)"""
+        return self.channels_by_name.get(channel_name.lower())
+    
+    def get_all_channels(self) -> List[YouTubeStockChannel]:
+        """Get all channels"""
+        return self.channels.copy()
+    
+    def get_channels_by_region(self, region: Region) -> List[YouTubeStockChannel]:
+        """Get channels filtered by region"""
+        return [channel for channel in self.channels if channel.region == region]
+    
+    def get_channels_by_language(self, language: Language) -> List[YouTubeStockChannel]:
+        """Get channels filtered by language"""
+        return [channel for channel in self.channels if channel.language == language]
+    
+    def get_channels_by_focus(self, focus: ChannelType) -> List[YouTubeStockChannel]:
+        """Get channels filtered by primary or secondary focus"""
+        return [
+            channel for channel in self.channels 
+            if channel.primary_focus == focus or focus in channel.secondary_focus
+        ]
+    
+    def get_high_credibility_channels(self, min_subscribers: int = 100000) -> List[YouTubeStockChannel]:
+        """Get channels with high subscriber count (proxy for credibility)"""
+        return [
+            channel for channel in self.channels 
+            if channel.subscriber_count and channel.subscriber_count >= min_subscribers
+        ]
+    
+    def search_channels(self, query: str) -> List[YouTubeStockChannel]:
+        """Search channels by name, specialization, or background"""
+        query_lower = query.lower()
+        results = []
         
-        channels = {}
+        for channel in self.channels:
+            # Search in channel name
+            if query_lower in channel.channel_name.lower():
+                results.append(channel)
+                continue
+            
+            # Search in specializations
+            if any(query_lower in spec.lower() for spec in channel.specializes_in):
+                results.append(channel)
+                continue
+            
+            # Search in professional background
+            if query_lower in channel.professional_background.lower():
+                results.append(channel)
+                continue
         
-        # Add each channel to the database
-        channel_list = [
+        return results
+    
+    def get_channels_covering_stock(self, stock_symbol: str) -> List[YouTubeStockChannel]:
+        """Get channels that might cover a specific stock (based on specializations)"""
+        stock_lower = stock_symbol.lower()
+        results = []
+        
+        for channel in self.channels:
+            # Check if stock symbol is mentioned in specializations
+            if any(stock_lower in spec.lower() for spec in channel.specializes_in):
+                results.append(channel)
+        
+        return results
+    
+    def reload_channels(self) -> None:
+        """Reload channels from config file"""
+        self.channels.clear()
+        self.channels_by_id.clear()
+        self.channels_by_name.clear()
+        self._load_channels_from_config()
+        logger.info(f"Reloaded {len(self.channels)} YouTube channels from config")
+    
+    def add_channel_to_config(self, channel: YouTubeStockChannel) -> bool:
+        """Add a new channel to the config file and reload"""
+        try:
+            with open(self.config_path, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
             
-            # ========== NORTH AMERICA - ENGLISH ==========
+            youtube_config = config_data.setdefault('youtube_channels', {})
+            channels_data = youtube_config.setdefault('channels', [])
             
-            # Major Financial News Channels
-            YouTubeStockChannel(
-                channel_id="UCIALMKvObZNtJ6AmdCLP7Lg",
-                channel_name="Bloomberg Markets and Finance",
-                channel_url="https://www.youtube.com/@markets",
-                handle="@markets",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.MARKET_NEWS,
-                secondary_focus=[ChannelType.DAILY_ANALYSIS, ChannelType.EARNINGS_ANALYSIS],
-                subscriber_count=1500000,
-                average_views=50000,
-                upload_frequency="multiple_daily",
-                covers_markets=["US", "Europe", "Asia", "Global"],
-                specializes_in=["Breaking News", "Earnings", "Fed Policy", "Global Markets"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=False,
-                tracks_performance=False,
-                has_live_streams=True,
-                years_active=10,
-                professional_background="Bloomberg financial news network",
-                accuracy_notes="Institutional quality financial news",
-                has_transcripts=True,
-                typical_upload_time="09:00-17:00 EST",
-                last_checked=None
-            ),
+            # Convert channel to dict
+            channel_dict = {
+                'channel_id': channel.channel_id,
+                'channel_name': channel.channel_name,
+                'channel_url': channel.channel_url,
+                'handle': channel.handle,
+                'region': channel.region.value,
+                'language': channel.language.value,
+                'primary_focus': channel.primary_focus.value,
+                'secondary_focus': [focus.value for focus in channel.secondary_focus],
+                'subscriber_count': channel.subscriber_count,
+                'average_views': channel.average_views,
+                'upload_frequency': channel.upload_frequency,
+                'covers_markets': channel.covers_markets,
+                'specializes_in': channel.specializes_in,
+                'typical_video_length': channel.typical_video_length,
+                'provides_charts': channel.provides_charts,
+                'provides_price_targets': channel.provides_price_targets,
+                'tracks_performance': channel.tracks_performance,
+                'has_live_streams': channel.has_live_streams,
+                'years_active': channel.years_active,
+                'professional_background': channel.professional_background,
+                'accuracy_notes': channel.accuracy_notes,
+                'has_transcripts': channel.has_transcripts,
+                'typical_upload_time': channel.typical_upload_time,
+                'last_checked': channel.last_checked
+            }
             
-            YouTubeStockChannel(
-                channel_id="UCEAZeUIeJs0IjQiqocgYGBQ",
-                channel_name="Yahoo Finance",
-                channel_url="https://www.youtube.com/@YahooFinance",
-                handle="@YahooFinance",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.MARKET_NEWS,
-                secondary_focus=[ChannelType.DAILY_ANALYSIS, ChannelType.EARNINGS_ANALYSIS],
-                subscriber_count=2200000,
-                average_views=75000,
-                upload_frequency="multiple_daily",
-                covers_markets=["US", "Global"],
-                specializes_in=["Market Opens/Closes", "Earnings", "CEO Interviews", "Market Analysis"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=False,
-                tracks_performance=False,
-                has_live_streams=True,
-                years_active=15,
-                professional_background="Yahoo Finance news division",
-                accuracy_notes="Mainstream financial news coverage",
-                has_transcripts=True,
-                typical_upload_time="09:00-18:00 EST",
-                last_checked=None
-            ),
+            channels_data.append(channel_dict)
             
-            # Technical Analysis & Trading Focused
-            YouTubeStockChannel(
-                channel_id="UCmvjjXLJWKHcT93mjRpDFfA",
-                channel_name="StockCharts TV",
-                channel_url="https://www.youtube.com/@StockChartsTV",
-                handle="@StockChartsTV",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.TECHNICAL_ANALYSIS,
-                secondary_focus=[ChannelType.DAILY_ANALYSIS, ChannelType.TRADING_INSIGHTS],
-                subscriber_count=125000,
-                average_views=8000,
-                upload_frequency="daily",
-                covers_markets=["US"],
-                specializes_in=["Technical Analysis", "Chart Patterns", "Market Timing"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=True,
-                tracks_performance=True,
-                has_live_streams=True,
-                years_active=8,
-                professional_background="StockCharts.com platform",
-                accuracy_notes="Strong technical analysis track record",
-                has_transcripts=True,
-                typical_upload_time="08:30 EST",
-                last_checked=None
-            ),
+            # Write back to config
+            with open(self.config_path, 'w', encoding='utf-8') as f:
+                json.dump(config_data, f, indent=2, ensure_ascii=False)
             
-            YouTubeStockChannel(
-                channel_id="UCQ-VoopRmpjbUQgzAdjpF-w",
-                channel_name="Benzinga",
-                channel_url="https://www.youtube.com/@Benzinga",
-                handle="@Benzinga",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.TRADING_INSIGHTS,
-                secondary_focus=[ChannelType.DAILY_ANALYSIS, ChannelType.MARKET_NEWS],
-                subscriber_count=180000,
-                average_views=12000,
-                upload_frequency="multiple_daily",
-                covers_markets=["US"],
-                specializes_in=["Pre-market Analysis", "Day Trading", "Options", "Penny Stocks"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=True,
-                tracks_performance=False,
-                has_live_streams=True,
-                years_active=6,
-                professional_background="Benzinga financial media",
-                accuracy_notes="Good for short-term trading insights",
-                has_transcripts=True,
-                typical_upload_time="08:00 EST",
-                last_checked=None
-            ),
+            # Reload channels
+            self.reload_channels()
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error adding channel to config: {e}")
+            return False
+    
+    def remove_channel_from_config(self, channel_id: str) -> bool:
+        """Remove a channel from the config file and reload"""
+        try:
+            with open(self.config_path, 'r', encoding='utf-8') as f:
+                config_data = json.load(f)
+            
+            youtube_config = config_data.get('youtube_channels', {})
+            channels_data = youtube_config.get('channels', [])
+            
+            # Remove channel with matching ID
+            original_count = len(channels_data)
+            channels_data[:] = [ch for ch in channels_data if ch.get('channel_id') != channel_id]
+            
+            if len(channels_data) < original_count:
+                # Write back to config
+                with open(self.config_path, 'w', encoding='utf-8') as f:
+                    json.dump(config_data, f, indent=2, ensure_ascii=False)
+                
+                # Reload channels
+                self.reload_channels()
+                return True
+            else:
+                logger.warning(f"Channel {channel_id} not found in config")
+                return False
+            
+        except Exception as e:
+            logger.error(f"Error removing channel from config: {e}")
+            return False
+    
+    def get_summary(self) -> Dict:
+        """Get a summary of the database"""
+        if not self.channels:
+            return {'total_channels': 0, 'message': 'No channels loaded'}
+        
+        # Count by region
+        region_counts = {}
+        for channel in self.channels:
+            region = channel.region.value
+            region_counts[region] = region_counts.get(region, 0) + 1
+        
+        # Count by language
+        language_counts = {}
+        for channel in self.channels:
+            language = channel.language.value
+            language_counts[language] = language_counts.get(language, 0) + 1
+        
+        # Count by focus
+        focus_counts = {}
+        for channel in self.channels:
+            focus = channel.primary_focus.value
+            focus_counts[focus] = focus_counts.get(focus, 0) + 1
+        
+        return {
+            'total_channels': len(self.channels),
+            'last_loaded': self.last_loaded.isoformat() if self.last_loaded else None,
+            'by_region': region_counts,
+            'by_language': language_counts,
+            'by_primary_focus': focus_counts
+        }
+
+
+def main():
+    """Test function to demonstrate database functionality"""
+    print("YouTube Stock Channels Database Test")
+    print("====================================")
+    
+    # Initialize database
+    db = YouTubeStockChannelsDatabase()
+    
+    # Print summary
+    summary = db.get_summary()
+    print(f"\nDatabase Summary:")
+    print(f"Total channels: {summary['total_channels']}")
+    print(f"Last loaded: {summary.get('last_loaded', 'Never')}")
+    
+    if summary['total_channels'] > 0:
+        print(f"\nBy Region: {summary['by_region']}")
+        print(f"By Language: {summary['by_language']}")
+        print(f"By Primary Focus: {summary['by_primary_focus']}")
+        
+        # Show some example queries
+        print(f"\nHigh credibility channels (100k+ subscribers): {len(db.get_high_credibility_channels())}")
+        print(f"English channels: {len(db.get_channels_by_language(Language.ENGLISH))}")
+        print(f"Technical analysis channels: {len(db.get_channels_by_focus(ChannelType.TECHNICAL_ANALYSIS))}")
+    else:
+        print("\nNo channels loaded. Make sure config.json has youtube_channels section enabled.")
+
+
+if __name__ == "__main__":
+    main()
             
             YouTubeStockChannel(
                 channel_id="UCkEqXbeH6XZNWPM7pPJNS8w",
@@ -1110,107 +1335,25 @@ class YouTubeStockChannelsDatabase:
             YouTubeStockChannel(
                 channel_id="UC-ejemplo-tech-stocks",
                 channel_name="Tech Stock Daily",
-                channel_url="https://www.youtube.com/@techstockdaily",
-                handle="@techstockdaily",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.SECTOR_ANALYSIS,
-                secondary_focus=[ChannelType.DAILY_ANALYSIS, ChannelType.MARKET_NEWS],
-                subscriber_count=195000,
-                average_views=22000,
-                upload_frequency="daily",
-                covers_markets=["US", "Global"],
-                specializes_in=["Tech Stocks", "FAANG", "Growth Stocks", "AI Stocks"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=True,
-                tracks_performance=True,
-                has_live_streams=False,
-                years_active=5,
-                professional_background="Tech industry analyst",
-                accuracy_notes="Tech sector focus",
-                has_transcripts=True,
-                typical_upload_time="16:30 EST",
-                last_checked=None
-            ),
-            
-            # ========== COMMODITY FOCUSED CHANNELS ==========
-            
-            YouTubeStockChannel(
-                channel_id="UC-ejemplo-commodity-report",
-                channel_name="Commodity Report",
-                channel_url="https://www.youtube.com/@commodityreport",
-                handle="@commodityreport",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.SECTOR_ANALYSIS,
-                secondary_focus=[ChannelType.DAILY_ANALYSIS, ChannelType.MARKET_NEWS],
-                subscriber_count=55000,
-                average_views=5000,
-                upload_frequency="daily",
-                covers_markets=["US", "Global"],
-                specializes_in=["Commodity Stocks", "Gold", "Oil", "Mining"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=True,
-                tracks_performance=True,
-                has_live_streams=False,
-                years_active=6,
-                professional_background="Commodity analyst",
-                accuracy_notes="Commodity sector specialist",
-                has_transcripts=True,
-                typical_upload_time="08:00 EST",
-                last_checked=None
-            ),
-            
-            # ========== CRYPTO-STOCKS HYBRID CHANNELS ==========
-            
-            YouTubeStockChannel(
-                channel_id="UC-ejemplo-crypto-stocks",
-                channel_name="Crypto & Stocks Daily",
-                channel_url="https://www.youtube.com/@cryptostocksdaily",
-                handle="@cryptostocksdaily",
-                region=Region.NORTH_AMERICA,
-                language=Language.ENGLISH,
-                primary_focus=ChannelType.DAILY_ANALYSIS,
-                secondary_focus=[ChannelType.TRADING_INSIGHTS, ChannelType.MARKET_NEWS],
-                subscriber_count=155000,
-                average_views=18000,
-                upload_frequency="daily",
-                covers_markets=["US", "Global"],
-                specializes_in=["Crypto Stocks", "Bitcoin Miners", "Blockchain Stocks"],
-                typical_video_length="medium",
-                provides_charts=True,
-                provides_price_targets=True,
-                tracks_performance=True,
-                has_live_streams=False,
-                years_active=3,
-                professional_background="Crypto-stock specialist",
-                accuracy_notes="Crypto-stock correlation analysis",
-                has_transcripts=True,
-                typical_upload_time="10:00 EST",
-                last_checked=None
             )
             
-        ]
-        
-        # Convert list to dictionary keyed by channel_id
-        for channel in channel_list:
-            channels[channel.channel_id] = channel
-        
-        return channels
+            return channel
+            
+        except Exception as e:
+            print(f"Error creating channel from data: {e}")
+            return None
     
     def get_channel(self, channel_id: str) -> Optional[YouTubeStockChannel]:
         """Get channel by ID"""
-        return self.channels.get(channel_id)
+        return self.channels_by_id.get(channel_id)
     
     def get_channels_by_region(self, region: Region) -> List[YouTubeStockChannel]:
         """Get all channels from a specific region"""
-        return [channel for channel in self.channels.values() if channel.region == region]
+        return [channel for channel in self.channels if channel.region == region]
     
     def get_channels_by_language(self, language: Language) -> List[YouTubeStockChannel]:
         """Get all channels in a specific language"""
-        return [channel for channel in self.channels.values() if channel.language == language]
+        return [channel for channel in self.channels if channel.language == language]
     
     def get_channels_by_focus(self, focus_type: ChannelType) -> List[YouTubeStockChannel]:
         """Get channels by primary focus type"""

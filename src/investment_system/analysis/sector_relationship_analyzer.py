@@ -423,7 +423,7 @@ class SectorRelationshipAnalyzer:
         
         return impact_scores
     
-    def visualize_sector_network(self, output_path: str = "reports/sector_network.png", 
+    def visualize_sector_network(self, output_path: str = "reports/market-intelligence/sector_network.png", 
                                top_sectors: int = 20):
         """Create a network visualization of sector relationships"""
         if self.supply_chain_graph is None:
@@ -466,7 +466,7 @@ class SectorRelationshipAnalyzer:
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
         plt.show()
     
-    def visualize_influence_heatmap(self, output_path: str = "reports/influence_heatmap.png"):
+    def visualize_influence_heatmap(self, output_path: str = "reports/market-intelligence/influence_heatmap.png"):
         """Create a heatmap showing sector influence relationships"""
         if self.influence_matrix is None:
             self.build_influence_matrix()
@@ -584,7 +584,7 @@ def main():
     report = analyzer.generate_sector_analysis_report()
     
     # Save report
-    report_path = Path("reports/sector_analysis_report.json")
+    report_path = Path("reports/market-intelligence/sector_analysis_report.json")
     report_path.parent.mkdir(parents=True, exist_ok=True)
     
     with open(report_path, 'w') as f:
@@ -623,7 +623,7 @@ def main():
     try:
         analyzer.visualize_sector_network()
         analyzer.visualize_influence_heatmap()
-        print("✅ Visualizations saved to reports/ directory")
+        print("✅ Visualizations saved to reports/market-intelligence/ directory")
     except Exception as e:
         print(f"⚠️  Could not generate visualizations: {e}")
     

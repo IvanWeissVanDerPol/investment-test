@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-20T18:29:22.248198",
+  "timestamp": "2025-07-20T23:43:03.389130",
   "data_type": "ethics",
   "identifier": "ethics_screen_NVDA_20250720",
   "data": {
@@ -16,10 +16,10 @@
     ],
     "alternative_suggestions": [],
     "portfolio_fit": {
-      "current_green_allocation": 0.15,
+      "current_green_allocation": 0,
       "target_green_allocation": 0.3,
-      "green_allocation_gap": 0.15,
-      "portfolio_value": 800
+      "green_allocation_gap": 0.3,
+      "portfolio_value": 900.0
     }
   }
 }

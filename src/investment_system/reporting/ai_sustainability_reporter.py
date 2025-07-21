@@ -32,8 +32,8 @@ class AISustainabilityReporter:
         self.cache_manager = CacheManager()
         
         self.config_path = Path(config_path)
-        self.reports_dir = Path("reports")
-        self.reports_dir.mkdir(exist_ok=True)
+        self.reports_dir = Path("reports/sustainability")
+        self.reports_dir.mkdir(parents=True, exist_ok=True)
         
         # Load reporting configuration
         self.load_reporting_config()
@@ -526,7 +526,7 @@ Green Target Progress: {report_data['sustainability_metrics']['target_progress']
         
         formatted_report += f"""
 ================================================================================
-Report saved to: reports/daily_sustainability_latest.json
+Report saved to: reports/sustainability/daily_sustainability_latest.json
 Run daily for optimal portfolio sustainability tracking
 ================================================================================
 """
