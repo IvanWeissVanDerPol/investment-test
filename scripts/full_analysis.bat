@@ -1,3 +1,0 @@
-@echo off
-echo Running comprehensive analysis...
-call scripts\run_comprehensive_analysis.bat

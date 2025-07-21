@@ -86,7 +86,8 @@
       "Bash(.run_daily_analysis.bat)",
       "Bash(scriptsvalidate_organization.bat)",
       "Bash(move:*)",
-      "Bash(move setup.bat scripts )"
+      "Bash(move setup.bat scripts )",
+      "Bash(find:*)"
     ],
     "deny": []
   }

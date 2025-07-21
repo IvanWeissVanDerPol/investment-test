@@ -1,3 +1,0 @@
-@echo off
-echo Running test suite...
-call scripts\run_tests.bat

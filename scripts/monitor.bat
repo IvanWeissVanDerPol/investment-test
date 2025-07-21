@@ -1,3 +1,0 @@
-@echo off
-echo Starting system monitoring...
-call scripts\run_system_monitor.bat

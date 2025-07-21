@@ -1,3 +1,0 @@
-@echo off
-echo Running quick analysis...
-call scripts\run_daily_analysis.bat
