@@ -1,0 +1,272 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}{{ stock.symbol }} - {{ stock.name }} Analysis{% endblock %}
+
+{% block content %}<div class="row">
+    <div class="col-12 mb-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ url_for('stocks') }}">Stocks</a></li>
+                <li class="breadcrumb-item active">{{ stock.symbol }}</li>
+            </ol>
+        </nav>
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 mb-1">{{ stock.name }} ({{ stock.symbol }})</h1>
+                <p class="text-muted mb-0">{{ stock.sector }} - {{ stock.industry }}</p>
+            </div>
+            <div class="text-end">
+                <h2 class="h3 mb-1">${{ stock.current_price or 0|format_currency }}</h2>
+                <p class="mb-0 {{ stock.daily_change|performance_color }}">
+                    {{ stock.daily_change|format_percentage }} ({{ stock.daily_change_percent|format_percentage }})
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Key Metrics -->
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="card-title">Market Cap</h6>
+                <p class="h4">{{ stock.market_cap|format_large_number or 'N/A' }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="card-title">P/E Ratio</h6>
+                <p class="h4">{{ stock.pe_ratio or 'N/A' }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="card-title">Volume</h6>
+                <p class="h4">{{ stock.volume|format_large_number or 'N/A' }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h6 class="card-title">AI Score</h6>
+                <p class="h4">{{ stock.ai_score or 0 }}/10</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Price Chart -->
+    <div class="col-lg-8 mb-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Price History</h5>
+                <div class="btn-group btn-group-sm" role="group">
+                    <button type="button" class="btn btn-outline-primary active" data-period="1M">1M</button>
+                    <button type="button" class="btn btn-outline-primary" data-period="3M">3M</button>
+                    <button type="button" class="btn btn-outline-primary" data-period="6M">6M</button>
+                    <button type="button" class="btn btn-outline-primary" data-period="1Y">1Y</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <canvas id="price-chart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analysis Summary -->
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Analysis Summary</h5>
+            </div>
+            <div class="card-body">
+                {% if analysis %}
+                {% set latest = analysis[0] %}
+                <div class="mb-3">
+                    <h6>Latest Signal</h6>
+                    <span class="badge bg-{{ 'success' if latest.signal == 'BUY' else 'danger' if latest.signal == 'SELL' else 'warning' }} fs-6">
+                        {{ latest.signal }}
+                    </span>
+                    <small class="text-muted">({{ "%.0f"|format(latest.confidence * 100) }}% confidence)</small>
+                </div>
+                <div class="mb-3">
+                    <h6>AI Score</h6>
+                    <div class="progress mb-2">
+                        <div class="progress-bar bg-primary" style="width: {{ latest.ai_score * 10 }}%">
+                            {{ latest.ai_score }}/10
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <h6>Risk Level</h6>
+                    <span class="badge bg-{{ 'success' if latest.risk_score < 3 else 'warning' if latest.risk_score < 7 else 'danger' }}">
+                        {{ latest.risk_score|format_risk_score }}
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <h6>Last Updated</h6>
+                    <p class="text-muted">{{ latest.created_at|format_date }}</p>
+                </div>
+                {% else %}
+                <p class="text-muted">No analysis available for this stock</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Company Info -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Company Information</h5>
+            </div>
+            <div class="card-body">
+                <h6>Business Description</h6>
+                <p class="text-muted">{{ stock.description or 'No description available' }}</p>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <strong>Sector:</strong> {{ stock.sector }}<br>
+                        <strong>Industry:</strong> {{ stock.industry }}<br>
+                        <strong>Exchange:</strong> {{ stock.exchange or 'N/A' }}<br>
+                    </div>
+                    <div class="col-sm-6">
+                        <strong>52W High:</strong> ${{ stock.week_52_high or 'N/A' }}<br>
+                        <strong>52W Low:</strong> ${{ stock.week_52_low or 'N/A' }}<br>
+                        <strong>Dividend Yield:</strong> {{ stock.dividend_yield or 'N/A' }}%<br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Analysis -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Recent Analysis</h5>
+            </div>
+            <div class="card-body">
+                {% if analysis %}
+                <div class="list-group list-group-flush">
+                    {% for item in analysis[:5] %}
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h6 class="mb-1">{{ item.signal }} Signal</h6>
+                                <p class="mb-1 text-muted">{{ item.reason|truncate_text(100) }}</p>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-{{ 'success' if item.signal == 'BUY' else 'danger' if item.signal == 'SELL' else 'warning' }}">
+                                    {{ "%.0f"|format(item.confidence * 100) }}%
+                                </span>
+                                <br>
+                                <small class="text-muted">{{ item.created_at|format_date }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted">No recent analysis</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- News Sentiment -->
+    <div class="col-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">News & Sentiment Analysis</h5>
+            </div>
+            <div class="card-body">
+                {% if news %}
+                <div class="list-group list-group-flush">
+                    {% for item in news[:10] %}
+                    <div class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h6 class="mb-1"><a href="{{ item.url }}" target="_blank" class="text-decoration-none">{{ item.title }}</a></h6>
+                                <p class="mb-1 text-muted">{{ item.description|truncate_text(150) }}</p>
+                                <small class="text-muted">{{ item.source }} • {{ item.published_at|format_date }}</small>
+                            </div>
+                            <div>
+                                <span class="badge bg-{{ 'success' if item.sentiment_score > 0.1 else 'danger' if item.sentiment_score < -0.1 else 'warning' }}">
+                                    {{ "%.1f"|format(item.sentiment_score * 100) }}%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted">No news sentiment data available</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Initialize price chart
+document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('price-chart').getContext('2d');
+    
+    // Sample data - replace with real API call
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Stock Price',
+                data: [100, 105, 110, 108, 115, 120, 125, 130, 135, 140, 145, 150],
+                borderColor: 'rgb(54, 162, 235)',
+                backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                tension: 0.4,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Handle timeframe buttons
+    document.querySelectorAll('[data-period]').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('[data-period]').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const period = this.getAttribute('data-period');
+            console.log('Changing period to:', period);
+            // Implement period change logic here
+        });
+    });
+});
+</script>
+{% endblock %}

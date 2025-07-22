@@ -1,0 +1,226 @@
+{
+  "investment_funds": {
+    "ai_focused_etfs": [
+      {"symbol": "ARKQ", "name": "ARK Autonomous Technology & Robotics ETF", "expense_ratio": 0.75},
+      {"symbol": "BOTZ", "name": "Global X Robotics & Artificial Intelligence ETF", "expense_ratio": 0.68},
+      {"symbol": "ROBO", "name": "ROBO Global Robotics and Automation Index ETF", "expense_ratio": 0.95},
+      {"symbol": "IRBO", "name": "iShares Robotics and Artificial Intelligence Multisector ETF", "expense_ratio": 0.47},
+      {"symbol": "UBOT", "name": "Daily Robotics, Artificial Intelligence & Automation Index ETF", "expense_ratio": 0.65},
+      {"symbol": "THNQ", "name": "ROBO Global Artificial Intelligence ETF", "expense_ratio": 0.68},
+      {"symbol": "QTUM", "name": "Defiance Quantum ETF", "expense_ratio": 0.40},
+      {"symbol": "DTEC", "name": "ALPS Disruptive Technologies ETF", "expense_ratio": 0.50},
+      {"symbol": "SNSR", "name": "Global X Internet of Things ETF", "expense_ratio": 0.68},
+      {"symbol": "HACK", "name": "ETFMG Prime Cyber Security ETF", "expense_ratio": 0.60}
+    ],
+    
+    "technology_etfs": [
+      {"symbol": "QQQ", "name": "Invesco QQQ Trust", "expense_ratio": 0.20},
+      {"symbol": "XLK", "name": "Technology Select Sector SPDR Fund", "expense_ratio": 0.12},
+      {"symbol": "VGT", "name": "Vanguard Information Technology ETF", "expense_ratio": 0.10},
+      {"symbol": "FTEC", "name": "Fidelity MSCI Information Technology Index ETF", "expense_ratio": 0.084},
+      {"symbol": "IYW", "name": "iShares U.S. Technology ETF", "expense_ratio": 0.40},
+      {"symbol": "SOXX", "name": "iShares Semiconductor ETF", "expense_ratio": 0.35},
+      {"symbol": "SMH", "name": "VanEck Semiconductor ETF", "expense_ratio": 0.35},
+      {"symbol": "CLOU", "name": "Global X Cloud Computing ETF", "expense_ratio": 0.68},
+      {"symbol": "SKYY", "name": "First Trust Cloud Computing ETF", "expense_ratio": 0.60},
+      {"symbol": "FINX", "name": "Global X FinTech ETF", "expense_ratio": 0.68}
+    ],
+    
+    "growth_mutual_funds": [
+      {"symbol": "FXAIX", "name": "Fidelity 500 Index Fund", "expense_ratio": 0.015},
+      {"symbol": "VTSAX", "name": "Vanguard Total Stock Market Index Fund", "expense_ratio": 0.03},
+      {"symbol": "VTIAX", "name": "Vanguard Total International Stock Index Fund", "expense_ratio": 0.11},
+      {"symbol": "FSKAX", "name": "Fidelity Total Market Index Fund", "expense_ratio": 0.015},
+      {"symbol": "SWTSX", "name": "Schwab Total Stock Market Index Fund", "expense_ratio": 0.03},
+      {"symbol": "VGTSX", "name": "Vanguard Total International Stock Index Fund", "expense_ratio": 0.11},
+      {"symbol": "FXNAX", "name": "Fidelity U.S. Bond Index Fund", "expense_ratio": 0.025},
+      {"symbol": "VBTLX", "name": "Vanguard Total Bond Market Index Fund", "expense_ratio": 0.05},
+      {"symbol": "SWTBX", "name": "Schwab Total Bond Market Index Fund", "expense_ratio": 0.04},
+      {"symbol": "FXSTX", "name": "Fidelity Extended Market Index Fund", "expense_ratio": 0.035}
+    ],
+    
+    "hedge_funds_public": [
+      {"symbol": "BRK.A", "name": "Berkshire Hathaway Inc. Class A", "manager": "Warren Buffett"},
+      {"symbol": "BRK.B", "name": "Berkshire Hathaway Inc. Class B", "manager": "Warren Buffett"},
+      {"symbol": "GOOG", "name": "Alphabet Inc. Class C (Brin/Page)", "manager": "Larry Page/Sergey Brin"},
+      {"symbol": "GOOGL", "name": "Alphabet Inc. Class A", "manager": "Larry Page/Sergey Brin"},
+      {"symbol": "TSLA", "name": "Tesla Inc. (Musk)", "manager": "Elon Musk"},
+      {"symbol": "AMZN", "name": "Amazon.com Inc. (Bezos)", "manager": "Jeff Bezos"},
+      {"symbol": "META", "name": "Meta Platforms Inc. (Zuckerberg)", "manager": "Mark Zuckerberg"},
+      {"symbol": "MSFT", "name": "Microsoft Corporation (Gates)", "manager": "Bill Gates"},
+      {"symbol": "AAPL", "name": "Apple Inc. (Jobs/Cook)", "manager": "Tim Cook"},
+      {"symbol": "NFLX", "name": "Netflix Inc. (Hastings)", "manager": "Reed Hastings"}
+    ],
+    
+    "private_equity_public": [
+      {"symbol": "BX", "name": "Blackstone Inc.", "type": "Private Equity"},
+      {"symbol": "APO", "name": "Apollo Global Management Inc.", "type": "Private Equity"},
+      {"symbol": "KKR", "name": "KKR & Co. Inc.", "type": "Private Equity"},
+      {"symbol": "CG", "name": "Carlyle Group Inc.", "type": "Private Equity"},
+      {"symbol": "TPG", "name": "TPG Inc.", "type": "Private Equity"},
+      {"symbol": "OWL", "name": "Blue Owl Capital Inc.", "type": "Private Credit"},
+      {"symbol": "ARES", "name": "Ares Management Corporation", "type": "Private Credit"},
+      {"symbol": "BCSF", "name": "Bain Capital Specialty Finance", "type": "BDC"},
+      {"symbol": "MAIN", "name": "Main Street Capital Corporation", "type": "BDC"},
+      {"symbol": "ARCC", "name": "Ares Capital Corporation", "type": "BDC"}
+    ],
+    
+    "venture_capital_public": [
+      {"symbol": "SVFB", "name": "SVF Investment Corp. 3", "type": "SPAC/VC"},
+      {"symbol": "PSTH", "name": "Pershing Square Tontine Holdings", "type": "SPAC"},
+      {"symbol": "IPOF", "name": "Social Capital Hedosophia Holdings Corp. VI", "type": "SPAC"},
+      {"symbol": "CCIV", "name": "Churchill Capital Corp IV", "type": "SPAC"},
+      {"symbol": "DWAC", "name": "Digital World Acquisition Corp", "type": "SPAC"},
+      {"symbol": "SPCE", "name": "Virgin Galactic Holdings Inc.", "type": "Space VC"},
+      {"symbol": "RKLB", "name": "Rocket Lab USA Inc.", "type": "Space VC"},
+      {"symbol": "ASTR", "name": "Astra Space Inc.", "type": "Space VC"},
+      {"symbol": "HOLO", "name": "MicroCloud Hologram Inc.", "type": "Tech VC"},
+      {"symbol": "AI", "name": "C3.ai Inc.", "type": "AI VC"}
+    ],
+    
+    "smart_money_13f_holdings": [
+      {"fund": "Berkshire Hathaway", "top_holdings": ["AAPL", "BAC", "CVX", "KO", "AXP", "OXY", "MCO", "VZ", "GM", "DVA"]},
+      {"fund": "Tiger Global Management", "top_holdings": ["MSFT", "AMZN", "META", "UBER", "ABNB", "SNOW", "ZM", "DOCU", "RBLX", "PATH"]},
+      {"fund": "Coatue Management", "top_holdings": ["MSFT", "GOOGL", "META", "NVDA", "TSLA", "UBER", "ABNB", "SNOW", "CRWD", "DDOG"]},
+      {"fund": "Whale Rock Capital", "top_holdings": ["MSFT", "AMZN", "GOOGL", "META", "CRM", "NOW", "SNOW", "DDOG", "NET", "ZS"]},
+      {"fund": "Point72 Asset Management", "top_holdings": ["MSFT", "AAPL", "AMZN", "GOOGL", "META", "TSLA", "NVDA", "CRM", "ADBE", "NFLX"]},
+      {"fund": "Citadel LLC", "top_holdings": ["AAPL", "MSFT", "AMZN", "GOOGL", "META", "TSLA", "NVDA", "JPM", "JNJ", "UNH"]},
+      {"fund": "Renaissance Technologies", "top_holdings": ["SPY", "QQQ", "IWM", "EFA", "VTI", "IEMG", "EEM", "GLD", "TLT", "HYG"]},
+      {"fund": "Bridgewater Associates", "top_holdings": ["VTI", "IEMG", "SPY", "EFA", "EEM", "IWM", "VEA", "VWO", "IEFA", "TLT"]},
+      {"fund": "AQR Capital Management", "top_holdings": ["VTI", "IEMG", "EFA", "EEM", "SPY", "IWM", "VEA", "VWO", "IEFA", "ACWI"]},
+      {"fund": "Two Sigma Investments", "top_holdings": ["SPY", "QQQ", "IWM", "EFA", "VTI", "IEMG", "EEM", "VEA", "VWO", "IEFA"]}
+    ]
+  },
+  
+  "technology_companies": {
+    "artificial_intelligence": [
+      {"symbol": "GOOGL", "name": "Alphabet Inc.", "market_cap": "1.7T", "ai_focus": "Search, Cloud AI, DeepMind"},
+      {"symbol": "MSFT", "name": "Microsoft Corporation", "market_cap": "2.8T", "ai_focus": "Azure AI, OpenAI Partnership, Copilot"},
+      {"symbol": "NVDA", "name": "NVIDIA Corporation", "market_cap": "1.8T", "ai_focus": "AI Chips, CUDA, Data Centers"},
+      {"symbol": "META", "name": "Meta Platforms Inc.", "market_cap": "800B", "ai_focus": "VR/AR, LLaMA, Computer Vision"},
+      {"symbol": "AAPL", "name": "Apple Inc.", "market_cap": "3.0T", "ai_focus": "Siri, Core ML, Neural Engine"},
+      {"symbol": "AMZN", "name": "Amazon.com Inc.", "market_cap": "1.5T", "ai_focus": "AWS AI, Alexa, Robotics"},
+      {"symbol": "TSLA", "name": "Tesla Inc.", "market_cap": "800B", "ai_focus": "Autopilot, FSD, Dojo Supercomputer"},
+      {"symbol": "BABA", "name": "Alibaba Group Holding", "market_cap": "200B", "ai_focus": "Cloud AI, E-commerce AI"},
+      {"symbol": "BIDU", "name": "Baidu Inc.", "market_cap": "40B", "ai_focus": "Apollo, DuerOS, AI Cloud"},
+      {"symbol": "TCEHY", "name": "Tencent Holdings", "market_cap": "400B", "ai_focus": "WeChat AI, Gaming AI, Cloud"}
+    ],
+    
+    "quantum_computing": [
+      {"symbol": "IBM", "name": "International Business Machines", "quantum_systems": "IBM Quantum Network"},
+      {"symbol": "GOOGL", "name": "Alphabet Inc.", "quantum_systems": "Sycamore Processor"},
+      {"symbol": "MSFT", "name": "Microsoft Corporation", "quantum_systems": "Azure Quantum"},
+      {"symbol": "IONQ", "name": "IonQ Inc.", "quantum_systems": "Trapped Ion Systems"},
+      {"symbol": "RGTI", "name": "Rigetti Computing", "quantum_systems": "Superconducting Processors"},
+      {"symbol": "QUBT", "name": "Quantum Computing Inc.", "quantum_systems": "Quantum Software"},
+      {"symbol": "ARQQ", "name": "Arqit Quantum Inc.", "quantum_systems": "Quantum Encryption"},
+      {"symbol": "QMCO", "name": "Quantum Corp.", "quantum_systems": "Quantum Storage"},
+      {"symbol": "HON", "name": "Honeywell International", "quantum_systems": "Honeywell Quantum Solutions"},
+      {"symbol": "INTC", "name": "Intel Corporation", "quantum_systems": "Horse Ridge Cryogenic Control"}
+    ],
+    
+    "robotics_automation": [
+      {"symbol": "ABB", "name": "ABB Ltd", "robotics_focus": "Industrial Robotics"},
+      {"symbol": "FANUY", "name": "Fanuc Corporation", "robotics_focus": "Factory Automation"},
+      {"symbol": "ISRG", "name": "Intuitive Surgical", "robotics_focus": "Surgical Robotics"},
+      {"symbol": "IRBT", "name": "iRobot Corporation", "robotics_focus": "Consumer Robotics"},
+      {"symbol": "KTOS", "name": "Kratos Defense & Security", "robotics_focus": "Defense Drones"},
+      {"symbol": "AVAV", "name": "AeroVironment Inc.", "robotics_focus": "Military Drones"},
+      {"symbol": "BLUE", "name": "bluebird bio Inc.", "robotics_focus": "Medical Robotics"},
+      {"symbol": "EKSO", "name": "Ekso Bionics Holdings", "robotics_focus": "Exoskeleton Robotics"},
+      {"symbol": "RWLK", "name": "ReWalk Robotics", "robotics_focus": "Medical Exoskeletons"},
+      {"symbol": "VUZI", "name": "Vuzix Corporation", "robotics_focus": "AR/VR Robotics"}
+    ],
+    
+    "cybersecurity": [
+      {"symbol": "CRWD", "name": "CrowdStrike Holdings", "cyber_focus": "Endpoint Protection"},
+      {"symbol": "ZS", "name": "Zscaler Inc.", "cyber_focus": "Zero Trust Security"},
+      {"symbol": "OKTA", "name": "Okta Inc.", "cyber_focus": "Identity Management"},
+      {"symbol": "PANW", "name": "Palo Alto Networks", "cyber_focus": "Network Security"},
+      {"symbol": "FTNT", "name": "Fortinet Inc.", "cyber_focus": "Network Security"},
+      {"symbol": "CYBR", "name": "CyberArk Software", "cyber_focus": "Privileged Access"},
+      {"symbol": "TENB", "name": "Tenable Holdings", "cyber_focus": "Vulnerability Management"},
+      {"symbol": "QLYS", "name": "Qualys Inc.", "cyber_focus": "Cloud Security"},
+      {"symbol": "FEYE", "name": "FireEye Inc.", "cyber_focus": "Threat Intelligence"},
+      {"symbol": "VRNS", "name": "Varonis Systems", "cyber_focus": "Data Security"}
+    ],
+    
+    "cloud_computing": [
+      {"symbol": "AMZN", "name": "Amazon Web Services", "cloud_focus": "Infrastructure as a Service"},
+      {"symbol": "MSFT", "name": "Microsoft Azure", "cloud_focus": "Platform as a Service"},
+      {"symbol": "GOOGL", "name": "Google Cloud Platform", "cloud_focus": "Machine Learning Cloud"},
+      {"symbol": "CRM", "name": "Salesforce Inc.", "cloud_focus": "Customer Relationship Management"},
+      {"symbol": "NOW", "name": "ServiceNow Inc.", "cloud_focus": "IT Service Management"},
+      {"symbol": "SNOW", "name": "Snowflake Inc.", "cloud_focus": "Data Cloud"},
+      {"symbol": "MDB", "name": "MongoDB Inc.", "cloud_focus": "Database as a Service"},
+      {"symbol": "NET", "name": "Cloudflare Inc.", "cloud_focus": "Edge Computing"},
+      {"symbol": "DDOG", "name": "Datadog Inc.", "cloud_focus": "Monitoring and Analytics"},
+      {"symbol": "FSLY", "name": "Fastly Inc.", "cloud_focus": "Edge Cloud Platform"}
+    ],
+    
+    "fintech_payments": [
+      {"symbol": "SQ", "name": "Block Inc.", "fintech_focus": "Digital Payments"},
+      {"symbol": "PYPL", "name": "PayPal Holdings", "fintech_focus": "Online Payments"},
+      {"symbol": "V", "name": "Visa Inc.", "fintech_focus": "Payment Networks"},
+      {"symbol": "MA", "name": "Mastercard Inc.", "fintech_focus": "Payment Networks"},
+      {"symbol": "COIN", "name": "Coinbase Global", "fintech_focus": "Cryptocurrency Exchange"},
+      {"symbol": "SOFI", "name": "SoFi Technologies", "fintech_focus": "Digital Banking"},
+      {"symbol": "AFRM", "name": "Affirm Holdings", "fintech_focus": "Buy Now Pay Later"},
+      {"symbol": "LC", "name": "LendingClub Corp.", "fintech_focus": "Peer-to-Peer Lending"},
+      {"symbol": "UPST", "name": "Upstart Holdings", "fintech_focus": "AI-Powered Lending"},
+      {"symbol": "NU", "name": "Nu Holdings", "fintech_focus": "Digital Banking Brazil"}
+    ],
+    
+    "semiconductors": [
+      {"symbol": "TSM", "name": "Taiwan Semiconductor", "semi_focus": "Contract Manufacturing"},
+      {"symbol": "NVDA", "name": "NVIDIA Corporation", "semi_focus": "Graphics Processing Units"},
+      {"symbol": "AMD", "name": "Advanced Micro Devices", "semi_focus": "CPUs and GPUs"},
+      {"symbol": "INTC", "name": "Intel Corporation", "semi_focus": "Central Processing Units"},
+      {"symbol": "QCOM", "name": "QUALCOMM Inc.", "semi_focus": "Mobile Processors"},
+      {"symbol": "AVGO", "name": "Broadcom Inc.", "semi_focus": "Networking Chips"},
+      {"symbol": "TXN", "name": "Texas Instruments", "semi_focus": "Analog Semiconductors"},
+      {"symbol": "ADI", "name": "Analog Devices", "semi_focus": "Signal Processing"},
+      {"symbol": "MRVL", "name": "Marvell Technology", "semi_focus": "Data Infrastructure"},
+      {"symbol": "MU", "name": "Micron Technology", "semi_focus": "Memory Semiconductors"}
+    ],
+    
+    "software_saas": [
+      {"symbol": "MSFT", "name": "Microsoft Corporation", "software_focus": "Operating Systems, Office"},
+      {"symbol": "ORCL", "name": "Oracle Corporation", "software_focus": "Database Management"},
+      {"symbol": "CRM", "name": "Salesforce Inc.", "software_focus": "Customer Relationship Management"},
+      {"symbol": "ADBE", "name": "Adobe Inc.", "software_focus": "Creative Software"},
+      {"symbol": "INTU", "name": "Intuit Inc.", "software_focus": "Financial Software"},
+      {"symbol": "WDAY", "name": "Workday Inc.", "software_focus": "Human Capital Management"},
+      {"symbol": "VEEV", "name": "Veeva Systems", "software_focus": "Life Sciences Software"},
+      {"symbol": "TEAM", "name": "Atlassian Corporation", "software_focus": "Collaboration Software"},
+      {"symbol": "ZM", "name": "Zoom Video Communications", "software_focus": "Video Conferencing"},
+      {"symbol": "DOCU", "name": "DocuSign Inc.", "software_focus": "Digital Transaction Management"}
+    ],
+    
+    "social_media_tech": [
+      {"symbol": "META", "name": "Meta Platforms Inc.", "social_focus": "Facebook, Instagram, WhatsApp"},
+      {"symbol": "SNAP", "name": "Snap Inc.", "social_focus": "Snapchat, AR Filters"},
+      {"symbol": "TWTR", "name": "Twitter Inc.", "social_focus": "Microblogging Platform"},
+      {"symbol": "PINS", "name": "Pinterest Inc.", "social_focus": "Visual Discovery"},
+      {"symbol": "RDDT", "name": "Reddit Inc.", "social_focus": "Social News Aggregation"},
+      {"symbol": "LNKD", "name": "LinkedIn Corporation", "social_focus": "Professional Networking"},
+      {"symbol": "TIK", "name": "TikTok (ByteDance)", "social_focus": "Short-form Video"},
+      {"symbol": "DSCD", "name": "Discord Inc.", "social_focus": "Gaming Communication"},
+      {"symbol": "CLUBH", "name": "Clubhouse", "social_focus": "Audio Social Networking"},
+      {"symbol": "TELEGRAM", "name": "Telegram", "social_focus": "Encrypted Messaging"}
+    ],
+    
+    "emerging_tech": [
+      {"symbol": "RBLX", "name": "Roblox Corporation", "emerging_focus": "Metaverse Gaming"},
+      {"symbol": "U", "name": "Unity Software Inc.", "emerging_focus": "3D Development Platform"},
+      {"symbol": "PATH", "name": "UiPath Inc.", "emerging_focus": "Robotic Process Automation"},
+      {"symbol": "AI", "name": "C3.ai Inc.", "emerging_focus": "Enterprise AI Software"},
+      {"symbol": "PLTR", "name": "Palantir Technologies", "emerging_focus": "Big Data Analytics"},
+      {"symbol": "SNOW", "name": "Snowflake Inc.", "emerging_focus": "Cloud Data Platform"},
+      {"symbol": "NET", "name": "Cloudflare Inc.", "emerging_focus": "Internet Infrastructure"},
+      {"symbol": "DDOG", "name": "Datadog Inc.", "emerging_focus": "Observability Platform"},
+      {"symbol": "MDB", "name": "MongoDB Inc.", "emerging_focus": "Modern Database"},
+      {"symbol": "ZS", "name": "Zscaler Inc.", "emerging_focus": "Zero Trust Security"}
+    ]
+  }
+}

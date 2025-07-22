@@ -1,0 +1,51 @@
+{
+  "backend_optimization_rules": {
+    "database_optimization": {
+      "query_performance": {
+        "max_query_time": "500ms",
+        "required_indexes": true,
+        "connection_pooling": true,
+        "query_caching": true
+      },
+      "data_validation": {
+        "input_sanitization": "required",
+        "type_checking": "strict",
+        "null_handling": "explicit",
+        "data_integrity": "enforced"
+      },
+      "backup_strategy": {
+        "frequency": "daily",
+        "retention": "30_days",
+        "compression": true,
+        "encryption": true
+      }
+    },
+    "api_optimization": {
+      "response_format": "json",
+      "compression": "gzip",
+      "caching_headers": "1_hour",
+      "rate_limiting": true,
+      "timeout": "30_seconds"
+    },
+    "error_handling": {
+      "graceful_degradation": true,
+      "meaningful_errors": true,
+      "logging_levels": ["debug", "info", "warning", "error"],
+      "monitoring_alerts": true
+    },
+    "performance_monitoring": {
+      "response_time_tracking": true,
+      "memory_usage_tracking": true,
+      "cpu_usage_tracking": true,
+      "database_query_monitoring": true
+    }
+  },
+  "api_design_rules": {
+    "restful_principles": true,
+    "consistent_naming": "kebab-case",
+    "versioning": "v1",
+    "pagination": "cursor_based",
+    "filtering": "query_params",
+    "sorting": "query_params"
+  }
+}

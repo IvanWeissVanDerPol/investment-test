@@ -1,0 +1,27 @@
+{
+  "client_id": "",
+  "client_secret": "",
+  "tenant_id": "",
+  "scope": ["https://analysis.windows.net/powerbi/api/.default"],
+  "authority": "https://login.microsoftonline.com/",
+  "workspace_id": "",
+  "dataset_id": "",
+  "api_base": "https://api.powerbi.com/v1.0/myorg",
+  "cache_timeout": 300,
+  "auto_refresh": true,
+  "refresh_schedule": {
+    "enabled": false,
+    "frequency": "daily",
+    "time": "06:00"
+  },
+  "export_settings": {
+    "output_format": "csv",
+    "include_metadata": true,
+    "compress_files": false
+  },
+  "security": {
+    "encrypt_credentials": true,
+    "token_cache_location": "./cache/powerbi_tokens.cache",
+    "log_api_calls": false
+  }
+}
