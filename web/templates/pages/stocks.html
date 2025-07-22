@@ -1,0 +1,230 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Stocks Analysis - Investment Dashboard{% endblock %}
+
+{% block content %}<div class="row">
+    <div class="col-12 mb-4">
+        <h1 class="h3 mb-3">Stock Analysis</h1>
+        <p class="text-muted">AI/Robotics stock research and analysis</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" class="form-control" id="stock-search" placeholder="Search stocks...">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="ai">AI</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="green">Green</button>
+            <button type="button" class="btn btn-outline-primary" data-filter="defense">Defense</button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Tracked Stocks</h5>
+                <div>
+                    <button class="btn btn-sm btn-outline-primary" id="refresh-stocks">
+                        <i class="fas fa-sync"></i> Refresh
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="stocks-table">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Company</th>
+                                <th>Sector</th>
+                                <th>Market Cap</th>
+                                <th>Signal</th>
+                                <th>Confidence</th>
+                                <th>Last Analysis</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-tbody">
+                            {% for stock in stocks %}
+                            <tr data-sectors="{{ stock.sector|lower }}">
+                                <td>
+                                    <strong class="text-primary">{{ stock.symbol }}</strong>
+                                </td>
+                                <td>
+                                    {{ stock.name }}
+                                    <br>
+                                    <small class="text-muted">{{ stock.industry }}</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-secondary">{{ stock.sector }}</span>
+                                </td>
+                                <td>{{ stock.market_cap|format_large_number if stock.market_cap else 'N/A' }}</td>
+                                <td>
+                                    {% if stock.latest_signal %}
+                                        <span class="badge bg-{{ 'success' if stock.latest_signal == 'BUY' else 'danger' if stock.latest_signal == 'SELL' else 'warning' }}">
+                                            {{ stock.latest_signal }}
+                                        </span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">N/A</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if stock.signal_confidence %}
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width: {{ stock.signal_confidence * 100 }}%">
+                                                {{ "%.0f"|format(stock.signal_confidence * 100) }}%
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <span class="text-muted">N/A</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if stock.last_analysis %}
+                                        {{ stock.last_analysis|format_date }}
+                                    {% else %}
+                                        <span class="text-muted">Never</span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <a href="{{ url_for('stock_detail', symbol=stock.symbol) }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-chart-line"></i> Analyze
+                                    </a>
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="8" class="text-center text-muted">No stocks tracked</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Top Performing Stocks</h5>
+            </div>
+            <div class="card-body">
+                <!-- Data will be loaded via JavaScript -->
+                <div id="top-performers">
+                    <p class="text-muted">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Sector Analysis</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="sector-analysis-chart" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Initialize DataTable and filtering
+document.addEventListener('DOMContentLoaded', function() {
+    const table = $('#stocks-table').DataTable({
+        pageLength: 25,
+        order: [[6, 'desc']], // Sort by last analysis
+        responsive: true,
+        language: {
+            search: "",
+            searchPlaceholder: "Search stocks..."
+        }
+    });
+
+    // Search functionality
+    document.getElementById('stock-search').addEventListener('input', function(e) {
+        table.search(e.target.value).draw();
+    });
+
+    // Filter functionality
+    document.querySelectorAll('[data-filter]').forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Apply filter
+            if (filter === 'all') {
+                table.column(2).search('').draw();
+            } else {
+                table.column(2).search(filter, true, false).draw();
+            }
+        });
+    });
+
+    // Refresh stocks
+    document.getElementById('refresh-stocks').addEventListener('click', function() {
+        location.reload();
+    });
+
+    // Initialize sector chart
+    initializeSectorChart();
+});
+
+function initializeSectorChart() {
+    const ctx = document.getElementById('sector-analysis-chart').getContext('2d');
+    
+    // Sample data - replace with real API call
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Technology', 'Healthcare', 'Industrials', 'Energy', 'Consumer'],
+            datasets: [{
+                label: 'Average Performance',
+                data: [12.5, 8.3, -2.1, 15.7, 5.2],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 0.8)',
+                    'rgba(75, 192, 192, 0.8)',
+                    'rgba(255, 206, 86, 0.8)',
+                    'rgba(255, 99, 132, 0.8)',
+                    'rgba(153, 102, 255, 0.8)'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+</script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+{% endblock %}"} was truncated. The file has been created successfully at: C:</Users/jandr/Documents/ivan/web/templates/pages/stocks.html>

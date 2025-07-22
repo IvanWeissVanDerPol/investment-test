@@ -1,0 +1,59 @@
+{
+  "clean_code_rules": {
+    "file_creation": {
+      "no_empty_files": true,
+      "no_todo_placeholders": true,
+      "minimum_content_length": 10,
+      "require_implementation": true,
+      "validation_checks": [
+        "file_has_purpose",
+        "content_is_complete",
+        "no_empty_functions",
+        "no_empty_classes",
+        "no_empty_methods"
+      ]
+    },
+    "code_quality": {
+      "no_unused_imports": true,
+      "no_unused_variables": true,
+      "proper_error_handling": true,
+      "meaningful_function_names": true,
+      "single_responsibility": true,
+      "no_duplicate_code": true
+    },
+    "documentation": {
+      "docstrings_required": true,
+      "function_documentation": true,
+      "class_documentation": true,
+      "complexity_explanation": true,
+      "no_empty_comments": true
+    },
+    "testing": {
+      "tests_for_public_functions": true,
+      "no_empty_test_files": true,
+      "complete_test_coverage": true,
+      "meaningful_assertions": true
+    },
+    "refactoring_triggers": [
+      "duplicate_code_detected",
+      "function_too_long",
+      "class_too_complex",
+      "unused_code_detected",
+      "inconsistent_naming"
+    ]
+  },
+  "file_validation": {
+    "before_creation": [
+      "purpose_defined",
+      "content_outline_ready",
+      "implementation_plan_complete",
+      "dependencies_identified"
+    ],
+    "after_creation": [
+      "content_review_complete",
+      "functionality_verified",
+      "tests_passing",
+      "documentation_complete"
+    ]
+  }
+}

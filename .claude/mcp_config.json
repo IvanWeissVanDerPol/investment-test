@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "File system access for investment system"
+    },
+    "sequential-thinking": {
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "description": "Advanced reasoning for investment decisions"
+    },
+    "investment-core": {
+      "command": "python",
+      "args": ["mcp/investment_mcp.py"],
+      "description": "Investment system database and configuration access"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "web_development_rules": {
+    "file_creation": {
+      "no_empty_files": true,
+      "no_todo_placeholders": true,
+      "require_complete_implementation": true,
+      "minimum_functionality": "working_endpoint"
+    },
+    "naming_conventions": {
+      "html_templates": "snake_case.html",
+      "css_files": "kebab-case.css", 
+      "js_files": "camelCase.js",
+      "python_endpoints": "snake_case.py",
+      "api_routes": "kebab-case"
+    },
+    "structure_rules": {
+      "templates_path": "web/templates/",
+      "static_path": "web/static/",
+      "api_path": "web/api/",
+      "config_path": "web/config/",
+      "tests_path": "tests/web/"
+    },
+    "security_requirements": {
+      "input_validation": "required",
+      "sql_injection_prevention": "parameterized_queries",
+      "xss_prevention": "html_escape",
+      "cors_configured": true
+    },
+    "performance_requirements": {
+      "response_time": "< 2 seconds",
+      "cache_headers": "enabled",
+      "compression": "gzip",
+      "minification": "production_only"
+    }
+  }
+}
