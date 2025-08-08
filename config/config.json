@@ -27,16 +27,16 @@
     "sync_interval_minutes": 15
   },
   "alpha_vantage": {
-    "api_key": "demo",
+    "api_key": "ENV:ALPHA_VANTAGE_API_KEY",
     "base_url": "https://www.alphavantage.co/query"
   },
   "email_settings": {
     "enabled": false,
-    "smtp_server": "smtp.gmail.com",
+    "smtp_server": "ENV:SMTP_SERVER",
     "smtp_port": 587,
-    "username": "weissvanderpol.ivan@gmail.com",
-    "password": "YOUR_APP_PASSWORD",
-    "recipient": "weissvanderpol.ivan@gmail.com"
+    "username": "ENV:SMTP_USERNAME",
+    "password": "ENV:SMTP_PASSWORD",
+    "recipient": "ENV:EMAIL_RECIPIENT"
   },
   "report_schedule": {
     "daily_report_time": "08:00",
@@ -69,6 +69,89 @@
       "console_colors": true,
       "show_timestamps": true,
       "log_level": "INFO"
+    }
+  },
+  "enhanced_system": {
+    "enabled": true,
+    "kelly_criterion": {
+      "enabled": true,
+      "lookback_period_days": 252,
+      "min_trades_required": 50,
+      "max_kelly_fraction": 0.25,
+      "conservative_multiplier": 0.5,
+      "min_edge_threshold": 0.02,
+      "min_win_rate": 0.52
+    },
+    "expected_value": {
+      "enabled": true,
+      "confidence_threshold": 0.6,
+      "time_horizon_days": 30,
+      "use_ml_predictions": true,
+      "scenario_weights": {
+        "bull_market": 0.25,
+        "normal_up": 0.35,
+        "sideways": 0.20,
+        "normal_down": 0.15,
+        "bear_market": 0.05
+      }
+    },
+    "dynamic_risk_management": {
+      "enabled": true,
+      "lookback_days": 30,
+      "base_limits": {
+        "max_position_size": 0.05,
+        "max_portfolio_exposure": 0.80,
+        "max_daily_trades": 10,
+        "max_correlation": 0.70,
+        "stop_loss_percent": 0.08,
+        "take_profit_percent": 0.15,
+        "cooling_period_hours": 4
+      },
+      "performance_thresholds": {
+        "excellent": {
+          "win_rate": 0.75,
+          "sharpe": 2.0,
+          "multiplier": 2.0
+        },
+        "good": {
+          "win_rate": 0.65,
+          "sharpe": 1.5,
+          "multiplier": 1.5
+        },
+        "average": {
+          "win_rate": 0.55,
+          "sharpe": 1.0,
+          "multiplier": 1.0
+        },
+        "poor": {
+          "win_rate": 0.45,
+          "sharpe": 0.5,
+          "multiplier": 0.7
+        },
+        "bad": {
+          "win_rate": 0.35,
+          "sharpe": 0.0,
+          "multiplier": 0.4
+        }
+      }
+    },
+    "market_data": {
+      "cache_duration_seconds": 3600,
+      "batch_size": 10,
+      "max_concurrent_requests": 5,
+      "data_quality_minimum": 0.8,
+      "retry_attempts": 3,
+      "timeout_seconds": 30
+    },
+    "portfolio_scoring": {
+      "performance_weight": 0.4,
+      "ev_analysis_weight": 0.3,
+      "diversification_weight": 0.3,
+      "target_positions": {
+        "min": 5,
+        "optimal": 8,
+        "max": 12
+      }
     }
   },
   "target_stocks": [
