@@ -194,3 +194,4 @@ investment_system.db
 # Runtime data directories
 data/
 logs/
+runtime/
