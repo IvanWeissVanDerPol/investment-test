@@ -389,7 +389,11 @@ if __name__ == "__main__":
     from web.app_secure import app, socketio, create_app
     
     # Create app with environment
-    env = os.getenv('ENVIRONMENT', 'development')
+    try:
+        from config.settings import get_settings
+        env = get_settings().environment
+    except Exception:
+        env = 'development'
     app = create_app(env)
     
     # Run with SocketIO
