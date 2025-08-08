@@ -21,7 +21,11 @@ def test_youtube_api_setup():
     print("🧪 Testing YouTube API Setup...")
     
     # Check if API key is set
-    api_key = os.getenv('YOUTUBE_API_KEY')
+    try:
+        from config.settings import get_settings
+        api_key = get_settings().apis.youtube_api_key
+    except Exception:
+        api_key = None
     if not api_key:
         print("❌ YOUTUBE_API_KEY environment variable not set")
         print("📋 To set up YouTube API:")

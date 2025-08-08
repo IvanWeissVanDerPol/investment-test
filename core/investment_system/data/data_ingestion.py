@@ -1,5 +1,4 @@
-import os
-from dotenv import load_dotenv
+from config.settings import get_settings
 import requests
 import pandas as pd
 import yfinance as yf
@@ -12,8 +11,9 @@ except ImportError:
 import json
 from datetime import datetime
 
-load_dotenv()
+settings = get_settings()
 
+import os
 TRACKING_DIR = os.path.join(os.path.dirname(__file__), '../tracking/sector_data/')
 os.makedirs(TRACKING_DIR, exist_ok=True)
 
@@ -33,7 +33,7 @@ def save_to_json(data, prefix):
 
 # Twelve Data
 def fetch_twelvedata_price(symbol):
-    api_key = os.getenv('TWELVEDATA_API_KEY')
+    api_key = settings.apis.twelvedata_api_key
     url = f'https://api.twelvedata.com/time_series?symbol={symbol}&interval=1day&apikey={api_key}'
     resp = requests.get(url)
     return resp.json()
@@ -45,7 +45,7 @@ def fetch_yfinance_price(symbol):
     return hist
 
 # Finnhub
-finnhub_client = finnhub.Client(api_key=os.getenv('FINNHUB_API_KEY'))
+finnhub_client = finnhub.Client(api_key=settings.apis.finnhub_api_key)
 def fetch_finnhub_quote(symbol):
     return finnhub_client.quote(symbol)
 
@@ -56,8 +56,8 @@ def fetch_finnhub_company_news(symbol):
 
 # Alpaca
 if ALPACA_AVAILABLE:
-    ALPACA_API_KEY = os.getenv('ALPACA_API_KEY')
-    ALPACA_API_SECRET = os.getenv('ALPACA_API_SECRET')
+    ALPACA_API_KEY = settings.apis.alpaca_api_key
+    ALPACA_API_SECRET = settings.apis.alpaca_api_secret
     ALPACA_PAPER_BASE_URL = 'https://paper-api.alpaca.markets'
     try:
         alpaca = REST(ALPACA_API_KEY, ALPACA_API_SECRET, ALPACA_PAPER_BASE_URL)

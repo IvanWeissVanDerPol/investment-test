@@ -198,7 +198,11 @@ def test_full_intelligence_cycle(intelligence):
     """Test complete intelligence cycle with minimal real data"""
     print("\n🧪 Testing Full Intelligence Cycle...")
     
-    api_key = os.getenv('YOUTUBE_API_KEY')
+    try:
+        from config.settings import get_settings
+        api_key = get_settings().apis.youtube_api_key
+    except Exception:
+        api_key = None
     if not api_key:
         print("⚠️ YOUTUBE_API_KEY not set, creating mock cycle")
         

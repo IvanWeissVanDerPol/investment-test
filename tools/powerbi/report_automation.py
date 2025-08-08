@@ -500,7 +500,8 @@ def main():
     report_automation = PowerBIReportAutomation()
     
     # Get report ID from config or environment
-    report_id = os.getenv('POWERBI_REPORT_ID')
+    from config.settings import get_settings
+    report_id = get_settings().powerbi.powerbi_report_id
     if not report_id:
         print("❌ POWERBI_REPORT_ID environment variable not set")
         return False

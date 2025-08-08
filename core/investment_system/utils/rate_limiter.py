@@ -65,8 +65,8 @@ class RateLimiter:
         self.redis_client = redis_client
         if not self.redis_client:
             try:
-                import os
-                redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379/1')
+                from config.settings import get_settings
+                redis_url = get_settings().redis.redis_url
                 self.redis_client = redis.from_url(redis_url)
                 # Test connection
                 self.redis_client.ping()

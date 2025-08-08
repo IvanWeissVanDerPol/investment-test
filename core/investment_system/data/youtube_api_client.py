@@ -21,6 +21,7 @@ from youtube_transcript_api.formatters import TextFormatter
 
 from ..utils.cache_manager import CacheManager
 from ..utils.config_loader import ConfigurationManager
+from config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -85,8 +86,8 @@ class YouTubeAPIClient:
             logger.warning(f"Could not load YouTube config: {e}")
             self.youtube_config = {}
         
-        # API setup
-        self.api_key = os.getenv('YOUTUBE_API_KEY')
+    # API setup
+    self.api_key = get_settings().apis.youtube_api_key
         if not self.api_key:
             logger.error("YOUTUBE_API_KEY environment variable not set")
             raise ValueError("YouTube API key is required")

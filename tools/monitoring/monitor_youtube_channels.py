@@ -280,7 +280,8 @@ def main():
     args = parser.parse_args()
     
     # Check API key
-    if not os.getenv('YOUTUBE_API_KEY'):
+    from config.settings import get_settings
+    if not get_settings().apis.youtube_api_key:
         print("❌ YOUTUBE_API_KEY environment variable not set")
         print("📋 Please set up YouTube API access first:")
         print("   See docs/guides/youtube_api_setup.md")

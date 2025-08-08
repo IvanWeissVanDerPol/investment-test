@@ -219,7 +219,11 @@ def test_real_youtube_integration():
     """Test with real YouTube API if available"""
     print("\n🧪 Testing Real YouTube Integration...")
     
-    api_key = os.getenv('YOUTUBE_API_KEY')
+    try:
+        from config.settings import get_settings
+        api_key = get_settings().apis.youtube_api_key
+    except Exception:
+        api_key = None
     if not api_key:
         print("⚠️ YOUTUBE_API_KEY not set, skipping real API test")
         return True

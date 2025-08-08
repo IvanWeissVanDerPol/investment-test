@@ -1,5 +1,4 @@
-import os
-from dotenv import load_dotenv
+from config.settings import get_settings
 import requests
 import finnhub
 import yfinance as yf
@@ -7,8 +6,9 @@ import json
 from datetime import datetime
 import pandas as pd
 
-load_dotenv()
+settings = get_settings()
 
+import os
 TRACKING_DIR = os.path.join(os.path.dirname(__file__), '../tracking/sector_data/')
 os.makedirs(TRACKING_DIR, exist_ok=True)
 
@@ -29,13 +29,13 @@ def save_to_csv(items, prefix):
 
 # NewsAPI
 def fetch_newsapi_news(query, language='en'):
-    api_key = os.getenv('NEWSAPI_KEY')
+    api_key = settings.apis.newsapi_key
     url = f'https://newsapi.org/v2/everything?q={query}&language={language}&apiKey={api_key}'
     resp = requests.get(url)
     return resp.json()
 
 # Finnhub News
-finnhub_client = finnhub.Client(api_key=os.getenv('FINNHUB_API_KEY'))
+finnhub_client = finnhub.Client(api_key=settings.apis.finnhub_api_key)
 def fetch_finnhub_company_news(symbol):
     today = datetime.now().strftime('%Y-%m-%d')
     last_week = (datetime.now() - pd.Timedelta(days=7)).strftime('%Y-%m-%d')
