@@ -45,3 +45,6 @@ structlog>=23.0.0
 
 # Rate Limiting
 slowapi>=0.1.9
+
+# Config
+pydantic>=1.10,<2.0
