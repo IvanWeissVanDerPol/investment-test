@@ -195,3 +195,6 @@ investment_system.db
 data/
 logs/
 runtime/
+
+# Node.js dependencies
+node_modules/
