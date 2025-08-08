@@ -14,11 +14,13 @@ import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 import redis
+from flask import request, session
 from flask_socketio import SocketIO, emit, join_room, leave_room
 
 from .market_data_collector import MarketDataCollector
 from ..utils.secure_config_manager import get_config_manager
 from ..monitoring.audit_logger import get_audit_logger, EventType, SeverityLevel
+from config.settings import get_settings
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +83,7 @@ class RealTimeDataManager:
         
         # Redis for caching and pub/sub
         try:
-            redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+            redis_url = get_settings().redis.redis_url
             self.redis_client = redis.from_url(redis_url)
             self.redis_pubsub = self.redis_client.pubsub()
         except Exception as e:
