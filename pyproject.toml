@@ -2,6 +2,13 @@
 requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["core*", "config*", "web*", "utils*"]
+
 [project]
 name = "investment-analysis-system"
 version = "1.0.0"
@@ -38,7 +45,10 @@ dev = [
     "isort>=5.12.0",
     "flake8>=6.0.0",
     "mypy>=1.0.0",
-    "pre-commit>=3.0.0"
+    "pre-commit>=3.0.0",
+    "ruff>=0.5.0",
+    "fastapi>=0.110.0",
+    "uvicorn>=0.23.0"
 ]
 
 monitoring = [
@@ -120,7 +130,7 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["src/investment_system"]
+source = ["src"]
 omit = [
     "*/tests/*",
     "*/cache/*",
