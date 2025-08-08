@@ -6,7 +6,7 @@ import sys
 import os
 sys.path.append('src')
 
-from src.investment_system.integrations.ethics_integration import EthicsIntegratedAnalyzer
+from core.investment_system.integrations.ethics_integration import EthicsIntegratedAnalyzer
 
 def test_ethics_integration():
     """Test the ethics integration system"""

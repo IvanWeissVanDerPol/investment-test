@@ -9,7 +9,7 @@ sys.path.append('src')
 # Add the specific module path
 sys.path.append('src/investment_system/ethics')
 
-from investment_blacklist import InvestmentBlacklistManager
+from core.investment_system.ethics.investment_blacklist import InvestmentBlacklistManager
 
 def test_blacklist_system():
     """Test the investment blacklist functionality"""
