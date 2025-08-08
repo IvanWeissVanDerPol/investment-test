@@ -176,3 +176,21 @@ reports/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Security and data artifacts
+# Keep example env but ignore all real env files
+.env.local
+.env.*
+!.env.example
+
+# Local databases and related artifacts
+investment_system.db
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Runtime data directories
+data/
+logs/
