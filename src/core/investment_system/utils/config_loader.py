@@ -14,16 +14,32 @@ from datetime import datetime, timedelta
 
 logger = logging.getLogger(__name__)
 
+def _find_config_dir() -> Path:
+    """Return the first existing configuration directory among common locations.
+    
+    Checks, in order:
+      - ./config
+      - ./src/config
+    Returns the first that exists.
+    If none exist, returns Path('config') so downstream validation raises clearly.
+    """
+    candidates = [Path("config"), Path("src/config")]
+    for p in candidates:
+        if p.exists():
+            return p
+    return Path("config")
+
+
 class ConfigurationManager:
     """Centralized configuration manager for all system settings"""
     
-    def __init__(self, config_dir: str = "config"):
+    def __init__(self, config_dir: Optional[str] = None):
         """Initialize configuration manager
         
         Args:
             config_dir: Directory containing configuration files
         """
-        self.config_dir = Path(config_dir)
+        self.config_dir = _find_config_dir() if config_dir is None else Path(config_dir)
         self.cache = {}
         self.cache_timestamps = {}
         self.cache_duration = timedelta(minutes=30)  # Cache configs for 30 minutes
