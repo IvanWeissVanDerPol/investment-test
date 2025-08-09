@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, development, integration-* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: ['3.11']
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Cache pip packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[dev]
+    
+    - name: Run linter
+      run: |
+        ruff check src/ tests/
+    
+    - name: Run tests with coverage
+      run: |
+        pytest -q --cov=src --cov-report=term-missing
+    
+    - name: Upload coverage reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: |
+          .coverage
+          htmlcov/
+        retention-days: 7
+    
+    - name: Generate test CSV artifact
+      if: always()
+      run: |
+        # Try to generate a sample CSV if tests passed
+        python -c "
+import csv
+from datetime import datetime
+with open('test_signals.csv', 'w', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(['symbol', 'ts', 'signal', 'rsi', 'sma20', 'sma50'])
+    writer.writerow(['TEST', datetime.now().isoformat(), 'hold', 50.0, 100.0, 101.0])
+print('Generated test CSV artifact')
+        " || echo "Could not generate test CSV"
+    
+    - name: Upload CSV artifact
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-signals-csv
+        path: test_signals.csv
+        retention-days: 3

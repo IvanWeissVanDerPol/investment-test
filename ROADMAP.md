@@ -22,3 +22,29 @@ Risks & Mitigations
 - External API rate limits: prefer cached sample data in tests.
 - Dependency drift: keep optional extras for heavy providers (e.g., Alpaca).
 - Import side-effects: keep __init__.py lightweight; enforce via lint rule later.
+
+## Next 7-Day Sprint (Post E2E Implementation)
+
+**Immediate Priorities**
+- **Async I/O**: Convert pipeline to async operations for concurrent symbol processing
+- **News Sentiment**: Basic integration with free news APIs (NewsAPI, Reddit)
+- **Monitoring/Alerts**: Add Prometheus metrics, basic alerting thresholds
+- **Test Coverage**: Achieve ≥85% coverage with unit tests for all modules
+
+**Technical Enhancements**
+- WebSocket support for real-time dashboard updates
+- Background task queue (Celery/RQ) for long-running analyses
+- Multi-timeframe analysis (1D, 1W, 1M charts)
+- Additional indicators: MACD, Bollinger Bands, Volume indicators
+
+**Infrastructure**
+- Docker containerization with compose file
+- PostgreSQL option for production deployment
+- Redis for caching and session management
+- Basic API authentication (JWT tokens)
+
+**Documentation**
+- API documentation with OpenAPI/Swagger
+- Deployment guide for cloud platforms
+- Performance tuning recommendations
+- Contribution guidelines for OSS
