@@ -26,7 +26,13 @@ os.environ["DATABASE_URL"] = (
     '{"database_url": "sqlite:///./runtime/test.db", '
     '"db_pool_size": 10, "db_max_overflow": 20, "db_pool_timeout": 30}'
 )
-os.environ.setdefault("SECRET_KEY", "test")
+# Provide SECURITY as JSON via the first env key in mapping (SECRET_KEY)
+# so Pydantic can parse the nested SecuritySettings model during import.
+os.environ["SECRET_KEY"] = (
+    '{"secret_key": "test", '
+    '"encryption_key": "0000000000000000000000000000000000000000000000000000000000000000", '
+    '"jwt_secret_key": "test", "enable_https": false, "session_timeout": 3600}'
+)
 os.environ.setdefault(
     "ENCRYPTION_KEY",
     "0000000000000000000000000000000000000000000000000000000000000000",
