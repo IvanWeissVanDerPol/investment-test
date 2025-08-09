@@ -1,224 +1,161 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file guides Claude Code when working in this repository. **Follow these rules exactly.**
 
-## 🚨 CRITICAL: Project Organization Rules
+## 🚨 Critical Organization Rules
 
-**MANDATORY FILE PLACEMENT:**
-- **ALL Python code MUST go in `src/investment_system/`**
-- **ALL documentation MUST go in `docs/`** 
-- **NO .py files in root directory**
-- **NO .md files outside docs/ (except README.md, CHANGELOG.md, LICENSE.md)**
+**Mandatory placement**
+- **All Python code →** `src/investment_system/` (top-level import is **`investment_system`**, *never* `src.investment_system`).
+- **Config code →** `src/config/` (e.g., `settings.py`). Non-code config files (e.g., json) may live in `config/`.
+- **Tests →** `tests/` (mirror `src/` hierarchy).
+- **Runtime artifacts →** `runtime/` (gitignored).
+- **Docs →** `docs/` (exceptions allowed at root: `README.md`, `CHANGELOG.md`, `LICENSE`, and **`CLAUDE.md`**).
 
-See detailed rules in `.claude/rules/QUICK_ORGANIZATION_RULES.md`
+**Absolutely avoid**
+- Creating `.py` files at repo root.
+- Importing with the `src.` prefix (wrong for src-layout).
+- Adding `os.getenv` outside `src/config/**` (use `config.settings.get_settings()`).
 
-# Automated Investment Analysis System
+## Current Project State (source of truth)
 
-## Project Overview
-AI-powered investment analysis system for individual trading decisions focused on AI/Robotics stocks and ETFs. Modern Python package structure with comprehensive market analysis, sentiment tracking, and automated reporting.
+- Src-layout with editable install.
+- Pre-commit blocks `os.getenv` outside `src/config/**`.
+- Tests pass locally (offline-friendly scaffolding via `.env.test` + `pytest.ini`).
+- Compatibility shim for legacy imports: `core.investment_system` re-exports `investment_system`.
+- `STATUS.md` and `ROADMAP.md` describe capabilities and near-term KPIs.
 
-## Project Structure
+## Imports (correct patterns)
 
+```python
+# ✅ Correct (src-layout creates top-level package `investment_system`)
+from investment_system.analysis.quick_analysis import run
+from investment_system.data.market_data_collector import MarketDataCollector
+
+# ❌ Incorrect (do not prefix with src.)
+# from src.investment_system.analysis.quick_analysis import run
 ```
-ivan/
-├── src/investment_system/          # Main Python package
-│   ├── data/                      # Data collection modules
-│   ├── analysis/                  # Analysis engines
-│   ├── portfolio/                 # Portfolio management
-│   ├── monitoring/                # System monitoring
-│   ├── reporting/                 # Report generation
-│   └── utils/                     # Utility functions
-├── docs/                          # Documentation
-│   ├── strategy/                  # Investment strategies
-│   ├── research/                  # Broker and market research
-│   ├── guides/                    # Setup and maintenance guides
-│   ├── tracking/                  # Portfolio tracking docs
-│   └── sectors/                   # Sector analysis docs
-├── config/                        # Configuration files
-│   ├── config.json               # Main configuration
-│   ├── .env.example              # Environment variables template
-│   └── .pre-commit-config.yaml   # Pre-commit hooks config
-├── scripts/                       # Automation scripts
-│   ├── run_daily_analysis.bat    # Quick analysis script
-│   ├── run_comprehensive_analysis.bat # Full analysis script
-│   ├── run_system_monitor.bat    # Monitoring script
-│   ├── run_tests.bat             # Test execution script
-│   └── setup_dev_environment.bat # Development setup
-├── tests/                         # Test suite
-├── reports/                       # Generated analysis reports
-├── cache/                         # Data cache
-└── .claude/                       # Claude Code tools
-    ├── commands/                  # Slash commands
-    └── hooks/                     # Pre/post analysis hooks
-```
+
+## Configuration (do this)
+
+- Load settings via `src/config/settings.py`:
+  ```python
+  from config.settings import get_settings
+  settings = get_settings()
+  ```
+- `.env` (local), `.env.test` (tests/CI). **Never** hardcode secrets.
+- Loader tolerates `config/` and `src/config/` paths.
+
+## Allowed Edit Scope for Claude
+
+When implementing features or fixes, restrict changes to:
+- `src/investment_system/**`, `src/config/**`
+- `tests/**`
+- `.github/workflows/**`
+- `docs/**`, `README.md`, `STATUS.md`, `ROADMAP.md`
+- `Makefile`, `pyproject.toml`, `pytest.ini`
+
+**Do not** touch unrelated modules, delete public APIs, or refactor widely without an explicit instruction.
 
 ## Common Commands
 
-### Running Analysis
 ```bash
-# Quick daily analysis (2-3 minutes)
-python -m src.investment_system.analysis.quick_analysis
+# Dev setup
+pip install -e .[dev]
 
-# Comprehensive analysis with all modules (10-15 minutes)  
-python -m src.investment_system.analysis.comprehensive_analyzer
+# Run API (healthcheck at /healthz)
+uvicorn investment_system.api:app --reload
 
-# System monitoring
-python -m src.investment_system.monitoring.system_monitor
+# Tests (offline-friendly)
+pytest -q
 
-# Windows batch shortcuts
-scripts\run_daily_analysis.bat
-scripts\run_comprehensive_analysis.bat
-scripts\run_system_monitor.bat
+# Make targets (if present)
+make setup | make lint | make test | make cov | make run
 ```
 
-### Development Workflow
+## Next Milestone (E2E Thin Slice)
+
+Implement minimal E2E without breaking existing logic:
+
+**A) Ingest — `src/investment_system/pipeline/ingest.py`**
+- `fetch_prices(symbols: list[str], lookback_days: int=120) -> pd.DataFrame`
+- yfinance + tenacity retry/backoff + simple rate-limit.
+- TTL cache 10m under `runtime/cache/{symbol}.parquet`.
+- Fallback: cached (stale-but-usable) or tiny baked sample for tests.
+- Columns: `date, open, high, low, close, volume, symbol` (lowercase).
+
+**B) Analyze — `src/investment_system/pipeline/analyze.py`**
+- `add_indicators(df)` → SMA_20, SMA_50, RSI_14.
+- `generate_signals(df)` → `{symbol, ts, signal, rsi, sma20, sma50}`.
+- Rule: SMA20 cross over/under SMA50; RSI guards (<30 buy bias, >70 sell bias).
+
+**C) Persist — `src/investment_system/db/store.py`**
+- SQLAlchemy (SQLite `runtime/app.db`), create-if-not-exists.
+- Tables: `prices`, `signals`; upsert latest signals.
+- Pragmas: `journal_mode=WAL`, `synchronous=NORMAL`. Short-lived sessions, retry on lock.
+
+**D) API & Dashboard — `src/investment_system/api.py` + `src/investment_system/web/templates/index.html`**
+- `POST /run` `{symbols[]}` → run pipeline; attach `correlation_id` (log it).
+- `GET /signals` → latest N signals (JSON).
+- `GET /export.csv` → CSV (filename `signals_YYYYMMDD_HHMM.csv`).
+- `GET /export.pdf` → 501 JSON if PDF lib not installed.
+- Dashboard lists (symbol, ts, signal, rsi, sma20, sma50); badge “stale” if from cache.
+
+**E) Resilience & Logs**
+- Retries with jitter and per-request timeouts.
+- Structured JSON logs (`ts, level, msg, module, correlation_id`), secrets redacted.
+
+**F) Tests — `tests/investment_system/test_pipeline_smoke.py`**
+- `/run` with `["AAPL","MSFT"]` → 200.
+- `/signals` returns ≥1 item.
+- `/export.csv` → 200 and non-empty.
+- Idempotent: second `/run` doesn’t duplicate latest ts.
+- Must pass **offline** (cache/sample fallback).
+
+**G) CI — `.github/workflows/ci.yml`**
+- Python 3.11, `pip install -e .[dev]`, `ruff check`, `pytest -q --cov=src --cov-report=term-missing`.
+- Keep workflow short; optional pip cache.
+
+## Guardrails (Do / Don’t)
+
+**Do**
+- Small PRs, narrow diffs, file allowlist above.
+- Prefer injection/time-of-use for `get_settings()` (avoid import-time side-effects).
+- Log structured JSON with `correlation_id`.
+
+**Don’t**
+- Introduce new `os.getenv` outside `src/config/**`.
+- Add heavy imports in any `__init__.py`.
+- Break existing endpoints or tests.
+- Depend on live network in tests.
+
+## Verification Script (run before PR)
+
 ```bash
-# Setup development environment
-scripts\setup_dev_environment.bat
-
-# Run all tests
-python -m pytest tests/ -v
-# Or use: scripts\run_tests.bat
-
-# Code quality checks
-make format     # Format code with black/isort
-make lint       # Run flake8 linting
-make type-check # Run mypy type checking
-
-# Pre-analysis validation
-python .claude/hooks/pre_analysis_hook.py
+pip install -e .[dev]
+uvicorn investment_system.api:app --reload & sleep 2 && curl -sSf http://127.0.0.1:8000/healthz && pkill -f uvicorn
+curl -s -X POST localhost:8000/run -H "content-type: application/json" -d '{"symbols":["AAPL","MSFT"]}'
+curl -s localhost:8000/signals | head
+curl -s -D- localhost:8000/export.csv | head
+pytest -q tests/investment_system/test_pipeline_smoke.py
 ```
 
-### Slash Commands (Claude Code)
+## PR Template (copy into PR body)
 
-**Code Quality & Development:**
-- `/clean` - Format code, organize imports, fix linting issues
-- `/analyze` - Comprehensive code analysis and architecture review
-- `/optimize` - Performance analysis and optimization recommendations
-- `/test` - Run complete test suite with coverage
-- `/debug` - Comprehensive debugging workflow and diagnostics
-- `/security` - Security audit and vulnerability assessment
+**Title:** `feat(e2e): thin slice ingest→analyze→persist→api/export with resilience`
 
-**Investment Analysis:**
-- `/portfolio` - Portfolio management and analysis commands
-- `/monitor` - System monitoring and health checks
-- `/context` - Load comprehensive project and investment context
-- `/todo` - Investment analysis task management and prioritization
+**Summary**
+- Add ingest/analyze/store modules with caching, retries, and SQLite upserts.
+- Extend API with /run, /signals, /export.csv (/export.pdf 501 if unavailable).
+- JSON logging + correlation_id; offline-friendly smoke test.
+- CI workflow (ruff + pytest coverage). Docs updated.
 
-**System Management:**
-- `/deploy` - Production deployment workflow and validation
-- `/performance` - Performance benchmarking and optimization analysis
-- `/docs` - Generate comprehensive system documentation
+**Verification**
+- Healthz 200 ✅
+- /run 200 with symbols ✅
+- /signals returns data ✅
+- /export.csv non-empty ✅
+- Tests pass; CI green ✅
 
-## System Architecture
-
-### Package Structure
-The system uses a proper Python package structure with clear separation of concerns:
-
-1. **Data Layer** (`src/investment_system/data/`)
-   - `market_data_collector.py` - Multi-source market data aggregation
-   - `news_feed.py` - Financial news ingestion
-   - `data_ingestion.py` - General data processing
-   - `real_time_data_manager.py` - Live data streaming
-
-2. **Analysis Layer** (`src/investment_system/analysis/`)
-   - `quick_analysis.py` - Fast technical analysis (2-3 min)
-   - `comprehensive_analyzer.py` - Complete analysis orchestrator (10-15 min)
-   - `advanced_market_analyzer.py` - Options flow and technical indicators
-   - `ai_prediction_engine.py` - ML-based pattern recognition
-   - `news_sentiment_analyzer.py` - NLP sentiment analysis
-   - `social_sentiment_analyzer.py` - Social media sentiment tracking
-
-3. **Portfolio Layer** (`src/investment_system/portfolio/`)
-   - `risk_management.py` - Position sizing and risk metrics
-   - `portfolio_analysis.py` - Portfolio optimization and allocation
-   - `backtesting_engine.py` - Historical strategy validation
-   - `smart_money_tracker.py` - Institutional investor tracking
-   - `government_spending_monitor.py` - AI contract monitoring
-   - `investment_signal_engine.py` - Signal generation and aggregation
-
-4. **Monitoring Layer** (`src/investment_system/monitoring/`)
-   - `system_monitor.py` - Continuous system health monitoring
-   - `alert_system.py` - Threshold-based notifications
-
-5. **Reporting Layer** (`src/investment_system/reporting/`)
-   - `automated_reporter.py` - Multi-format report generation
-
-6. **Utils Layer** (`src/investment_system/utils/`)
-   - `cache_manager.py` - Data caching and performance optimization
-
-### Configuration System
-- **`config/config.json`** - Central configuration
-  - User profile (Ivan, $900 balance, medium risk tolerance)
-  - Target assets: AI/Robotics stocks and ETFs
-  - Alert thresholds and API settings
-  - Smart money tracking targets (ARK, Tiger Global, Coatue, etc.)
-
-### Data Flow
-```
-External APIs → Data Collection → Analysis Engines → Portfolio Management
-     ↓              ↓                  ↓                    ↓
-Cache Layer → Real-time Processing → Signal Generation → Risk Assessment
-     ↓              ↓                  ↓                    ↓  
-Performance → Sentiment Analysis → Portfolio Optimization → Reports & Alerts
-```
-
-## Import Patterns
-
-### Modern Package Imports
-```python
-# Analysis modules
-from src.investment_system.analysis import get_stock_analysis, ComprehensiveAnalyzer
-from src.investment_system.portfolio import RiskManager, PortfolioAnalyzer
-from src.investment_system.data import MarketDataCollector
-from src.investment_system.utils import CacheManager
-
-# Direct module access
-import src.investment_system.analysis.quick_analysis
-import src.investment_system.monitoring.system_monitor
-```
-
-### Configuration Loading
-```python
-import json
-from pathlib import Path
-
-config_path = Path("config/config.json")
-with open(config_path, 'r') as f:
-    config = json.load(f)
-```
-
-## Key Design Patterns
-
-### Package-Based Architecture
-- Clear separation of concerns with dedicated packages
-- Proper `__init__.py` files with controlled exports
-- Consistent import patterns across modules
-- Module-level documentation and version tracking
-
-### Configuration-Driven Development
-- Centralized configuration in `config/config.json`
-- Environment-specific settings support
-- Validation hooks for configuration changes
-
-### Hook-Based Quality Control
-- Pre-analysis validation hooks
-- Post-analysis verification and notifications
-- Automated code quality enforcement
-- Investment-specific validation rules
-
-## Investment Focus Areas
-- **Primary Stocks**: NVDA, MSFT, TSLA, DE, TSM, AMZN, GOOGL, META, AAPL, CRM
-- **AI/Robotics ETFs**: KROP, BOTZ, SOXX, ARKQ, ROBO, IRBO, UBOT
-- **Smart Money Tracking**: ARK Invest, Tiger Global, Coatue, Whale Rock, Berkshire Hathaway
-- **Government Contracts**: Defense contractors and AI-focused government spending
-- **Portfolio**: $900 balance, medium risk tolerance, quarterly rebalancing
-
-## Development Guidelines
-- Use proper package imports (`src.investment_system.*`)
-- Maintain configuration accuracy in `config/config.json`
-- Run pre-analysis validation before major operations
-- All modules include comprehensive error handling
-- Reports include confidence scores and risk warnings
-- Follow hooks-based development workflow
-- Use Claude Code slash commands for common operations
+**Notes**
+- PDF export optional; returns 501 without weasyprint/reportlab.
+- Cache TTL 10m; stale badge on dashboard.
