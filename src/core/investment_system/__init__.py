@@ -7,14 +7,11 @@ AI-powered investment analysis system for AI/Robotics stocks and ETFs.
 __version__ = "1.0.0"
 __author__ = "Ivan"
 
-from .utils.cache_manager import CacheManager
-from .data.market_data_collector import MarketDataCollector
-from .analysis.quick_analysis import get_stock_analysis
-# from .portfolio.risk_management import RiskManager  # Temporarily disabled
+# Avoid importing submodules at package import time to minimize side effects and
+# heavy dependency initialization during test collection. Consumers should import
+# the needed modules directly, e.g., `from core.investment_system.ethics import ...`.
 
 __all__ = [
-    "CacheManager",
-    "MarketDataCollector", 
-    "get_stock_analysis",
-    # "RiskManager"
+    "__version__",
+    "__author__",
 ]
