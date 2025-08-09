@@ -18,15 +18,14 @@ _load_env_test()
 # Ensure runtime directory exists for sqlite file path, logs, etc.
 Path("runtime").mkdir(parents=True, exist_ok=True)
 
-# Set default environment variables for tests if not already set
-os.environ.setdefault("ENVIRONMENT", "test")
+# Set environment variables for tests (override if needed for compatibility)
+os.environ["ENVIRONMENT"] = os.environ.get("ENVIRONMENT", "test")
 # Provide DATABASE_URL in a JSON object format so Pydantic BaseSettings can parse
-# nested 'database' field without error during import-time settings initialization.
-if not os.environ.get("DATABASE_URL"):
-    os.environ["DATABASE_URL"] = (
-        '{"database_url": "sqlite:///./runtime/test.db", '
-        '"db_pool_size": 10, "db_max_overflow": 20, "db_pool_timeout": 30}'
-    )
+# the nested 'database' field correctly during import-time settings initialization.
+os.environ["DATABASE_URL"] = (
+    '{"database_url": "sqlite:///./runtime/test.db", '
+    '"db_pool_size": 10, "db_max_overflow": 20, "db_pool_timeout": 30}'
+)
 os.environ.setdefault("SECRET_KEY", "test")
 os.environ.setdefault(
     "ENCRYPTION_KEY",
