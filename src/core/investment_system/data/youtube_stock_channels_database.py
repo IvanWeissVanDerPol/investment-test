@@ -1411,6 +1411,7 @@ if __name__ == "__main__":
             "high_quality_channels": len(self.get_high_quality_channels())
         }
 
+"""
 def main():
     """Test the YouTube stock channels database"""
     
