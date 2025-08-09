@@ -1,10 +1,8 @@
 """
 Investment System Integrations
 Connects various system components for seamless workflow
+
+Side-effect imports removed; import integration points directly from modules.
 """
 
-from .ethics_integration import EthicsIntegratedAnalyzer
-
-__all__ = [
-    'EthicsIntegratedAnalyzer'
-]
+__all__ = []

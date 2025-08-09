@@ -1,9 +1,6 @@
-"""System monitoring and alerts"""
+"""System monitoring and alerts
 
-from .system_monitor import InvestmentSystemMonitor
-from .alert_system import AlertSystem
+Side-effect imports removed; import concrete classes from submodules directly.
+"""
 
-__all__ = [
-    "InvestmentSystemMonitor",
-    "AlertSystem"
-]
+__all__ = []

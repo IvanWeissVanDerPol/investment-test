@@ -198,3 +198,4 @@ runtime/
 
 # Node.js dependencies
 node_modules/
+.env.test

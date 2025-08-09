@@ -33,7 +33,6 @@ dependencies = [
     "dataclasses-json>=0.6.0",
     "typing-extensions>=4.8.0",
     "twelvedata",
-    "alpaca-trade-api",
     "finnhub-python",
     "newsapi-python"
 ]
@@ -52,6 +51,12 @@ dev = [
     "ruff>=0.5.0",
     "fastapi>=0.110.0",
     "uvicorn>=0.23.0"
+]
+
+# Broker/API specific optional extras to avoid heavy deps in CI/E2E by default
+alpaca = [
+    # Pin to a version compatible with urllib3 < 2
+    "alpaca-trade-api>=3.0.0,<4; python_version >= '3.9'"
 ]
 
 monitoring = [

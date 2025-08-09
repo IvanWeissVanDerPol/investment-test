@@ -2,14 +2,17 @@
 Investment Analysis System
 
 AI-powered investment analysis system for AI/Robotics stocks and ETFs.
+
+Temporary shim; remove after 2 sprints.
+This package location remains for backward compatibility and re-exports the
+public API from the canonical package path if it changes.
 """
 
 __version__ = "1.0.0"
 __author__ = "Ivan"
 
-# Avoid importing submodules at package import time to minimize side effects and
-# heavy dependency initialization during test collection. Consumers should import
-# the needed modules directly, e.g., `from core.investment_system.ethics import ...`.
+# Note: Avoid importing submodules here to prevent side effects at import time.
+# Callers should import concrete modules directly.
 
 __all__ = [
     "__version__",

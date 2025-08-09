@@ -5,6 +5,10 @@
 **Last Updated**: July 19, 2025  
 **Total Portfolio**: $200 USD ($100 savings, $100 investments)
 
+Quick links
+- See STATUS: [STATUS.md](STATUS.md)
+- See 7-day plan: [ROADMAP.md](ROADMAP.md)
+
 ## 📂 Project Structure
 
 ### Core Files
