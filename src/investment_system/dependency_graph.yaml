@@ -1,0 +1,343 @@
+# Dependency Graph for Investment System MVP
+# This file defines all module dependencies and contracts
+# Used by AI agents to safely add features without breaking existing logic
+
+version: "1.0.0"
+metadata:
+  generated: "2025-08-09"
+  format: "dependency-graph-v1"
+  purpose: "Track module dependencies for safe feature addition"
+
+# Core modules and their dependencies
+modules:
+  # Infrastructure layer (no business dependencies)
+  config:
+    path: "src/config/settings.py"
+    type: "infrastructure"
+    dependencies: []
+    exports:
+      - name: "Settings"
+        type: "class"
+        contract: "BaseSettings"
+      - name: "get_settings"
+        type: "function"
+        returns: "Settings"
+    environment_vars:
+      - DATABASE_URL
+      - REDIS_URL
+      - JWT_SECRET
+      - STRIPE_SECRET_KEY
+      - RATE_LIMIT
+    
+  database:
+    path: "src/investment_system/infrastructure/database.py"
+    type: "infrastructure"
+    dependencies:
+      - config
+    exports:
+      - name: "get_db"
+        type: "function"
+        returns: "Session"
+      - name: "BaseModel"
+        type: "class"
+        contract: "SQLAlchemy.Model"
+    tables:
+      - users
+      - subscriptions
+      - api_usage
+      - signals
+      - market_data
+    
+  cache:
+    path: "src/investment_system/infrastructure/cache.py"
+    type: "infrastructure"
+    dependencies:
+      - config
+    exports:
+      - name: "cache_get"
+        type: "function"
+        params: ["key: str"]
+        returns: "Optional[Any]"
+      - name: "cache_set"
+        type: "function"
+        params: ["key: str", "value: Any", "ttl: int"]
+        returns: "bool"
+    ttl_defaults:
+      market_data: 600  # 10 minutes
+      signals: 300      # 5 minutes
+      user_data: 3600   # 1 hour
+
+  # Core business logic (pure functions)
+  contracts:
+    path: "src/investment_system/core/contracts.py"
+    type: "core"
+    dependencies: []
+    exports:
+      - name: "MarketData"
+        type: "pydantic.BaseModel"
+        fields:
+          - symbol: str
+          - price: float
+          - volume: int
+          - timestamp: datetime
+      - name: "TradingSignal"
+        type: "pydantic.BaseModel"
+        fields:
+          - symbol: str
+          - signal: "Literal['buy', 'sell', 'hold']"
+          - confidence: float
+          - indicators: Dict[str, float]
+      - name: "UserTier"
+        type: "enum"
+        values: ["free", "starter", "pro", "enterprise"]
+    
+  analyzers:
+    path: "src/investment_system/core/analyzers/"
+    type: "core"
+    dependencies:
+      - contracts
+    exports:
+      - name: "BaseAnalyzer"
+        type: "abstract_class"
+        methods:
+          - "analyze(data: MarketData) -> TradingSignal"
+      - name: "TechnicalAnalyzer"
+        type: "class"
+        extends: "BaseAnalyzer"
+        indicators:
+          - RSI
+          - SMA_20
+          - SMA_50
+          - MACD
+      - name: "AIAnalyzer"
+        type: "class"
+        extends: "BaseAnalyzer"
+        ai_hooks:
+          - pre_analyze
+          - post_analyze
+          - confidence_adjustment
+    
+  # Service layer (business orchestration)
+  market_service:
+    path: "src/investment_system/services/market_data.py"
+    type: "service"
+    dependencies:
+      - contracts
+      - cache
+      - database
+    exports:
+      - name: "fetch_prices"
+        type: "function"
+        params: ["symbols: List[str]"]
+        returns: "List[MarketData]"
+        cache_ttl: 600
+      - name: "get_historical"
+        type: "function"
+        params: ["symbol: str", "days: int"]
+        returns: "DataFrame"
+    external_apis:
+      - yfinance
+      - alpaca
+      - polygon
+    
+  signal_service:
+    path: "src/investment_system/services/signals.py"
+    type: "service"
+    dependencies:
+      - contracts
+      - analyzers
+      - market_service
+      - cache
+      - database
+    exports:
+      - name: "generate_signals"
+        type: "function"
+        params: ["symbols: List[str]", "user_tier: UserTier"]
+        returns: "List[TradingSignal]"
+      - name: "get_cached_signals"
+        type: "function"
+        params: ["symbols: List[str]"]
+        returns: "Optional[List[TradingSignal]]"
+    ai_hooks:
+      - name: "pre_signal_generation"
+        params: ["data: MarketData"]
+        returns: "MarketData"
+      - name: "post_signal_generation"
+        params: ["signal: TradingSignal"]
+        returns: "TradingSignal"
+    
+  billing_service:
+    path: "src/investment_system/services/billing.py"
+    type: "service"
+    dependencies:
+      - contracts
+      - database
+    exports:
+      - name: "track_usage"
+        type: "function"
+        params: ["user_id: str", "endpoint: str", "units: int"]
+      - name: "check_limits"
+        type: "function"
+        params: ["user_id: str", "resource: str"]
+        returns: "bool"
+      - name: "create_subscription"
+        type: "function"
+        params: ["user_id: str", "tier: UserTier"]
+        returns: "Subscription"
+    pricing_tiers:
+      free:
+        api_calls: 100
+        symbols: 5
+        price: 0
+      starter:
+        api_calls: 1000
+        symbols: 20
+        price: 29
+      pro:
+        api_calls: 10000
+        symbols: 100
+        price: 99
+      enterprise:
+        api_calls: -1
+        symbols: -1
+        price: 499
+    
+  # API layer
+  auth:
+    path: "src/investment_system/api/auth.py"
+    type: "api"
+    dependencies:
+      - contracts
+      - database
+      - config
+    exports:
+      - name: "create_token"
+        type: "function"
+        params: ["user_id: str"]
+        returns: "str"
+      - name: "verify_token"
+        type: "function"
+        params: ["token: str"]
+        returns: "User"
+      - name: "require_auth"
+        type: "decorator"
+        returns: "User"
+    
+  api_routes:
+    path: "src/investment_system/api/routes/"
+    type: "api"
+    dependencies:
+      - auth
+      - signal_service
+      - market_service
+      - billing_service
+      - contracts
+    endpoints:
+      - path: "/health"
+        method: "GET"
+        auth: false
+        rate_limit: 1000
+      - path: "/auth/register"
+        method: "POST"
+        auth: false
+        rate_limit: 10
+      - path: "/auth/login"
+        method: "POST"
+        auth: false
+        rate_limit: 20
+      - path: "/subscribe"
+        method: "POST"
+        auth: true
+        rate_limit: 5
+      - path: "/signals"
+        method: "GET"
+        auth: true
+        rate_limit: "tier_based"
+        billing: "per_symbol"
+      - path: "/market/prices"
+        method: "GET"
+        auth: true
+        rate_limit: "tier_based"
+        billing: "per_symbol"
+      - path: "/export/csv"
+        method: "GET"
+        auth: true
+        rate_limit: 10
+        billing: "premium_only"
+
+# Feature addition rules for AI agents
+feature_rules:
+  - name: "No Breaking Changes"
+    rule: "New features must not modify existing function signatures"
+    enforcement: "strict"
+    
+  - name: "Dependency Direction"
+    rule: "Dependencies must flow: api -> service -> core -> infrastructure"
+    enforcement: "strict"
+    
+  - name: "Contract First"
+    rule: "All new features must define contracts before implementation"
+    enforcement: "strict"
+    
+  - name: "AI Hook Usage"
+    rule: "AI features must use predefined hooks, not modify core logic"
+    enforcement: "strict"
+    
+  - name: "Billing Integration"
+    rule: "All new endpoints must specify billing model"
+    enforcement: "strict"
+    
+  - name: "Cache Strategy"
+    rule: "All data fetching must specify cache TTL"
+    enforcement: "moderate"
+    
+  - name: "Test Coverage"
+    rule: "New features must maintain >80% test coverage"
+    enforcement: "moderate"
+
+# AI integration points
+ai_integration:
+  hooks:
+    - id: "data_enhancement"
+      location: "market_service.fetch_prices"
+      type: "filter"
+      description: "AI can enhance or clean market data"
+      
+    - id: "signal_override"
+      location: "signal_service.generate_signals"
+      type: "override"
+      description: "AI can override technical signals"
+      
+    - id: "risk_adjustment"
+      location: "analyzers.calculate_risk"
+      type: "modifier"
+      description: "AI adjusts risk scores"
+      
+    - id: "feature_flag"
+      location: "api_routes.*"
+      type: "gate"
+      description: "AI controls feature rollout"
+      
+    - id: "auto_scaling"
+      location: "infrastructure.monitoring"
+      type: "action"
+      description: "AI triggers scaling events"
+
+# Dependency validation rules
+validation:
+  circular_dependencies: "error"
+  unused_exports: "warning"
+  missing_contracts: "error"
+  untested_endpoints: "warning"
+  unbilled_endpoints: "error"
+  
+# Graph visualization settings
+visualization:
+  layout: "hierarchical"
+  direction: "top-down"
+  grouping: "by_type"
+  colors:
+    infrastructure: "#0066cc"
+    core: "#00aa00"
+    service: "#ff9900"
+    api: "#cc0000"
