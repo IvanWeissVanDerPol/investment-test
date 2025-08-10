@@ -62,10 +62,13 @@ security = HTTPBearer()
 USERS_DB = {}
 SUBSCRIPTIONS_DB = {}
 
-# JWT settings (move to settings.py)
-JWT_SECRET = "your-secret-key-change-in-production"
-JWT_ALGORITHM = "HS256"
-JWT_EXPIRATION_HOURS = 24
+# JWT settings from environment
+import os
+JWT_SECRET = os.getenv("JWT_SECRET", None)
+if not JWT_SECRET:
+    raise ValueError("JWT_SECRET environment variable is required")
+JWT_ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
+JWT_EXPIRATION_HOURS = int(os.getenv("JWT_EXPIRATION_HOURS", "24"))
 
 
 # Pydantic models for auth
@@ -490,15 +493,17 @@ async def startup_event():
     print(f"Dependency graph loaded with {len(DEPENDENCY_GRAPH['modules'])} modules")
     print("AI hooks ready for registration")
     
-    # Create demo user for testing
-    demo_user = User(
-        id="demo-user-id",
-        email="demo@example.com",
-        tier=UserTier.PRO,
-        api_key="demo-api-key"
-    )
-    USERS_DB["demo-user-id"] = demo_user
-    print("Demo user created: demo@example.com")
+    # Create demo user only in development mode
+    if os.getenv("ENVIRONMENT", "development") == "development":
+        demo_api_key = os.getenv("DEMO_API_KEY", secrets.token_urlsafe(32))
+        demo_user = User(
+            id="demo-user-id",
+            email="demo@example.com",
+            tier=UserTier.PRO,
+            api_key=demo_api_key
+        )
+        USERS_DB["demo-user-id"] = demo_user
+        print("Demo user created for development: demo@example.com")
 
 
 if __name__ == "__main__":
