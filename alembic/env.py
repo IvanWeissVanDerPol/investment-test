@@ -21,6 +21,10 @@ from investment_system.infrastructure.database import Base
 # this is the Alembic Config object
 config = context.config
 
+# Update config file path if needed
+if not config.config_file_name:
+    config.config_file_name = "config/alembic.ini"
+
 # Interpret the config file for Python logging
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)

@@ -24,12 +24,12 @@ from investment_system.core.contracts import (
     ErrorCode, ErrorResponse, RateLimitStatus
 )
 from investment_system.services.signal_service import get_signal_service
-from investment_system.dependency_graph import yaml
 import io
 import csv
+import yaml
 
 # Load dependency graph for AI agents
-with open("src/investment_system/dependency_graph.yaml", "r") as f:
+with open("config/dependency_graph.yaml", "r") as f:
     DEPENDENCY_GRAPH = yaml.safe_load(f)
 
 # Initialize FastAPI app
