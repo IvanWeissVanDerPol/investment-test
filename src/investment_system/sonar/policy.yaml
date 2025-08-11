@@ -1,0 +1,78 @@
+version: 1
+description: Sonar indexing and security policy
+
+# Directories to index
+allow_dirs:
+  - src
+  - tests
+  - config
+  - docs
+
+# Directories to ignore
+ignore_dirs:
+  - __pycache__
+  - .git
+  - .github
+  - venv
+  - env
+  - runtime
+  - node_modules
+  - dist
+  - build
+  - .pytest_cache
+  - .mypy_cache
+  - htmlcov
+  - .claude
+
+# File patterns to ignore
+ignore_files:
+  - "*.pyc"
+  - "*.pyo"
+  - "*.pyd"
+  - "__pycache__"
+  - "*.so"
+  - "*.egg"
+  - "*.egg-info"
+  - ".DS_Store"
+  - "Thumbs.db"
+  - "*.log"
+  - "*.sqlite"
+  - "*.db"
+
+# Security scanning
+scan_imports: true
+scan_secrets: true
+scan_vulnerabilities: true
+
+# File size limits
+max_file_size: 1048576  # 1MB
+
+# Complexity thresholds
+max_file_lines: 1000
+max_function_lines: 100
+max_cyclomatic_complexity: 10
+
+# AI context rules
+ai_context:
+  max_tokens: 8000
+  max_files: 20
+  max_depth: 3
+  include_tests: false
+  include_docs: true
+
+# Secrets patterns to detect
+secret_patterns:
+  - api_key
+  - secret_key
+  - password
+  - token
+  - credential
+  - private_key
+  - aws_access_key
+  - jwt_secret
+  - stripe_key
+  - database_url
+
+# Read-only enforcement
+read_only: true
+allow_write: []  # No write access by default

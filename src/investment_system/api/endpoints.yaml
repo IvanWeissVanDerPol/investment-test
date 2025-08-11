@@ -1,0 +1,272 @@
+version: 1
+metadata:
+  title: Investment System API
+  description: AI-ready trading signal platform with tiered subscriptions
+  version: 1.0.0
+
+services:
+  # Health Check Endpoints
+  - id: health.check
+    path: /health
+    method: GET
+    handler: api.handlers.health:health_check
+    auth: none
+    tier: all
+    rate: 1000/m
+    tags: [health]
+    description: Basic health check
+
+  - id: health.detailed
+    path: /healthz
+    method: GET
+    handler: api.handlers.health:detailed_health
+    auth: none
+    tier: all
+    rate: 100/m
+    tags: [health]
+    description: Detailed health check with dependencies
+
+  # Authentication Endpoints
+  - id: auth.register
+    path: /auth/register
+    method: POST
+    handler: api.handlers.auth:register
+    auth: none
+    tier: all
+    rate: 10/h
+    tags: [auth]
+    description: Register new user account
+
+  - id: auth.login
+    path: /auth/login
+    method: POST
+    handler: api.handlers.auth:login
+    auth: none
+    tier: all
+    rate: 20/h
+    tags: [auth]
+    description: User login
+
+  - id: auth.refresh
+    path: /auth/refresh
+    method: POST
+    handler: api.handlers.auth:refresh_token
+    auth: jwt
+    tier: all
+    rate: 60/h
+    tags: [auth]
+    description: Refresh JWT token
+
+  - id: auth.logout
+    path: /auth/logout
+    method: POST
+    handler: api.handlers.auth:logout
+    auth: jwt
+    tier: all
+    rate: 60/h
+    tags: [auth]
+    description: User logout
+
+  # Subscription Management
+  - id: subscription.create
+    path: /subscribe
+    method: POST
+    handler: api.handlers.billing:subscribe
+    auth: jwt
+    tier: all
+    rate: 5/h
+    tags: [billing]
+    description: Create or upgrade subscription
+
+  - id: subscription.cancel
+    path: /subscribe/cancel
+    method: POST
+    handler: api.handlers.billing:cancel_subscription
+    auth: jwt
+    tier: all
+    rate: 5/h
+    tags: [billing]
+    description: Cancel subscription
+
+  - id: subscription.status
+    path: /subscribe/status
+    method: GET
+    handler: api.handlers.billing:subscription_status
+    auth: jwt
+    tier: all
+    rate: 60/h
+    tags: [billing]
+    description: Get subscription status
+
+  # Trading Signals - Core Revenue Endpoints
+  - id: signals.generate
+    path: /signals
+    method: POST
+    handler: api.handlers.signals:get_signals
+    auth: jwt
+    tier: all
+    rate: dynamic  # Based on user tier
+    tags: [signals, revenue]
+    description: Generate trading signals
+    tier_limits:
+      free: 100/h
+      starter: 1000/h
+      pro: 10000/h
+      enterprise: unlimited
+
+  - id: signals.history
+    path: /signals/history/{symbol}
+    method: GET
+    handler: api.handlers.signals:get_signal_history
+    auth: jwt
+    tier: paid  # Starter, Pro, Enterprise only
+    rate: dynamic
+    tags: [signals, premium]
+    description: Get historical signals for symbol
+
+  - id: signals.portfolio
+    path: /signals/portfolio
+    method: POST
+    handler: api.handlers.signals:get_portfolio_signals
+    auth: jwt
+    tier: pro  # Pro and Enterprise only
+    rate: 100/h
+    tags: [signals, premium]
+    description: Generate signals for entire portfolio
+
+  # Market Data
+  - id: market.prices
+    path: /market/prices
+    method: GET
+    handler: api.handlers.market:get_prices
+    auth: jwt
+    tier: all
+    rate: 300/h
+    tags: [market]
+    description: Get current market prices
+
+  - id: market.indicators
+    path: /market/indicators/{symbol}
+    method: GET
+    handler: api.handlers.market:get_indicators
+    auth: jwt
+    tier: all
+    rate: 200/h
+    tags: [market]
+    description: Get technical indicators for symbol
+
+  # Export Endpoints
+  - id: export.csv
+    path: /export/csv
+    method: GET
+    handler: api.handlers.export:export_csv
+    auth: jwt
+    tier: paid
+    rate: 10/h
+    tags: [export, premium]
+    description: Export signals as CSV
+
+  - id: export.pdf
+    path: /export/pdf
+    method: GET
+    handler: api.handlers.export:export_pdf
+    auth: jwt
+    tier: pro
+    rate: 5/h
+    tags: [export, premium]
+    description: Export signals as PDF report
+
+  # Usage & Analytics
+  - id: usage.current
+    path: /usage
+    method: GET
+    handler: api.handlers.usage:get_usage
+    auth: jwt
+    tier: all
+    rate: 60/h
+    tags: [usage]
+    description: Get current usage statistics
+
+  - id: usage.history
+    path: /usage/history
+    method: GET
+    handler: api.handlers.usage:get_usage_history
+    auth: jwt
+    tier: paid
+    rate: 30/h
+    tags: [usage, premium]
+    description: Get historical usage data
+
+  # AI Integration Endpoints (Enterprise)
+  - id: ai.dependency_graph
+    path: /dependency-graph
+    method: GET
+    handler: api.handlers.ai:get_dependency_graph
+    auth: jwt
+    tier: enterprise
+    rate: 10/h
+    tags: [ai, enterprise]
+    description: Get system dependency graph for AI agents
+
+  - id: ai.register_hook
+    path: /ai/hook
+    method: POST
+    handler: api.handlers.ai:register_ai_hook
+    auth: jwt
+    tier: enterprise
+    rate: 10/h
+    tags: [ai, enterprise]
+    description: Register AI enhancement hook
+
+  - id: ai.sonar_context
+    path: /ai/sonar/context
+    method: POST
+    handler: api.handlers.ai:get_sonar_context
+    auth: jwt
+    tier: enterprise
+    rate: 100/h
+    tags: [ai, enterprise]
+    description: Get code context via Sonar subsystem
+
+  # Payment Webhooks
+  - id: webhook.stripe
+    path: /webhooks/stripe
+    method: POST
+    handler: api.handlers.webhooks:stripe_webhook
+    auth: webhook_signature:stripe
+    tier: all
+    rate: 300/m
+    tags: [webhooks, payments]
+    description: Stripe payment webhook
+
+  # Admin Endpoints
+  - id: admin.users
+    path: /admin/users
+    method: GET
+    handler: api.handlers.admin:list_users
+    auth: jwt:admin
+    tier: admin
+    rate: 30/m
+    tags: [admin]
+    description: List all users
+
+  - id: admin.audit_logs
+    path: /admin/audit-logs
+    method: GET
+    handler: api.handlers.admin:get_audit_logs
+    auth: jwt:admin
+    tier: admin
+    rate: 30/m
+    tags: [admin, security]
+    description: Get security audit logs
+
+  # Run Pipeline (for backward compatibility)
+  - id: pipeline.run
+    path: /run
+    method: POST
+    handler: api.handlers.pipeline:run_pipeline
+    auth: jwt
+    tier: all
+    rate: dynamic
+    tags: [pipeline]
+    description: Run analysis pipeline
