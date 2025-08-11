@@ -63,7 +63,7 @@ class PricePoint(BaseModel):
 
 class MarketData(TimestampedModel):
     """Market data for a symbol"""
-    symbol: str = Field(..., regex=r'^[A-Z]{1,5}$')
+    symbol: str = Field(..., pattern=r'^[A-Z]{1,5}$')
     prices: List[PricePoint]
     is_stale: bool = False
     source: str = "yfinance"
@@ -95,7 +95,7 @@ class Indicator(BaseModel):
 
 class TradingSignal(TimestampedModel):
     """Trading signal with indicators"""
-    symbol: str = Field(..., regex=r'^[A-Z]{1,5}$')
+    symbol: str = Field(..., pattern=r'^[A-Z]{1,5}$')
     signal: SignalType
     confidence: float = Field(..., ge=0, le=1)
     price: Decimal
