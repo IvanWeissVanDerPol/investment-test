@@ -64,6 +64,8 @@ SUBSCRIPTIONS_DB = {}
 
 # JWT settings from environment
 import os
+from dotenv import load_dotenv
+load_dotenv()
 JWT_SECRET = os.getenv("JWT_SECRET", None)
 if not JWT_SECRET:
     raise ValueError("JWT_SECRET environment variable is required")

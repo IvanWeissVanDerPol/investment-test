@@ -77,13 +77,20 @@ class ErrorCode(Enum):
     EMAIL_NOT_VERIFIED = ("EMAIL_NOT_VERIFIED", 403, "Email address not verified")
     PASSWORD_RESET_REQUIRED = ("PASSWORD_RESET_REQUIRED", 403, "Password reset required")
     
-    def __init__(self, code: str, http_status: int, default_message: str):
-        self.value = code
-        self.http_status = http_status
-        self.default_message = default_message
+    @property
+    def code(self) -> str:
+        return self.value[0]
+    
+    @property
+    def http_status(self) -> int:
+        return self.value[1]
+    
+    @property
+    def default_message(self) -> str:
+        return self.value[2]
     
     def __str__(self) -> str:
-        return self.value
+        return self.code
 
 
 @dataclass

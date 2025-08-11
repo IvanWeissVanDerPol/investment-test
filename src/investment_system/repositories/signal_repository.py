@@ -7,7 +7,8 @@ from typing import Optional, List, Dict, Any
 from datetime import datetime, timezone
 
 from investment_system.repositories.base import AuditableRepository, QueryOptions, QueryFilter
-from investment_system.models.signal import Signal, SignalType
+from investment_system.infrastructure.database import Signal
+from investment_system.core.contracts import SignalType
 from investment_system.core.exceptions import ValidationError
 
 

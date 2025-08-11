@@ -7,7 +7,8 @@ from typing import Optional, List, Dict, Any
 from datetime import datetime, timezone
 
 from investment_system.repositories.base import AuditableRepository, QueryOptions, QueryFilter
-from investment_system.models.user import User, UserTier
+from investment_system.infrastructure.database import User
+from investment_system.core.contracts import UserTier
 from investment_system.core.exceptions import (
     ResourceNotFoundError, ConflictError, ValidationError
 )

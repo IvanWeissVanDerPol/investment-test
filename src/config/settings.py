@@ -10,7 +10,8 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import Optional
 
-from pydantic import BaseModel, BaseSettings, validator, Field
+from pydantic import BaseModel, validator, Field
+from pydantic_settings import BaseSettings
 from typing import List
 
 
@@ -123,9 +124,9 @@ class AppSettings(BaseSettings):
     # Core App Configuration
     app_name: str = "Investment System API"
     api_version: str = "1.0.0"
-    environment: str = Field(default="development", regex="^(development|staging|production)$")
+    environment: str = Field(default="development", pattern="^(development|staging|production)$")
     debug: bool = False
-    log_level: str = Field(default="INFO", regex="^(DEBUG|INFO|WARNING|ERROR|CRITICAL)$")
+    log_level: str = Field(default="INFO", pattern="^(DEBUG|INFO|WARNING|ERROR|CRITICAL)$")
     host: str = "0.0.0.0"
     port: int = Field(default=8000, ge=1, le=65535)
     

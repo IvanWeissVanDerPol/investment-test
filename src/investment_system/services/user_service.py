@@ -12,7 +12,8 @@ from investment_system.services.base import (
     ValidationMixin, AuthorizationMixin
 )
 from investment_system.repositories.user_repository import UserRepository
-from investment_system.models.user import User, UserTier
+from investment_system.infrastructure.database import User
+from investment_system.core.contracts import UserTier
 from investment_system.core.exceptions import (
     APIError, ErrorCode, ValidationError, ConflictError,
     AuthenticationError, AuthorizationError
