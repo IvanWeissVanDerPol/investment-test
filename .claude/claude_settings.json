@@ -1,0 +1,31 @@
+{
+  "dependency_tracking": {
+    "enabled": true,
+    "mode": "automatic",
+    "cache_location": ".claude/dependency_cache.json",
+    "context_preservation": true,
+    "max_context_size": 1000,
+    "risk_thresholds": {
+      "high": 10,
+      "medium": 5,
+      "low": 2
+    }
+  },
+  "hooks": {
+    "pre_edit": ".claude/hooks/dependency_hook.py pre-edit",
+    "post_edit": ".claude/hooks/dependency_hook.py post-edit",
+    "session_start": ".claude/hooks/dependency_hook.py session-start",
+    "session_end": ".claude/hooks/dependency_hook.py session-end"
+  },
+  "optimization": {
+    "auto_cleanup": true,
+    "deduplicate": true,
+    "compress_context": true,
+    "incremental_analysis": true
+  },
+  "reporting": {
+    "inline_warnings": true,
+    "summary_on_save": true,
+    "risk_alerts": true
+  }
+}

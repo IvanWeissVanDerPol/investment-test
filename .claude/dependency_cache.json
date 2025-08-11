@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "api.app": [
+      "api.webhooks",
+      "api.handlers.billing",
+      "services.signal_service",
+      "api.handlers",
+      "core.contracts"
+    ]
+  },
+  "dependents": {
+    "api.handlers.billing": [
+      "api.app"
+    ],
+    "services.signal_service": [
+      "api.app"
+    ],
+    "api.handlers": [
+      "api.app"
+    ],
+    "core.contracts": [
+      "api.app"
+    ],
+    "api.webhooks": [
+      "api.app"
+    ]
+  },
+  "snapshots": {}
+}
