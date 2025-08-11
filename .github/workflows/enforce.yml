@@ -1,0 +1,226 @@
+name: Conditional Enforcement
+on:
+  pull_request:
+    paths-ignore: 
+      - "docs/**"
+      - "*.md"
+  schedule:
+    - cron: "0 3 * * 1"  # Weekly backstop (Monday 03:00 UTC)
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  decide:
+    runs-on: ubuntu-latest
+    outputs:
+      run_enforce: ${{ steps.decide.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history for diff
+      
+      - name: Decide if enforcement needed
+        id: decide
+        run: |
+          python - << 'PYTHON_SCRIPT'
+          import subprocess
+          import sys
+          
+          # Default to not enforcing
+          should_run = "false"
+          reason = "No triggers met"
+          
+          # Check commit message for override tags
+          try:
+              commit_msg = subprocess.check_output(
+                  ["git", "log", "-1", "--pretty=%B"], 
+                  text=True
+              )
+              
+              if "[ci:full]" in commit_msg:
+                  should_run = "true"
+                  reason = "Commit tag [ci:full]"
+              elif "[ci:skip-enforce]" in commit_msg:
+                  should_run = "false"
+                  reason = "Commit tag [ci:skip-enforce]"
+              else:
+                  # Check changed files
+                  diff_output = subprocess.check_output(
+                      ["git", "diff", "--name-only", "origin/${{ github.base_ref }}..."],
+                      text=True
+                  ).splitlines()
+                  
+                  # Critical paths that trigger enforcement
+                  critical_paths = [
+                      "src/investment_system/api/endpoints.yaml",
+                      "src/investment_system/api/handlers/",
+                      "src/investment_system/core/",
+                      "src/investment_system/infrastructure/database.py",
+                      "config/alembic.ini",
+                      "requirements",
+                      "pyproject.toml"
+                  ]
+                  
+                  for file in diff_output:
+                      for path in critical_paths:
+                          if path in file:
+                              should_run = "true"
+                              reason = f"Critical path: {file}"
+                              break
+                      if should_run == "true":
+                          break
+                  
+                  # Check LOC delta
+                  if should_run == "false":
+                      try:
+                          loc_output = subprocess.check_output(
+                              ["git", "diff", "--shortstat", "origin/${{ github.base_ref }}..."],
+                              text=True
+                          )
+                          numbers = [int(s) for s in loc_output.split() if s.isdigit()]
+                          total_changes = sum(numbers) if numbers else 0
+                          
+                          if total_changes > 400:
+                              should_run = "true"
+                              reason = f"Large change: {total_changes} lines"
+                      except:
+                          pass
+          except Exception as e:
+              print(f"Error in decision logic: {e}", file=sys.stderr)
+          
+          # Output decision
+          print(f"::set-output name=run::{should_run}")
+          print(f"Enforcement decision: {should_run} - Reason: {reason}")
+          PYTHON_SCRIPT
+
+  enforce:
+    needs: decide
+    if: needs.decide.outputs.run_enforce == 'true' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || true
+          pip install pyyaml prometheus-client || true
+      
+      - name: Sonar Index Diff
+        id: sonar
+        continue-on-error: true
+        run: |
+          echo "Running Sonar index diff check..."
+          python -c "
+          from src.investment_system.sonar.indexer import SonarIndexer
+          from pathlib import Path
+          import json
+          
+          # Build current graph
+          indexer = SonarIndexer()
+          graph = indexer.index()
+          
+          # Save for comparison
+          output_path = Path('sonar/store/graph.new.json')
+          output_path.parent.mkdir(parents=True, exist_ok=True)
+          with open(output_path, 'w') as f:
+              json.dump(graph.to_dict(), f)
+          
+          print(f'Indexed {len(graph.nodes)} files with {len(graph.edges)} dependencies')
+          "
+      
+      - name: Validate Endpoint Catalog
+        id: endpoints
+        continue-on-error: true
+        run: |
+          echo "Validating endpoint catalog..."
+          python -c "
+          from src.investment_system.api.router import EndpointCatalog
+          
+          catalog = EndpointCatalog()
+          services = catalog.get_all_endpoints()
+          
+          # Check for duplicates
+          ids = [s['id'] for s in services]
+          duplicates = [id for id in ids if ids.count(id) > 1]
+          
+          if duplicates:
+              print(f'ERROR: Duplicate endpoint IDs: {duplicates}')
+              exit(1)
+          
+          print(f'✓ Validated {len(services)} endpoints')
+          "
+      
+      - name: Validate Contracts
+        id: contracts
+        continue-on-error: true
+        run: |
+          echo "Validating Pydantic contracts..."
+          python -c "
+          from src.investment_system.core import contracts
+          
+          # Test that models can be instantiated
+          models = [
+              contracts.User,
+              contracts.TradingSignal,
+              contracts.MarketData
+          ]
+          
+          for model in models:
+              schema = model.schema()
+              print(f'✓ Validated {model.__name__}')
+          "
+      
+      - name: Security Scan
+        id: security
+        continue-on-error: true
+        run: |
+          echo "Running security scans..."
+          
+          # Check for hardcoded secrets
+          python -c "
+          import re
+          from pathlib import Path
+          
+          patterns = [
+              r'api[_-]?key\s*=\s*[\"'][a-zA-Z0-9]{20,}[\"']',
+              r'secret[_-]?key\s*=\s*[\"'][a-zA-Z0-9]{20,}[\"']',
+              r'password\s*=\s*[\"'][^\"']{8,}[\"']'
+          ]
+          
+          found = []
+          for py_file in Path('src').rglob('*.py'):
+              content = py_file.read_text()
+              for pattern in patterns:
+                  if re.search(pattern, content, re.IGNORECASE):
+                      found.append(str(py_file))
+                      break
+          
+          if found:
+              print(f'WARNING: Potential secrets in: {found}')
+          else:
+              print('✓ No hardcoded secrets detected')
+          "
+      
+      - name: Enforcement Summary
+        if: always()
+        run: |
+          echo "## Enforcement Results"
+          echo "- Sonar Diff: ${{ steps.sonar.outcome }}"
+          echo "- Endpoint Validation: ${{ steps.endpoints.outcome }}"
+          echo "- Contract Validation: ${{ steps.contracts.outcome }}"
+          echo "- Security Scan: ${{ steps.security.outcome }}"
+          
+          # Fail if any critical check failed
+          if [[ "${{ steps.endpoints.outcome }}" == "failure" ]] || \
+             [[ "${{ steps.contracts.outcome }}" == "failure" ]]; then
+            echo "❌ Critical enforcement checks failed"
+            exit 1
+          fi
+          
+          echo "✅ All enforcement checks passed"

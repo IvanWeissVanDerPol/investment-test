@@ -1,0 +1,302 @@
+name: Frontend Deployment
+
+on:
+  push:
+    branches: [main, staging, development]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/frontend-deploy.yml'
+  pull_request:
+    branches: [main, staging]
+    paths:
+      - 'frontend/**'
+
+env:
+  NODE_VERSION: '18.x'
+  CACHE_KEY: node-modules-${{ hashFiles('frontend/package-lock.json') }}
+
+jobs:
+  # Quality checks
+  quality:
+    name: Quality Checks
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Type checking
+        run: npm run type-check
+        
+      - name: Linting
+        run: npm run lint
+        
+      - name: Security audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+        
+      - name: Build test
+        run: npm run build
+        env:
+          NEXT_PUBLIC_APP_ENV: ${{ github.ref == 'refs/heads/main' && 'production' || github.ref == 'refs/heads/staging' && 'staging' || 'development' }}
+
+  # Tests (when implemented)
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    needs: quality
+    defaults:
+      run:
+        working-directory: frontend
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      # Uncomment when tests are implemented
+      # - name: Run tests
+      #   run: npm test -- --coverage --watchAll=false
+      #   
+      # - name: Upload coverage
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     directory: frontend/coverage
+
+  # Preview deployment (PRs)
+  preview:
+    name: Preview Deployment
+    runs-on: ubuntu-latest
+    needs: [quality, test]
+    if: github.event_name == 'pull_request'
+    defaults:
+      run:
+        working-directory: frontend
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Deploy to Vercel (Preview)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: frontend
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+          
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: |
+            🚀 **Preview Deployment Ready!**
+            
+            Your changes have been deployed to a preview environment.
+            
+            **Preview URL:** ${{ steps.deploy.outputs.preview-url }}
+            
+            **Environment:** Preview
+            **Commit:** ${{ github.sha }}
+            **Branch:** ${{ github.head_ref }}
+
+  # Staging deployment
+  staging:
+    name: Staging Deployment
+    runs-on: ubuntu-latest
+    needs: [quality, test]
+    if: github.ref == 'refs/heads/staging' && github.event_name == 'push'
+    environment:
+      name: staging
+      url: https://staging.tradesys.com
+    defaults:
+      run:
+        working-directory: frontend
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Deploy to Vercel (Staging)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: frontend
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+        env:
+          NEXT_PUBLIC_APP_ENV: staging
+          NEXT_PUBLIC_API_URL: ${{ secrets.STAGING_API_URL }}
+          NEXT_PUBLIC_WS_URL: ${{ secrets.STAGING_WS_URL }}
+          
+      - name: Notify deployment
+        uses: 8398a7/action-slack@v3
+        if: always()
+        with:
+          status: ${{ job.status }}
+          text: |
+            Staging deployment ${{ job.status }}
+            Environment: staging
+            Commit: ${{ github.sha }}
+            URL: https://staging.tradesys.com
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  # Production deployment
+  production:
+    name: Production Deployment
+    runs-on: ubuntu-latest
+    needs: [quality, test]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: production
+      url: https://tradesys.com
+    defaults:
+      run:
+        working-directory: frontend
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Generate sitemap
+        run: npm run postbuild || echo "Sitemap generation skipped"
+        
+      - name: Deploy to Vercel (Production)
+        uses: amondnet/vercel-action@v25
+        id: deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: frontend
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+        env:
+          NEXT_PUBLIC_APP_ENV: production
+          NEXT_PUBLIC_API_URL: ${{ secrets.PRODUCTION_API_URL }}
+          NEXT_PUBLIC_WS_URL: ${{ secrets.PRODUCTION_WS_URL }}
+          NEXT_PUBLIC_SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          NEXT_PUBLIC_VERCEL_ANALYTICS_ID: ${{ secrets.VERCEL_ANALYTICS_ID }}
+          
+      - name: Run post-deployment checks
+        run: |
+          echo "Running post-deployment health checks..."
+          curl -f -s "${{ steps.deploy.outputs.preview-url }}/api/health" || echo "Health check endpoint not available"
+          
+      - name: Notify successful deployment
+        uses: 8398a7/action-slack@v3
+        if: success()
+        with:
+          status: success
+          text: |
+            🎉 Production deployment successful!
+            Environment: production
+            Commit: ${{ github.sha }}
+            URL: https://tradesys.com
+            Deployed by: ${{ github.actor }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          
+      - name: Notify deployment failure
+        uses: 8398a7/action-slack@v3
+        if: failure()
+        with:
+          status: failure
+          text: |
+            ❌ Production deployment failed!
+            Environment: production
+            Commit: ${{ github.sha }}
+            Check logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  # Bundle analysis (optional)
+  analyze:
+    name: Bundle Analysis
+    runs-on: ubuntu-latest
+    needs: quality
+    if: github.event_name == 'pull_request'
+    defaults:
+      run:
+        working-directory: frontend
+        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Analyze bundle
+        run: npm run analyze
+        env:
+          ANALYZE: true
+          
+      - name: Upload bundle analysis
+        uses: actions/upload-artifact@v3
+        with:
+          name: bundle-analysis
+          path: frontend/.next/analyze/
+          retention-days: 7

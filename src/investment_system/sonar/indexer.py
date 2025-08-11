@@ -9,6 +9,10 @@ import json
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Any
 from datetime import datetime
+from investment_system.core.logging import get_logger
+from investment_system.core.monitoring import track_custom_metric, increment_counter
+
+logger = get_logger(__name__)
 
 
 class SonarGraph:
@@ -21,14 +25,20 @@ class SonarGraph:
             "indexed_at": datetime.utcnow().isoformat(),
             "version": "1.0.0"
         }
+        # Track SONAR metrics
+        track_custom_metric("sonar_graph_initialized", datetime.utcnow().isoformat())
     
     def add_node(self, node_id: str, kind: str, meta: Dict[str, Any]):
         """Add node to graph."""
         self.nodes[node_id] = {"kind": kind, **meta}
+        increment_counter(f"sonar_nodes_{kind}")
+        logger.debug("Added SONAR node", node_id=node_id, kind=kind)
     
     def add_edge(self, src: str, dst: str, edge_type: str):
         """Add edge between nodes."""
         self.edges.append((src, dst, edge_type))
+        increment_counter(f"sonar_edges_{edge_type}")
+        logger.debug("Added SONAR edge", src=src, dst=dst, edge_type=edge_type)
     
     def get_dependencies(self, node_id: str) -> List[str]:
         """Get all dependencies of a node."""
@@ -40,11 +50,16 @@ class SonarGraph:
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert graph to dictionary."""
-        return {
+        result = {
             "nodes": self.nodes,
             "edges": [{"src": s, "dst": d, "type": t} for s, d, t in self.edges],
             "metadata": self.metadata
         }
+        # Update metrics
+        track_custom_metric("sonar_total_nodes", len(self.nodes))
+        track_custom_metric("sonar_total_edges", len(self.edges))
+        logger.info("SONAR graph serialized", nodes=len(self.nodes), edges=len(self.edges))
+        return result
 
 
 class PythonAnalyzer:

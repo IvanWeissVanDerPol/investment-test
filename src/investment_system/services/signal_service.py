@@ -16,15 +16,30 @@ from investment_system.core.analyzers import AnalyzerFactory, BaseAnalyzer
 from investment_system.infrastructure.cache import get_cache, cache_result
 from investment_system.pipeline.ingest import fetch_prices
 from investment_system.pipeline.analyze import generate_signals as legacy_generate_signals
+# Integration with new repository pattern and monitoring
+from investment_system.repositories.signal_repository import SignalRepository
+from investment_system.repositories.user_repository import UserRepository
+from investment_system.core.logging import get_logger
+from investment_system.core.monitoring import track_custom_metric, increment_counter
+from investment_system.infrastructure.database_session import get_database_session
+
+logger = get_logger(__name__)
 
 
 class SignalService:
-    """Service for generating trading signals"""
+    """Service for generating trading signals with repository pattern integration"""
     
-    def __init__(self):
+    def __init__(self, signal_repository: Optional[SignalRepository] = None, user_repository: Optional[UserRepository] = None):
+        # Existing sophisticated features
         self.cache = get_cache()
         self.analyzer_factory = AnalyzerFactory()
         self._ai_hooks = {}
+        
+        # New repository pattern integration (optional for backward compatibility)
+        self.signal_repository = signal_repository
+        self.user_repository = user_repository
+        
+        logger.info("SignalService initialized", has_repositories=bool(signal_repository and user_repository))
         
     def register_ai_hook(self, hook_name: str, handler: callable):
         """Register an AI hook for signal enhancement"""
@@ -38,8 +53,21 @@ class SignalService:
         """
         Generate trading signals for requested symbols.
         This is the main revenue-generating endpoint.
+        Enhanced with repository pattern for persistence.
         """
         request_id = str(uuid.uuid4())
+        
+        # Track signal generation metrics
+        increment_counter("signal_requests_total")
+        track_custom_metric("signal_request_symbols_count", len(request.symbols))
+        
+        logger.info(
+            "Signal generation started",
+            request_id=request_id,
+            user_tier=user.tier.value,
+            symbols=request.symbols,
+            ai_hooks_registered=len(self._ai_hooks)
+        )
         
         # Check user limits
         if not self._check_user_limits(user, request):
@@ -61,7 +89,7 @@ class SignalService:
             request.lookback_days
         )
         
-        # Generate signals
+        # Generate signals with enhanced repository integration
         signals = []
         for market_data in market_data_list:
             signal = await self._generate_signal_for_symbol(
@@ -70,12 +98,31 @@ class SignalService:
                 request.indicators
             )
             signals.append(signal)
+            
+            # Persist signal to repository if available
+            if self.signal_repository:
+                try:
+                    await self._persist_signal(signal, user.id, request_id)
+                except Exception as e:
+                    logger.warning("Failed to persist signal to repository", error=str(e), symbol=signal.symbol)
         
         # Cache results
         self._cache_signals(request.symbols, user.tier, signals)
         
         # Track usage for billing
         await self._track_usage(user, request.symbols)
+        
+        # Update metrics
+        increment_counter("signals_generated_total", len(signals))
+        track_custom_metric("signal_generation_success", 1)
+        
+        logger.info(
+            "Signal generation completed",
+            request_id=request_id,
+            signals_count=len(signals),
+            cached=False,
+            ai_enhanced=any(getattr(s, 'ai_enhanced', False) for s in signals)
+        )
         
         return SignalResponse(
             signals=signals,
@@ -221,6 +268,52 @@ class SignalService:
         )
         # In production, save to database
         print(f"Usage tracked: {user.id} used {len(symbols)} symbol queries")
+    
+    async def _persist_signal(self, signal: TradingSignal, user_id: str, request_id: str) -> None:
+        """Persist signal to repository with enhanced metadata."""
+        if not self.signal_repository:
+            return
+        
+        try:
+            # Convert TradingSignal to repository format
+            signal_data = {
+                "symbol": signal.symbol,
+                "signal_type": signal.signal,
+                "timestamp": datetime.utcnow(),
+                "confidence": signal.confidence,
+                "price": float(signal.price) if signal.price else None,
+                "user_id": user_id,
+                "metadata": {
+                    "request_id": request_id,
+                    "indicators": signal.indicators,
+                    "reasoning": getattr(signal, 'reasoning', None),
+                    "ai_enhanced": getattr(signal, 'ai_enhanced', False),
+                    "ai_hooks_used": list(self._ai_hooks.keys()) if self._ai_hooks else []
+                },
+                "created_at": datetime.utcnow(),
+                "updated_at": datetime.utcnow()
+            }
+            
+            # Create signal using repository
+            await self.signal_repository.create(signal_data)
+            
+            logger.debug(
+                "Signal persisted to repository",
+                symbol=signal.symbol,
+                user_id=user_id,
+                request_id=request_id,
+                ai_enhanced=signal_data["metadata"]["ai_enhanced"]
+            )
+            
+        except Exception as e:
+            logger.error(
+                "Failed to persist signal",
+                error=str(e),
+                symbol=signal.symbol,
+                user_id=user_id
+            )
+            # Don't fail the entire request if persistence fails
+            increment_counter("signal_persistence_failures")
     
     def _get_rate_limit_status(self, user: User) -> RateLimitStatus:
         """Get current rate limit status for user"""

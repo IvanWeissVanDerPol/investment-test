@@ -1,0 +1,46 @@
+version: 1
+description: AI enforcement and telemetry policy
+
+enforcement:
+  mode: conditional            # off | conditional | full
+  triggers:
+    paths:
+      - "src/investment_system/api/endpoints.yaml"
+      - "src/investment_system/api/handlers/**"
+      - "src/investment_system/core/**"
+      - "src/investment_system/services/**"
+      - "src/investment_system/infrastructure/database.py"
+      - "config/alembic.ini"
+      - "requirements*.txt"
+      - "pyproject.toml"
+    max_loc_delta: 400         # run if PR adds+deletes > this
+    core_delta_eps: 0.08       # run if |Δ core_score| > ε for top-20 nodes
+    schema_changed: true       # run if pydantic contracts diff
+    endpoint_catalog_changed: true
+  overrides:
+    commit_tags_full: ["[ci:full]"]
+    commit_tags_skip: ["[ci:skip-enforce]"]
+  schedule_backstop_days: 7    # force full once per week
+
+telemetry:
+  enabled: false               # Set via FEATURE_DEV_TELEMETRY env var
+  dev_only: true              # Never in production
+  sampling_rate: 0.1          # Sample 10% of requests
+  retention_days: 7           # Keep metrics for 7 days
+  
+security:
+  max_context_tokens: 8000
+  max_output_tokens: 4000
+  prompt_injection_action: block  # block | warn | log
+  secret_redaction: true
+  
+monitoring:
+  metrics:
+    - ai_prompt_injection_blocked_total
+    - ai_context_token_spend_sum
+    - ai_context_hit_rate
+    - sonar_core_nodes_count
+    - sonar_core_delta
+    - api_requests_total
+    - ai_output_repair_count
+    - latency_ms_bucket

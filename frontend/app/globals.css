@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme - Clean and minimal */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 142.1 70% 96%;
+    
+    --danger: 0 84.2% 60.2%;
+    --danger-foreground: 0 0% 98%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 90% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    
+    --radius: 0.5rem;
+  }
+  
+  .dark {
+    /* Dark theme - Elegant and sophisticated */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    
+    --success: 142.1 70% 45%;
+    --success-foreground: 142.1 70% 96%;
+    
+    --danger: 0 62.8% 50%;
+    --danger-foreground: 0 0% 98%;
+    
+    --warning: 38 80% 45%;
+    --warning-foreground: 38 90% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+    
+    &:hover {
+      @apply bg-muted-foreground/30;
+    }
+  }
+  
+  /* Selection colors */
+  ::selection {
+    @apply bg-primary/20 text-primary;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  /* Smooth number transitions */
+  .number-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  
+  /* Button base styles */
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium 
+           transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 
+           focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none 
+           disabled:opacity-50 active:scale-[0.98];
+  }
+  
+  /* Data table styles */
+  .data-table {
+    @apply w-full text-sm;
+    
+    thead {
+      @apply border-b border-border/50;
+      
+      th {
+        @apply px-4 py-3 text-left font-medium text-muted-foreground;
+      }
+    }
+    
+    tbody {
+      tr {
+        @apply border-b border-border/30 transition-colors hover:bg-muted/50;
+        
+        td {
+          @apply px-4 py-3;
+        }
+      }
+    }
+  }
+  
+  /* Price movement indicators */
+  .price-up {
+    @apply text-success;
+  }
+  
+  .price-down {
+    @apply text-danger;
+  }
+  
+  .price-neutral {
+    @apply text-muted-foreground;
+  }
+  
+  /* Loading skeleton */
+  .skeleton {
+    @apply animate-shimmer bg-gradient-to-r from-muted via-muted-foreground/10 to-muted bg-[length:200%_100%];
+  }
+  
+  /* Tooltip styles */
+  .tooltip {
+    @apply absolute z-50 overflow-hidden rounded-md border border-border 
+           bg-card px-3 py-1.5 text-xs text-card-foreground shadow-md 
+           animate-in fade-in-0 zoom-in-95;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  /* Gradient borders */
+  .gradient-border {
+    position: relative;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1px;
+      border-radius: inherit;
+      background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
+  
+  /* Glow effect */
+  .glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Safe area padding for mobile */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

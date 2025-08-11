@@ -16,6 +16,8 @@ from sqlalchemy import (
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker, Session
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from contextlib import asynccontextmanager
 from sqlalchemy.pool import QueuePool
 from sqlalchemy.dialects.postgresql import UUID
 
@@ -39,6 +41,9 @@ class User(Base):
     api_key_hash = Column(String(255))
     api_key_created_at = Column(DateTime, default=datetime.utcnow)
     api_key_last_used = Column(DateTime)
+    
+    # Stripe integration
+    stripe_customer_id = Column(String(255), index=True)
     
     # Account status
     is_active = Column(Boolean, default=True, nullable=False)
@@ -89,7 +94,7 @@ class Subscription(Base):
     stripe_payment_method_id = Column(String(255))
     
     # Billing details
-    amount = Column(DECIMAL(10, 2), nullable=False)
+    monthly_amount = Column(Integer)  # Amount in cents
     currency = Column(String(3), default="USD")
     interval = Column(String(20), default="month")  # month, year
     
@@ -335,3 +340,64 @@ def get_db() -> Session:
         yield db
     finally:
         db.close()
+
+
+# Async session management
+class AsyncDatabaseManager:
+    """Async database connection and session management"""
+    
+    def __init__(self, database_url: Optional[str] = None):
+        self.database_url = database_url or os.getenv(
+            "DATABASE_URL",
+            "sqlite+aiosqlite:///runtime/investment_system.db"
+        )
+        
+        # Convert sync URL to async if needed
+        if self.database_url.startswith("sqlite://"):
+            self.database_url = self.database_url.replace("sqlite://", "sqlite+aiosqlite://")
+        elif self.database_url.startswith("postgresql://"):
+            self.database_url = self.database_url.replace("postgresql://", "postgresql+asyncpg://")
+        
+        # Configure async engine
+        self.engine = create_async_engine(
+            self.database_url,
+            pool_pre_ping=True,
+            pool_recycle=3600
+        )
+        
+        self.async_session = async_sessionmaker(
+            self.engine,
+            class_=AsyncSession,
+            expire_on_commit=False
+        )
+    
+    @asynccontextmanager
+    async def session(self):
+        """Get async database session"""
+        async with self.async_session() as session:
+            try:
+                yield session
+            except Exception:
+                await session.rollback()
+                raise
+            finally:
+                await session.close()
+
+
+# Global async database manager
+_async_db_manager: Optional[AsyncDatabaseManager] = None
+
+
+def get_async_db_manager() -> AsyncDatabaseManager:
+    """Get global async database manager instance"""
+    global _async_db_manager
+    if _async_db_manager is None:
+        _async_db_manager = AsyncDatabaseManager()
+    return _async_db_manager
+
+
+@asynccontextmanager
+async def get_session() -> AsyncSession:
+    """Get async database session"""
+    async with get_async_db_manager().session() as session:
+        yield session

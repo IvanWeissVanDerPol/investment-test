@@ -149,11 +149,20 @@ def get_tier_rate_limit(tier: UserTier) -> str:
     return limits.get(tier, "100/hour")
 
 
-# Health check endpoint
-@app.get("/health")
+# Import routers
+from investment_system.api.handlers import health_router
+from investment_system.api.webhooks import webhook_router
+from investment_system.api.handlers.billing import get_billing_handler
+
+# Include routers
+app.include_router(health_router)
+app.include_router(webhook_router)
+
+# Legacy health check endpoint (kept for compatibility)
+@app.get("/healthz")
 @limiter.limit("1000/minute")
 async def health_check(request: Request):
-    """Health check endpoint"""
+    """Legacy health check endpoint"""
     return {
         "status": "healthy",
         "timestamp": datetime.utcnow().isoformat(),
@@ -229,42 +238,116 @@ async def login(request: Request, login_req: LoginRequest):
     }
 
 
-# Subscription endpoints
+# Billing endpoints
+from investment_system.api.handlers.billing import (
+    get_billing_handler,
+    CreateSubscriptionRequest,
+    UpgradeSubscriptionRequest,
+    CancelSubscriptionRequest
+)
+
+@app.post("/billing/subscribe")
+@limiter.limit("5/hour")
+async def create_subscription(
+    request: Request,
+    subscribe_req: CreateSubscriptionRequest,
+    user: User = Depends(get_current_user)
+):
+    """Create new subscription with Stripe integration"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.create_subscription(subscribe_req, user)
+
+
+@app.get("/billing/status")
+@limiter.limit("100/hour")
+async def get_billing_status(
+    request: Request,
+    user: User = Depends(get_current_user)
+):
+    """Get subscription status and billing information"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.get_subscription_status(user)
+
+
+@app.post("/billing/upgrade")
+@limiter.limit("5/hour")
+async def upgrade_subscription(
+    request: Request,
+    upgrade_req: UpgradeSubscriptionRequest,
+    user: User = Depends(get_current_user)
+):
+    """Upgrade subscription tier"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.upgrade_subscription(upgrade_req, user)
+
+
+@app.post("/billing/cancel")
+@limiter.limit("3/hour")
+async def cancel_subscription(
+    request: Request,
+    cancel_req: CancelSubscriptionRequest,
+    user: User = Depends(get_current_user)
+):
+    """Cancel subscription"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.cancel_subscription(cancel_req, user)
+
+
+@app.get("/billing/payment-methods")
+@limiter.limit("20/hour")
+async def get_payment_methods(
+    request: Request,
+    user: User = Depends(get_current_user)
+):
+    """Get user's payment methods"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.get_payment_methods(user)
+
+
+@app.get("/billing/portal")
+@limiter.limit("10/hour")
+async def get_billing_portal(
+    request: Request,
+    user: User = Depends(get_current_user)
+):
+    """Get Stripe billing portal URL"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.get_billing_portal_url(user)
+
+
+@app.get("/pricing")
+@limiter.limit("1000/hour")
+async def get_pricing(request: Request):
+    """Get pricing information for all tiers"""
+    billing_handler = get_billing_handler()
+    return await billing_handler.get_pricing_info()
+
+
+# Legacy subscription endpoint (kept for backwards compatibility)
 @app.post("/subscribe")
 @limiter.limit("5/hour")
-async def subscribe(
+async def legacy_subscribe(
     request: Request,
     subscribe_req: SubscribeRequest,
     user: User = Depends(get_current_user)
 ):
-    """Subscribe or upgrade tier"""
+    """Legacy subscription endpoint - redirects to new billing system"""
+    from investment_system.api.handlers.billing import CreateSubscriptionRequest
+    
     if subscribe_req.tier == UserTier.FREE:
-        # Downgrade to free
-        user.tier = UserTier.FREE
-        USERS_DB[user.id] = user
-        return {"message": "Downgraded to free tier", "tier": user.tier}
+        # Handle downgrade
+        billing_handler = get_billing_handler()
+        cancel_req = CancelSubscriptionRequest(at_period_end=False, reason="downgrade_to_free")
+        return await billing_handler.cancel_subscription(cancel_req, user)
     
-    # In production, integrate with Stripe here
-    # For MVP, just update tier
-    user.tier = subscribe_req.tier
-    USERS_DB[user.id] = user
+    # Convert to new format
+    create_req = CreateSubscriptionRequest(
+        tier=subscribe_req.tier,
+        payment_method_id=subscribe_req.payment_method_id or "pm_mock_test"
+    )
     
-    # Record subscription
-    SUBSCRIPTIONS_DB[user.id] = {
-        "tier": subscribe_req.tier,
-        "started_at": datetime.utcnow(),
-        "status": "active"
-    }
-    
-    return {
-        "message": f"Subscribed to {subscribe_req.tier} tier",
-        "tier": user.tier,
-        "monthly_price": {
-            UserTier.STARTER: 29,
-            UserTier.PRO: 99,
-            UserTier.ENTERPRISE: 499
-        }.get(subscribe_req.tier, 0)
-    }
+    billing_handler = get_billing_handler()
+    return await billing_handler.create_subscription(create_req, user)
 
 
 # Trading signal endpoints
